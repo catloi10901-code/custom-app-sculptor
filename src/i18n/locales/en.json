@@ -462,7 +462,7 @@
   "admin.users.roleSet": "Role set: {{role}}",
   "admin.users.loading": "Loading...",
 
-  "admin.settings.title": "⚙️ Settings",
+  "admin.settings.title": "Settings",
   "admin.settings.info": "Website Information",
   "admin.settings.infoSub": "Manage general settings for UNPray",
   "admin.settings.siteName": "Website Name",

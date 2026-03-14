@@ -462,7 +462,7 @@
   "admin.users.roleSet": "Đã set role: {{role}}",
   "admin.users.loading": "Đang tải...",
 
-  "admin.settings.title": "⚙️ Cài Đặt",
+  "admin.settings.title": "Cài Đặt",
   "admin.settings.info": "Thông tin website",
   "admin.settings.infoSub": "Quản lý cài đặt chung của UNPray",
   "admin.settings.siteName": "Tên website",
