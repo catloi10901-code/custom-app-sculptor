@@ -14,7 +14,7 @@ const navItems = [
   { path: '/word', label: 'nav.word' },
   { path: '/library', label: 'nav.library' },
   { path: '/about', label: 'nav.about' },
-  { path: '/give', label: 'nav.give' },
+  // { path: '/give', label: 'nav.give' },
 ];
 
 const Navbar = () => {
