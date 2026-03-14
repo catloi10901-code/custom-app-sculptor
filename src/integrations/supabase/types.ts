@@ -151,6 +151,45 @@ export type Database = {
           },
         ]
       }
+      campaigns: {
+        Row: {
+          created_at: string
+          description: string
+          goal: number
+          icon: string
+          id: string
+          is_active: boolean
+          participants: number
+          sort_order: number
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string
+          goal?: number
+          icon?: string
+          id?: string
+          is_active?: boolean
+          participants?: number
+          sort_order?: number
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string
+          goal?: number
+          icon?: string
+          id?: string
+          is_active?: boolean
+          participants?: number
+          sort_order?: number
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       community_replies: {
         Row: {
           content: string
