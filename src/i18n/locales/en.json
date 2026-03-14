@@ -446,7 +446,7 @@
   "admin.posts.deleted": "Deleted",
   "admin.posts.loading": "Loading...",
 
-  "admin.users.title": "👥 User Management",
+  "admin.users.title": "User Management",
   "admin.users.name": "Name",
   "admin.users.country": "Country",
   "admin.users.status": "Status",
