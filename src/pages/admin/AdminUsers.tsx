@@ -12,14 +12,33 @@ interface Profile {
   created_at: string;
 }
 
+interface UserWithAmens extends Profile {
+  total_amens: number;
+}
+
 const AdminUsers = () => {
   const { t } = useTranslation();
-  const [users, setUsers] = useState<Profile[]>([]);
+  const [users, setUsers] = useState<UserWithAmens[]>([]);
   const [loading, setLoading] = useState(true);
 
   const fetchUsers = async () => {
-    const { data } = await supabase.from('profiles').select('*').order('created_at', { ascending: false });
-    if (data) setUsers(data);
+    const { data: profiles } = await supabase.from('profiles').select('*').order('created_at', { ascending: false });
+    if (!profiles) { setLoading(false); return; }
+
+    // Fetch amen counts per user from prayer_amens
+    const { data: amens } = await supabase.from('prayer_amens').select('user_id');
+    
+    const amenCountMap: Record<string, number> = {};
+    if (amens) {
+      amens.forEach(a => {
+        amenCountMap[a.user_id] = (amenCountMap[a.user_id] || 0) + 1;
+      });
+    }
+
+    setUsers(profiles.map(p => ({
+      ...p,
+      total_amens: amenCountMap[p.user_id] || 0,
+    })));
     setLoading(false);
   };
 
@@ -43,11 +62,12 @@ const AdminUsers = () => {
     <div>
       <h1 className="font-serif text-primary text-2xl mb-6">{t('admin.users.title')}</h1>
       <div className="bg-card border border-border rounded-xl overflow-x-auto">
-        <table className="w-full text-[0.88rem] min-w-[550px]">
+        <table className="w-full text-[0.88rem] min-w-[650px]">
           <thead>
             <tr className="border-b border-border">
               <th className="text-left px-4 py-3 text-muted-foreground font-semibold">{t('admin.users.name')}</th>
               <th className="text-left px-4 py-3 text-muted-foreground font-semibold">{t('admin.users.country')}</th>
+              <th className="text-center px-4 py-3 text-muted-foreground font-semibold">🙏 Amen</th>
               <th className="text-center px-4 py-3 text-muted-foreground font-semibold">{t('admin.users.status')}</th>
               <th className="text-center px-4 py-3 text-muted-foreground font-semibold">{t('admin.users.role')}</th>
               <th className="text-center px-4 py-3 text-muted-foreground font-semibold">{t('admin.users.actions')}</th>
@@ -58,6 +78,7 @@ const AdminUsers = () => {
               <tr key={u.id} className="border-b border-border/50 hover:bg-white/[0.03]">
                 <td className="px-4 py-3 text-foreground font-medium">{u.display_name || 'N/A'}</td>
                 <td className="px-4 py-3 text-muted-foreground">{u.country || '—'}</td>
+                <td className="px-4 py-3 text-center text-primary font-bold">{u.total_amens}</td>
                 <td className="px-4 py-3 text-center">
                   <span className={`px-2 py-0.5 rounded-full text-[0.75rem] font-bold ${u.is_active ? 'bg-green-500/20 text-green-400' : 'bg-red-500/20 text-red-400'}`}>
                     {u.is_active ? t('admin.users.active') : t('admin.users.locked')}
@@ -82,7 +103,7 @@ const AdminUsers = () => {
               </tr>
             ))}
             {users.length === 0 && (
-              <tr><td colSpan={5} className="px-4 py-8 text-center text-muted-foreground">{t('admin.users.empty')}</td></tr>
+              <tr><td colSpan={6} className="px-4 py-8 text-center text-muted-foreground">{t('admin.users.empty')}</td></tr>
             )}
           </tbody>
         </table>
