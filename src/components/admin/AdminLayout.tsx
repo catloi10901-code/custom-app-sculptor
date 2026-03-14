@@ -10,6 +10,7 @@ const adminNav = [
   { path: '/admin/posts', labelKey: 'admin.posts.title', icon: FileText },
   { path: '/admin/prayers', labelKey: 'admin.prayers.title', icon: MessageSquare },
   { path: '/admin/users', labelKey: 'admin.users.title', icon: Users },
+  { path: '/admin/campaigns', labelKey: 'Chiến dịch', icon: Flag },
   { path: '/admin/settings', labelKey: 'admin.settings.title', icon: Settings },
 ];
 
