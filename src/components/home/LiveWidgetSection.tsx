@@ -47,12 +47,12 @@ const LiveWidgetSection = () => {
     <section className="py-20">
       <div className="container">
         <div className="text-center mb-8">
-          <h2 className="font-serif text-primary mb-2">
-            <span className="inline-flex items-center gap-2 whitespace-nowrap">
+          <h2 className="font-serif text-primary mb-2 flex items-center justify-center gap-3">
+            <span className="inline-flex items-center gap-2">
               <span className="w-2.5 h-2.5 rounded-full bg-destructive" style={{ animation: 'livePulse 1.2s ease-in-out infinite' }} />
-              LIVE
-            </span>{' '}
-            <span className="text-foreground whitespace-nowrap">{t('live.title')}</span>
+              <span className="text-primary">LIVE</span>
+            </span>
+            <span className="text-foreground">{t('live.title')}</span>
           </h2>
           <Link to="/pray?tab=live" className="text-muted-foreground text-sm hover:text-primary transition-colors no-underline">
             {t('live.viewAll')}
