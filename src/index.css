@@ -94,7 +94,7 @@
 
 /* ===== SCROLLBAR ===== */
 ::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: hsl(221, 68%, 33%); }
+::-webkit-scrollbar-track { background: hsl(221, 82%, 28%); }
 ::-webkit-scrollbar-thumb { background: hsl(38, 47%, 56%); border-radius: 10px; }
 
 /* ===== ANIMATIONS ===== */
