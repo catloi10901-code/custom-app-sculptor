@@ -22,8 +22,21 @@ const AboutPage = () => {
   return (
     <div>
       <section className="py-20 text-center" style={{ background: 'linear-gradient(180deg, rgba(197,160,89,0.06) 0%, transparent 100%)' }}>
-        <div className="container"><h1 className="font-serif text-primary mb-4">The Union Nations of Prayer</h1><p className="text-muted-foreground text-lg max-w-[700px] mx-auto">{t('about.heroSub')}</p></div>
+        <div className="container">
+          <h1 className="font-serif text-primary mb-4">HOLY PRAY TODAY</h1>
+          <p className="text-primary/80 text-lg font-semibold mb-3">Bàn Thờ Số — Cầu nguyện cho muôn dân</p>
+          <p className="text-muted-foreground text-base max-w-[750px] mx-auto italic leading-relaxed">Hiệp một trong Thánh Linh, lay động Thiên Đình.</p>
+        </div>
       </section>
+
+      <section className="py-16">
+        <div className="container max-w-[800px] text-center">
+          <p className="text-muted-foreground text-lg leading-[1.9]">
+            <strong className="text-foreground">HOLYPray</strong> là bàn thờ cầu nguyện số toàn cầu, nơi mọi người có thể lắng lại, cầu nguyện, hiệp nguyện, theo dõi tác động, và bước vào một hệ sinh thái được xây trên <span className="text-primary font-semibold">sự thánh khiết</span>, <span className="text-primary font-semibold">tình yêu thương</span>, <span className="text-primary font-semibold">minh bạch</span> và <span className="text-primary font-semibold">quản trị trung tín</span>.
+          </p>
+        </div>
+      </section>
+
       <section className="py-16"><div className="container max-w-[800px] text-center"><h2 className="font-serif text-primary mb-6">{t('about.mission')}</h2><p className="text-muted-foreground text-lg leading-[1.8]">{t('about.missionText')}</p></div></section>
       <section className="py-16" style={{ background: 'rgba(197,160,89,0.03)' }}>
         <div className="container"><h2 className="font-serif text-primary mb-10 text-center">{t('about.values')}</h2><div className="grid grid-cols-1 md:grid-cols-2 gap-5">{values.map((v, i) => (<div key={i} className="bg-card border border-border rounded-2xl p-6 flex gap-4 transition-all duration-300 hover:border-primary/50 hover:-translate-y-0.5"><div className="text-3xl flex-shrink-0 mt-1">{v.icon}</div><div><h4 className="font-serif text-primary mb-2 text-base">{v.title}</h4><p className="text-muted-foreground text-[0.92rem] leading-relaxed">{v.desc}</p></div></div>))}</div></div>
