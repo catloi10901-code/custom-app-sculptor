@@ -28,9 +28,10 @@ const LiveWidgetSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {liveCards.map((card, i) => (
-            <div
+            <Link
               key={i}
-              className={`bg-white/[0.04] border border-white/[0.08] rounded-xl p-4 transition-all duration-300 hover:bg-white/[0.07] h-full flex flex-col ${!card.isLive ? 'opacity-70' : ''}`}
+              to="/pray?tab=live"
+              className={`bg-white/[0.04] border border-white/[0.08] rounded-xl p-4 transition-all duration-300 hover:bg-white/[0.07] h-full flex flex-col no-underline ${!card.isLive ? 'opacity-70' : ''}`}
             >
               <div className={`text-[0.78rem] font-semibold mb-1.5 ${card.isLive ? 'text-red-400' : 'text-primary'}`}>
                 {card.time}
@@ -42,7 +43,7 @@ const LiveWidgetSection = () => {
                   👥 {card.viewers} {t('live.viewers')}
                 </div>
               )}
-            </div>
+            </Link>
           ))}
         </div>
       </div>
