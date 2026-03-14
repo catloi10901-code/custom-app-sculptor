@@ -18,7 +18,7 @@ const ImpactStatsSection = () => {
           <p className="text-muted-foreground text-balance">{t('section.impact.sub')}</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
           {stats.map((stat) => (
             <div key={stat.labelKey} className="bg-card border border-border rounded-2xl p-6 text-center">
               <span className="font-serif text-[2.2rem] font-bold text-primary block">{stat.value}</span>
