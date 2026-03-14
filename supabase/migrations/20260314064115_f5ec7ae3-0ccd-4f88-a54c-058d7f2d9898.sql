@@ -1,0 +1,7 @@
+ALTER TABLE public.live_stats
+  ADD COLUMN IF NOT EXISTS prayer_min integer NOT NULL DEFAULT 1,
+  ADD COLUMN IF NOT EXISTS prayer_max integer NOT NULL DEFAULT 3,
+  ADD COLUMN IF NOT EXISTS member_chance numeric NOT NULL DEFAULT 0.6,
+  ADD COLUMN IF NOT EXISTS member_min integer NOT NULL DEFAULT 1,
+  ADD COLUMN IF NOT EXISTS member_max integer NOT NULL DEFAULT 2,
+  ADD COLUMN IF NOT EXISTS donation_amounts text NOT NULL DEFAULT '1,5,10,25,50,100';
