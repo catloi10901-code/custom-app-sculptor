@@ -59,6 +59,9 @@ const App = () => (
               <Route path="users" element={<AdminUsers />} />
               <Route path="settings" element={<AdminSettings />} />
               <Route path="campaigns" element={<AdminCampaigns />} />
+              <Route path="site-content" element={<AdminSiteContent />} />
+              <Route path="live-sessions" element={<AdminLiveSessions />} />
+              <Route path="testimonials" element={<AdminTestimonials />} />
             </Route>
             <Route path="/reset-password" element={<ResetPasswordPage />} />
             <Route path="*" element={<NotFound />} />

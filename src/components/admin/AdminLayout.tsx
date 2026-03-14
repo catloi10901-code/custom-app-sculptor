@@ -2,15 +2,19 @@ import { Link, Outlet, useLocation, Navigate } from 'react-router-dom';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/hooks/useAuth';
-import { LayoutDashboard, FileText, MessageSquare, Users, Settings, BarChart3, Menu, X, Flag } from 'lucide-react';
+import { LayoutDashboard, FileText, MessageSquare, Users, Settings, BarChart3, Menu, X, Flag, Globe, Radio, Quote, Mail } from 'lucide-react';
 
 const adminNav = [
   { path: '/admin', labelKey: 'admin.dashboard', icon: LayoutDashboard },
   { path: '/admin/live-stats', labelKey: 'Live Stats', icon: BarChart3 },
+  { path: '/admin/site-content', labelKey: 'Nội dung web', icon: Globe },
+  { path: '/admin/live-sessions', labelKey: 'Phiên Live', icon: Radio },
   { path: '/admin/posts', labelKey: 'admin.posts.title', icon: FileText },
   { path: '/admin/prayers', labelKey: 'admin.prayers.title', icon: MessageSquare },
-  { path: '/admin/users', labelKey: 'admin.users.title', icon: Users },
   { path: '/admin/campaigns', labelKey: 'Chiến dịch', icon: Flag },
+  { path: '/admin/testimonials', labelKey: 'Lời chứng', icon: Quote },
+  { path: '/admin/users', labelKey: 'admin.users.title', icon: Users },
+  { path: '/admin/newsletter', labelKey: 'Newsletter', icon: Mail },
   { path: '/admin/settings', labelKey: 'admin.settings.title', icon: Settings },
 ];
 
