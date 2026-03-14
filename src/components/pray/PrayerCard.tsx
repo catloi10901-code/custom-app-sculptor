@@ -2,6 +2,18 @@ import { useTranslation } from 'react-i18next';
 
 const avatarEmojis = ['🙏', '🌸', '💛', '🌺', '✝️', '🌍', '💜', '🕊️', '⭐', '🌟'];
 
+const topicColorMap: Record<string, { border: string; badge: string; badgeText: string; avatarBorder: string; hoverBorder: string; emoji: string }> = {
+  peace:      { border: 'border-l-blue-400',    badge: 'bg-blue-400/15 border-blue-400/30',    badgeText: 'text-blue-400',    avatarBorder: 'border-blue-400/60',    hoverBorder: 'hover:border-blue-400/40',    emoji: '🕊️' },
+  prosperity: { border: 'border-l-amber-400',   badge: 'bg-amber-400/15 border-amber-400/30',  badgeText: 'text-amber-400',   avatarBorder: 'border-amber-400/60',   hoverBorder: 'hover:border-amber-400/40',   emoji: '⭐' },
+  healing:    { border: 'border-l-emerald-400',  badge: 'bg-emerald-400/15 border-emerald-400/30', badgeText: 'text-emerald-400', avatarBorder: 'border-emerald-400/60', hoverBorder: 'hover:border-emerald-400/40', emoji: '💚' },
+  family:     { border: 'border-l-pink-400',     badge: 'bg-pink-400/15 border-pink-400/30',    badgeText: 'text-pink-400',    avatarBorder: 'border-pink-400/60',    hoverBorder: 'hover:border-pink-400/40',    emoji: '👨‍👩‍👧' },
+  nation:     { border: 'border-l-purple-400',   badge: 'bg-purple-400/15 border-purple-400/30', badgeText: 'text-purple-400',  avatarBorder: 'border-purple-400/60',  hoverBorder: 'hover:border-purple-400/40',  emoji: '🏛️' },
+  poverty:    { border: 'border-l-orange-400',   badge: 'bg-orange-400/15 border-orange-400/30', badgeText: 'text-orange-400',  avatarBorder: 'border-orange-400/60',  hoverBorder: 'hover:border-orange-400/40',  emoji: '🌿' },
+  recovery:   { border: 'border-l-cyan-400',     badge: 'bg-cyan-400/15 border-cyan-400/30',    badgeText: 'text-cyan-400',    avatarBorder: 'border-cyan-400/60',    hoverBorder: 'hover:border-cyan-400/40',    emoji: '🔄' },
+};
+
+const defaultColors = { border: 'border-l-primary', badge: 'bg-primary/10 border-primary/20', badgeText: 'text-primary', avatarBorder: 'border-primary', hoverBorder: 'hover:border-primary/40', emoji: '🙏' };
+
 interface PrayerCardProps {
   prayer: {
     id: string;
@@ -20,6 +32,7 @@ interface PrayerCardProps {
 
 const PrayerCard = ({ prayer, index, hasAmened, onToggleAmen, isRealtime }: PrayerCardProps) => {
   const { t } = useTranslation();
+  const colors = topicColorMap[prayer.topic] || defaultColors;
 
   const topicLabels: Record<string, string> = {
     peace: t('topic.peace'),
@@ -49,11 +62,11 @@ const PrayerCard = ({ prayer, index, hasAmened, onToggleAmen, isRealtime }: Pray
 
   return (
     <div
-      className="bg-card border border-border rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:border-primary/40"
+      className={`bg-card border border-border border-l-4 ${colors.border} rounded-2xl p-4 sm:p-6 transition-all duration-300 ${colors.hoverBorder}`}
       style={animationStyle}
     >
       <div className="flex items-center gap-3 mb-3">
-        <div className="w-10 h-10 rounded-full bg-gold-dim border-[1.5px] border-primary flex items-center justify-center text-lg flex-shrink-0">
+        <div className={`w-10 h-10 rounded-full bg-card border-[2px] ${colors.avatarBorder} flex items-center justify-center text-lg flex-shrink-0`}>
           {avatarEmojis[index % avatarEmojis.length]}
         </div>
         <div className="flex-1 min-w-0">
@@ -62,7 +75,8 @@ const PrayerCard = ({ prayer, index, hasAmened, onToggleAmen, isRealtime }: Pray
         </div>
         {prayer.country && <span className="text-[0.78rem] text-primary bg-gold-dim px-2 py-0.5 rounded-full">{prayer.country}</span>}
       </div>
-      <span className="inline-block px-2.5 py-0.5 rounded-full text-[0.75rem] font-bold bg-primary/10 text-primary border border-primary/20 mb-3">
+      <span className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[0.75rem] font-bold ${colors.badge} ${colors.badgeText} border mb-3`}>
+        <span>{colors.emoji}</span>
         {topicLabels[prayer.topic] || prayer.topic}
       </span>
       <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-4 line-clamp-4">{prayer.content}</p>
