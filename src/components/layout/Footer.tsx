@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
+import logo7center from '@/assets/logos/7center.png';
+import logo9s from '@/assets/logos/9slogo.png';
+import logoGifpp from '@/assets/logos/gifpp.png';
+import logoPartner4 from '@/assets/logos/partner4.png';
 
 const Footer = () => {
   const { t } = useTranslation();
