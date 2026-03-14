@@ -403,8 +403,8 @@
   "library.cat.nation": "🏛️ Nation",
   "library.count": "{{count}} items",
 
-  "admin.dashboard": "📊 Dashboard",
-  "admin.prayers.title": "🙏 Prayer Management",
+  "admin.dashboard": "Dashboard",
+  "admin.prayers.title": "Prayer Management",
   "admin.prayers.name": "Name",
   "admin.prayers.topic": "Topic",
   "admin.prayers.content": "Content",
@@ -422,7 +422,7 @@
   "admin.prayers.deleted": "Deleted",
   "admin.prayers.loading": "Loading...",
 
-  "admin.posts.title": "📖 Post Management",
+  "admin.posts.title": "Post Management",
   "admin.posts.create": "+ Create Post",
   "admin.posts.close": "Close",
   "admin.posts.postTitle": "Title",
@@ -446,7 +446,7 @@
   "admin.posts.deleted": "Deleted",
   "admin.posts.loading": "Loading...",
 
-  "admin.users.title": "👥 User Management",
+  "admin.users.title": "User Management",
   "admin.users.name": "Name",
   "admin.users.country": "Country",
   "admin.users.status": "Status",
@@ -462,7 +462,7 @@
   "admin.users.roleSet": "Role set: {{role}}",
   "admin.users.loading": "Loading...",
 
-  "admin.settings.title": "⚙️ Settings",
+  "admin.settings.title": "Settings",
   "admin.settings.info": "Website Information",
   "admin.settings.infoSub": "Manage general settings for UNPray",
   "admin.settings.siteName": "Website Name",
