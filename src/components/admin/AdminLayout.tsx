@@ -6,7 +6,7 @@ import { LayoutDashboard, FileText, MessageSquare, Users, Settings, BarChart3, M
 
 const adminNav = [
   { path: '/admin', labelKey: 'admin.dashboard', icon: LayoutDashboard },
-  { path: '/admin/live-stats', labelKey: 'admin.dashboard', icon: BarChart3 },
+  { path: '/admin/live-stats', labelKey: 'admin.liveStats', icon: BarChart3 },
   { path: '/admin/posts', labelKey: 'admin.posts.title', icon: FileText },
   { path: '/admin/prayers', labelKey: 'admin.prayers.title', icon: MessageSquare },
   { path: '/admin/users', labelKey: 'admin.users.title', icon: Users },
