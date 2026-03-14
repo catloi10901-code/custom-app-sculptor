@@ -53,14 +53,14 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative overflow-hidden" style={{ background: '#162c50' }}>
+    <section className="relative overflow-hidden" style={{ background: '#0f2347' }}>
       {/* Background layers */}
       <div className="absolute inset-0" style={{
         background: `
-          radial-gradient(ellipse 120% 80% at 50% 0%, #1E4DB0 0%, transparent 60%),
-          radial-gradient(ellipse 80% 60% at 20% 60%, #183898 0%, transparent 55%),
-          radial-gradient(ellipse 60% 70% at 80% 40%, #1B3FA8 0%, transparent 50%),
-          linear-gradient(180deg, #183898 0%, #1B3FA8 40%, #183898 100%)
+          radial-gradient(ellipse 120% 80% at 50% 0%, #153d8a 0%, transparent 60%),
+          radial-gradient(ellipse 80% 60% at 20% 60%, #0e2d6e 0%, transparent 55%),
+          radial-gradient(ellipse 60% 70% at 80% 40%, #12357a 0%, transparent 50%),
+          linear-gradient(180deg, #0e2d6e 0%, #12357a 40%, #0e2d6e 100%)
         `
       }} />
 
