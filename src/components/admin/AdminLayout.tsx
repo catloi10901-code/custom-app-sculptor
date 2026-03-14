@@ -2,7 +2,7 @@ import { Link, Outlet, useLocation, Navigate } from 'react-router-dom';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/hooks/useAuth';
-import { LayoutDashboard, FileText, MessageSquare, Users, Settings, BarChart3, Menu, X } from 'lucide-react';
+import { LayoutDashboard, FileText, MessageSquare, Users, Settings, BarChart3, Menu, X, Flag } from 'lucide-react';
 
 const adminNav = [
   { path: '/admin', labelKey: 'admin.dashboard', icon: LayoutDashboard },
@@ -10,6 +10,7 @@ const adminNav = [
   { path: '/admin/posts', labelKey: 'admin.posts.title', icon: FileText },
   { path: '/admin/prayers', labelKey: 'admin.prayers.title', icon: MessageSquare },
   { path: '/admin/users', labelKey: 'admin.users.title', icon: Users },
+  { path: '/admin/campaigns', labelKey: 'Chiến dịch', icon: Flag },
   { path: '/admin/settings', labelKey: 'admin.settings.title', icon: Settings },
 ];
 

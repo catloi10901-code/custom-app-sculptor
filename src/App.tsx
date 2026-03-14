@@ -22,6 +22,7 @@ import AdminPrayers from "./pages/admin/AdminPrayers";
 import AdminUsers from "./pages/admin/AdminUsers";
 import AdminSettings from "./pages/admin/AdminSettings";
 import AdminLiveStats from "./pages/admin/AdminLiveStats";
+import AdminCampaigns from "./pages/admin/AdminCampaigns";
 import NotFound from "./pages/NotFound";
 import ResetPasswordPage from "./pages/ResetPasswordPage";
 
@@ -54,6 +55,7 @@ const App = () => (
               <Route path="prayers" element={<AdminPrayers />} />
               <Route path="users" element={<AdminUsers />} />
               <Route path="settings" element={<AdminSettings />} />
+              <Route path="campaigns" element={<AdminCampaigns />} />
             </Route>
             <Route path="/reset-password" element={<ResetPasswordPage />} />
             <Route path="*" element={<NotFound />} />
