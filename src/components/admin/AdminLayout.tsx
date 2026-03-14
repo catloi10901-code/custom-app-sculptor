@@ -2,7 +2,7 @@ import { Link, Outlet, useLocation, Navigate } from 'react-router-dom';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from '@/hooks/useAuth';
-import { LayoutDashboard, FileText, MessageSquare, Users, Settings, BarChart3, Menu, X } from 'lucide-react';
+import { LayoutDashboard, FileText, MessageSquare, Users, Settings, BarChart3, Menu, X, Flag } from 'lucide-react';
 
 const adminNav = [
   { path: '/admin', labelKey: 'admin.dashboard', icon: LayoutDashboard },
