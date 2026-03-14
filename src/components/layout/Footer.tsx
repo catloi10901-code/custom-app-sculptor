@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
+import logo7center from '@/assets/logos/7center.png';
+import logo9s from '@/assets/logos/9slogo.png';
+import logoGifpp from '@/assets/logos/gifpp.png';
+import logoPartner4 from '@/assets/logos/partner4.png';
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -61,6 +65,11 @@ const Footer = () => {
                 <a key={i} href="#" className="w-[38px] h-[38px] rounded-full bg-gold-dim border border-border flex items-center justify-center text-base cursor-pointer transition-all duration-300 text-primary no-underline hover:bg-primary hover:text-primary-foreground">
                   {icon}
                 </a>
+            ))}
+            </div>
+            <div className="flex items-center gap-5 mt-5 flex-wrap">
+              {[logo7center, logo9s, logoGifpp, logoPartner4].map((logo, i) => (
+                <img key={i} src={logo} alt={`Partner ${i + 1}`} className="h-8 opacity-70 hover:opacity-100 transition-opacity duration-300 object-contain" />
               ))}
             </div>
           </div>
