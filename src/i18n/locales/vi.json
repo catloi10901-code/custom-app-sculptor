@@ -404,7 +404,7 @@
   "library.count": "{{count}} nội dung",
 
   "admin.dashboard": "Dashboard",
-  "admin.prayers.title": "🙏 Quản Lý Cầu Nguyện",
+  "admin.prayers.title": "Quản Lý Cầu Nguyện",
   "admin.prayers.name": "Tên",
   "admin.prayers.topic": "Chủ đề",
   "admin.prayers.content": "Nội dung",
