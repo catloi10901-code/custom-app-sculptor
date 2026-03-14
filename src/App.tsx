@@ -22,6 +22,7 @@ import AdminPrayers from "./pages/admin/AdminPrayers";
 import AdminUsers from "./pages/admin/AdminUsers";
 import AdminSettings from "./pages/admin/AdminSettings";
 import AdminLiveStats from "./pages/admin/AdminLiveStats";
+import AdminCampaigns from "./pages/admin/AdminCampaigns";
 import NotFound from "./pages/NotFound";
 import ResetPasswordPage from "./pages/ResetPasswordPage";
 
