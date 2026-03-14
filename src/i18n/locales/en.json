@@ -403,7 +403,7 @@
   "library.cat.nation": "🏛️ Nation",
   "library.count": "{{count}} items",
 
-  "admin.dashboard": "📊 Dashboard",
+  "admin.dashboard": "Dashboard",
   "admin.prayers.title": "🙏 Prayer Management",
   "admin.prayers.name": "Name",
   "admin.prayers.topic": "Topic",
