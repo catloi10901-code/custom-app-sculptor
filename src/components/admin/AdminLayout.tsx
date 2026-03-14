@@ -37,7 +37,7 @@ const AdminLayout = () => {
       </div>
 
       {/* Sidebar - desktop always visible, mobile toggle */}
-      <aside className={`${sidebarOpen ? 'block' : 'hidden'} md:block w-full md:w-[240px] bg-card border-r border-border flex-shrink-0 p-4 flex flex-col gap-1`}>
+      <aside className={`${sidebarOpen ? 'block' : 'hidden'} md:block w-full md:w-[260px] bg-card border-r border-border flex-shrink-0 p-4 flex flex-col gap-1`}>
         <Link to="/" className="hidden md:flex items-center gap-2 no-underline mb-6 px-2">
           <div className="w-8 h-8 rounded-full bg-gold-dim border border-primary flex items-center justify-center text-sm">✦</div>
           <span className="font-serif text-primary text-lg font-bold">Admin</span>
