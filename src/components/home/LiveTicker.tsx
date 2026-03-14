@@ -7,11 +7,11 @@ const LiveTicker = () => {
     { emoji: '🙏', name: 'Nguyễn Thị Hoa', action: t('ticker.prayed'), flag: '🇻🇳', country: 'Việt Nam' },
     { emoji: '✨', name: 'John Smith', action: t('ticker.amened'), flag: '🇺🇸', country: 'USA' },
     { emoji: '🌍', name: 'Amara Diallo', action: t('ticker.prayed'), flag: '🇸🇳', country: 'Senegal' },
-    { emoji: '💛', name: 'Maria Garcia', action: t('ticker.donated'), flag: '🇪🇸', country: 'España' },
     { emoji: '🕊️', name: 'Yuki Tanaka', action: t('ticker.prayed'), flag: '🇯🇵', country: '日本' },
     { emoji: '🙏', name: 'David Kim', action: t('ticker.amened'), flag: '🇰🇷', country: '한국' },
-    { emoji: '🌟', name: 'Sarah Williams', action: t('ticker.donated'), flag: '🇬🇧', country: 'UK' },
     { emoji: '💚', name: 'Ahmed Hassan', action: t('ticker.prayed'), flag: '🇪🇬', country: 'Egypt' },
+    { emoji: '🌸', name: 'Fatima Al-Rashid', action: t('ticker.prayed'), flag: '🇸🇦', country: 'Saudi Arabia' },
+    { emoji: '✝️', name: 'Carlos Mendez', action: t('ticker.amened'), flag: '🇲🇽', country: 'México' },
   ];
 
   const items = Array.from({ length: 10 }, () => tickerItems).flat();
