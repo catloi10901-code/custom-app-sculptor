@@ -22,7 +22,7 @@ const Index = () => {
       <ImpactStatsSection />
       <div className="h-px bg-border" />
       <TestimonialsSection />
-      <GiveCTASection />
+      
     </div>
   );
 };
