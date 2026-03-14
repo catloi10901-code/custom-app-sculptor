@@ -7,9 +7,9 @@
 @layer base {
   :root {
     /* UNPray Design System — All HSL */
-    --blue-deep: 221 68% 33%;
-    --blue-mid: 221 62% 38%;
-    --blue-light: 221 68% 46%;
+    --blue-deep: 221 82% 28%;
+    --blue-mid: 221 78% 32%;
+    --blue-light: 221 80% 40%;
     --gold: 38 47% 56%;
     --gold-light: 38 47% 64%;
     --gold-dim: 38 47% 56%;
@@ -17,20 +17,20 @@
     --success-hsl: 122 52% 33%;
     --error-hsl: 3 72% 41%;
 
-    --background: 221 68% 33%;
+    --background: 221 82% 28%;
     --foreground: 34 20% 92%;
-    --card: 221 62% 38%;
+    --card: 221 78% 32%;
     --card-foreground: 34 20% 92%;
-    --popover: 221 62% 38%;
+    --popover: 221 78% 32%;
     --popover-foreground: 34 20% 92%;
     --primary: 38 47% 56%;
-    --primary-foreground: 221 68% 33%;
-    --secondary: 221 68% 46%;
+    --primary-foreground: 221 82% 28%;
+    --secondary: 221 80% 40%;
     --secondary-foreground: 34 20% 92%;
-    --muted: 221 62% 38%;
-    --muted-foreground: 216 52% 80%;
+    --muted: 221 78% 32%;
+    --muted-foreground: 216 60% 78%;
     --accent: 38 47% 56%;
-    --accent-foreground: 221 68% 33%;
+    --accent-foreground: 221 82% 28%;
     --destructive: 3 72% 41%;
     --destructive-foreground: 0 0% 100%;
     --border: 38 47% 56% / 0.25;
@@ -38,11 +38,11 @@
     --ring: 38 47% 56%;
     --radius: 0.5rem;
 
-    --sidebar-background: 221 68% 33%;
+    --sidebar-background: 221 82% 28%;
     --sidebar-foreground: 34 20% 92%;
     --sidebar-primary: 38 47% 56%;
-    --sidebar-primary-foreground: 221 68% 33%;
-    --sidebar-accent: 221 62% 38%;
+    --sidebar-primary-foreground: 221 82% 28%;
+    --sidebar-accent: 221 78% 32%;
     --sidebar-accent-foreground: 34 20% 92%;
     --sidebar-border: 38 47% 56% / 0.25;
     --sidebar-ring: 38 47% 56%;
