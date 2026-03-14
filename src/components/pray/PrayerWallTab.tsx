@@ -23,6 +23,7 @@ const PrayerWallTab = () => {
     { id: 'prosperity', label: t('topic.prosperity') },
     { id: 'poverty', label: t('topic.poverty') },
     { id: 'healing', label: t('topic.healing') },
+    { id: 'recovery', label: t('topic.recovery') },
     { id: 'family', label: t('topic.family') },
     { id: 'nation', label: t('topic.nation') },
   ];
