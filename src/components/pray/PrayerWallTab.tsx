@@ -6,6 +6,17 @@ import { toast } from 'sonner';
 import PrayerCard from './PrayerCard';
 import PrayerForm from './PrayerForm';
 
+const filterEmojis: Record<string, string> = {
+  all: '🌐',
+  peace: '🕊️',
+  prosperity: '⭐',
+  poverty: '🌿',
+  healing: '💚',
+  recovery: '🔄',
+  family: '👨‍👩‍👧',
+  nation: '🏛️',
+};
+
 const PrayerWallTab = () => {
   const { t } = useTranslation();
   const { user } = useAuth();
@@ -115,19 +126,32 @@ const PrayerWallTab = () => {
   return (
     <section className="py-20">
       <div className="container">
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-7 gap-4">
-          <div>
-            <h2 className="font-serif text-primary mb-2">{t('prayerWall.title')}</h2>
-            <p className="text-muted-foreground text-sm sm:text-base">{t('prayerWall.sub')}</p>
+        {/* Header with gradient banner */}
+        <div className="relative rounded-2xl overflow-hidden mb-8 p-6 sm:p-8 bg-gradient-to-r from-primary/10 via-blue-500/5 to-purple-500/10 border border-primary/20">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div>
+              <h2 className="font-serif text-primary mb-2 text-xl sm:text-2xl">{t('prayerWall.title')}</h2>
+              <p className="text-muted-foreground text-sm sm:text-base">{t('prayerWall.sub')}</p>
+            </div>
+            <a href="#submit-form" className="px-5 py-2.5 rounded-lg bg-primary text-primary-foreground font-bold text-sm transition-all duration-300 hover:bg-gold-light shadow-lg shadow-primary/20">
+              {t('prayerWall.sendBtn')}
+            </a>
           </div>
-          <a href="#submit-form" className="px-5 py-2.5 rounded-lg bg-primary text-primary-foreground font-bold text-sm transition-all duration-300 hover:bg-gold-light">
-            {t('prayerWall.sendBtn')}
-          </a>
         </div>
 
+        {/* Filter pills with emojis */}
         <div className="flex gap-2 flex-wrap mb-6 overflow-x-auto pb-1">
           {filters.map((f) => (
-            <button key={f.id} onClick={() => setActiveFilter(f.id)} className={`px-4 py-1.5 rounded-full border text-[0.85rem] font-semibold cursor-pointer transition-all duration-300 ${activeFilter === f.id ? 'bg-gold-dim border-primary text-primary' : 'border-border bg-transparent text-muted-foreground hover:bg-gold-dim hover:border-primary hover:text-primary'}`}>
+            <button
+              key={f.id}
+              onClick={() => setActiveFilter(f.id)}
+              className={`px-4 py-1.5 rounded-full border text-[0.85rem] font-semibold cursor-pointer transition-all duration-300 flex items-center gap-1.5 ${
+                activeFilter === f.id
+                  ? 'bg-gold-dim border-primary text-primary shadow-md shadow-primary/15'
+                  : 'border-border bg-transparent text-muted-foreground hover:bg-gold-dim hover:border-primary hover:text-primary'
+              }`}
+            >
+              <span className="text-sm">{filterEmojis[f.id]}</span>
               {f.label}
             </button>
           ))}
