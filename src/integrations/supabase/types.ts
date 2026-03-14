@@ -342,6 +342,48 @@ export type Database = {
         }
         Relationships: []
       }
+      live_sessions: {
+        Row: {
+          created_at: string
+          host: string
+          id: string
+          is_active: boolean
+          is_live: boolean
+          scheduled_time: string | null
+          sort_order: number
+          title: string
+          updated_at: string
+          viewers: number
+          youtube_url: string | null
+        }
+        Insert: {
+          created_at?: string
+          host?: string
+          id?: string
+          is_active?: boolean
+          is_live?: boolean
+          scheduled_time?: string | null
+          sort_order?: number
+          title: string
+          updated_at?: string
+          viewers?: number
+          youtube_url?: string | null
+        }
+        Update: {
+          created_at?: string
+          host?: string
+          id?: string
+          is_active?: boolean
+          is_live?: boolean
+          scheduled_time?: string | null
+          sort_order?: number
+          title?: string
+          updated_at?: string
+          viewers?: number
+          youtube_url?: string | null
+        }
+        Relationships: []
+      }
       live_stats: {
         Row: {
           donated_total: number
@@ -506,6 +548,75 @@ export type Database = {
           is_active?: boolean
           updated_at?: string
           user_id?: string
+        }
+        Relationships: []
+      }
+      site_content: {
+        Row: {
+          category: string
+          content_key: string
+          content_type: string
+          content_value: string
+          id: string
+          label: string
+          sort_order: number
+          updated_at: string
+        }
+        Insert: {
+          category?: string
+          content_key: string
+          content_type?: string
+          content_value?: string
+          id?: string
+          label?: string
+          sort_order?: number
+          updated_at?: string
+        }
+        Update: {
+          category?: string
+          content_key?: string
+          content_type?: string
+          content_value?: string
+          id?: string
+          label?: string
+          sort_order?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      testimonials: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          id: string
+          is_active: boolean
+          name: string
+          organization: string
+          quote: string
+          sort_order: number
+          updated_at: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          id?: string
+          is_active?: boolean
+          name: string
+          organization?: string
+          quote: string
+          sort_order?: number
+          updated_at?: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          id?: string
+          is_active?: boolean
+          name?: string
+          organization?: string
+          quote?: string
+          sort_order?: number
+          updated_at?: string
         }
         Relationships: []
       }
