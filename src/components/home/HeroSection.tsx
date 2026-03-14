@@ -122,7 +122,7 @@ const HeroSection = () => {
             </Link>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-8" style={{ animation: 'fadeUp 0.9s ease 0.8s both' }}>
+          <div className="grid grid-cols-3 gap-3 sm:gap-8" style={{ animation: 'fadeUp 0.9s ease 0.8s both' }}>
             <div className="text-center lg:text-left">
               <AnimatedCounter value={stats.prayers} className="font-serif text-[1.2rem] sm:text-[1.8rem] font-bold text-primary block tabular-nums" />
               <span className="text-[0.65rem] sm:text-[0.82rem] text-muted-foreground uppercase tracking-wide">{t('hero.stat.prayers')}</span>
@@ -134,10 +134,6 @@ const HeroSection = () => {
             <div className="text-center lg:text-left">
               <AnimatedCounter value={stats.members} className="font-serif text-[1.2rem] sm:text-[1.8rem] font-bold text-primary block tabular-nums" />
               <span className="text-[0.65rem] sm:text-[0.82rem] text-muted-foreground uppercase tracking-wide">{t('hero.stat.members')}</span>
-            </div>
-            <div className="text-center lg:text-left">
-              <AnimatedCounter value={stats.donated} prefix="$" className="font-serif text-[1.2rem] sm:text-[1.8rem] font-bold text-primary block tabular-nums" />
-              <span className="text-[0.65rem] sm:text-[0.82rem] text-muted-foreground uppercase tracking-wide">{t('hero.stat.donated')}</span>
             </div>
           </div>
         </div>
