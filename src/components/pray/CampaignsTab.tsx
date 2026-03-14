@@ -72,7 +72,7 @@ const CampaignsTab = () => {
           return (
             <div
               key={campaign.id}
-              className="rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5"
+              className="rounded-xl border border-border bg-card p-5 transition-all duration-300 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 flex flex-col h-full"
             >
               <div className="flex items-center gap-3 mb-3">
                 <span className="text-2xl">{campaign.icon}</span>
@@ -80,29 +80,31 @@ const CampaignsTab = () => {
                   {campaign.title}
                 </h3>
               </div>
-              <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+              <p className="text-muted-foreground text-sm mb-4 leading-relaxed flex-1">
                 {campaign.description}
               </p>
 
-              <div className="mb-3">
-                <div className="flex justify-between text-xs text-muted-foreground mb-1.5">
-                  <span>{campaign.participants.toLocaleString()} {t('campaigns.participants')}</span>
-                  <span>{t('campaigns.goal')}: {campaign.goal.toLocaleString()}</span>
+              <div className="mt-auto">
+                <div className="mb-3">
+                  <div className="flex justify-between text-xs text-muted-foreground mb-1.5">
+                    <span>{campaign.participants.toLocaleString()} {t('campaigns.participants')}</span>
+                    <span>{t('campaigns.goal')}: {campaign.goal.toLocaleString()}</span>
+                  </div>
+                  <Progress value={progress} className="h-2" />
                 </div>
-                <Progress value={progress} className="h-2" />
-              </div>
 
-              <button
-                onClick={() => handleJoin(campaign.id)}
-                disabled={joined}
-                className={`w-full py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 ${
-                  joined
-                    ? 'bg-primary/10 text-primary border border-primary/20 cursor-default'
-                    : 'bg-primary text-primary-foreground hover:bg-primary/90 cursor-pointer'
-                }`}
-              >
-                {joined ? `✓ ${t('campaigns.joined')}` : `🙏 ${t('campaigns.join')}`}
-              </button>
+                <button
+                  onClick={() => handleJoin(campaign.id)}
+                  disabled={joined}
+                  className={`w-full py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 ${
+                    joined
+                      ? 'bg-primary/10 text-primary border border-primary/20 cursor-default'
+                      : 'bg-primary text-primary-foreground hover:bg-primary/90 cursor-pointer'
+                  }`}
+                >
+                  {joined ? `✓ ${t('campaigns.joined')}` : `🙏 ${t('campaigns.join')}`}
+                </button>
+              </div>
             </div>
           );
         })}
