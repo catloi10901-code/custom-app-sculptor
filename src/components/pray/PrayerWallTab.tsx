@@ -27,6 +27,7 @@ const PrayerWallTab = () => {
   const [realtimeIds, setRealtimeIds] = useState<Set<string>>(new Set());
   const prayersRef = useRef(prayers);
   prayersRef.current = prayers;
+  const hoveringRef = useRef(false);
 
   const filters = [
     { id: 'all', label: t('filter.all') },
@@ -63,6 +64,8 @@ const PrayerWallTab = () => {
         const newPrayer = payload.new as any;
         if (!newPrayer.is_approved) return;
         if (activeFilter !== 'all' && newPrayer.topic !== activeFilter) return;
+        // If hovering, skip adding new prayers to avoid disruption
+        if (hoveringRef.current) return;
         setRealtimeIds(prev => new Set(prev).add(newPrayer.id));
         setPrayers(prev => {
           if (prev.some(p => p.id === newPrayer.id)) return prev;
@@ -81,13 +84,14 @@ const PrayerWallTab = () => {
     return () => { supabase.removeChannel(channel); };
   }, [activeFilter]);
 
-  // Auto-seed prayers every ~600ms
+  // Auto-seed prayers every ~600ms, pause on hover
   useEffect(() => {
     let interval: ReturnType<typeof setInterval> | null = null;
 
     const start = () => {
       if (!interval) {
         interval = setInterval(() => {
+          if (hoveringRef.current) return; // Skip seed while hovering
           supabase.functions.invoke('seed-prayers').catch(() => {});
         }, 600);
       }
@@ -174,6 +178,8 @@ const PrayerWallTab = () => {
                 hasAmened={amenedPrayers.has(prayer.id)}
                 onToggleAmen={toggleAmen}
                 isRealtime={realtimeIds.has(prayer.id)}
+                onMouseEnter={() => { hoveringRef.current = true; }}
+                onMouseLeave={() => { hoveringRef.current = false; }}
               />
             ))}
           </div>

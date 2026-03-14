@@ -28,9 +28,11 @@ interface PrayerCardProps {
   hasAmened: boolean;
   onToggleAmen: (id: string) => void;
   isRealtime?: boolean;
+  onMouseEnter?: () => void;
+  onMouseLeave?: () => void;
 }
 
-const PrayerCard = ({ prayer, index, hasAmened, onToggleAmen, isRealtime }: PrayerCardProps) => {
+const PrayerCard = ({ prayer, index, hasAmened, onToggleAmen, isRealtime, onMouseEnter, onMouseLeave }: PrayerCardProps) => {
   const { t } = useTranslation();
   const colors = topicColorMap[prayer.topic] || defaultColors;
 
@@ -64,6 +66,8 @@ const PrayerCard = ({ prayer, index, hasAmened, onToggleAmen, isRealtime }: Pray
     <div
       className={`bg-card border border-border border-l-4 ${colors.border} rounded-2xl p-4 sm:p-6 transition-all duration-300 ${colors.hoverBorder}`}
       style={animationStyle}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
     >
       <div className="flex items-center gap-3 mb-3">
         <div className={`w-10 h-10 rounded-full bg-card border-[2px] ${colors.avatarBorder} flex items-center justify-center text-lg flex-shrink-0`}>
