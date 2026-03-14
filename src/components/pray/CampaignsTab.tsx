@@ -1,23 +1,49 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Progress } from '@/components/ui/progress';
+import { supabase } from '@/integrations/supabase/client';
 
-const campaignsData = [
-  { id: 1, icon: '🕊️', titleKey: 'campaigns.card.peace.title', descKey: 'campaigns.card.peace.desc', participants: 12847, goal: 20000 },
-  { id: 2, icon: '💚', titleKey: 'campaigns.card.healing.title', descKey: 'campaigns.card.healing.desc', participants: 8432, goal: 15000 },
-  { id: 3, icon: '👨‍👩‍👧', titleKey: 'campaigns.card.family.title', descKey: 'campaigns.card.family.desc', participants: 6215, goal: 10000 },
-  { id: 4, icon: '🏛️', titleKey: 'campaigns.card.nation.title', descKey: 'campaigns.card.nation.desc', participants: 9876, goal: 15000 },
-  { id: 5, icon: '🌾', titleKey: 'campaigns.card.poverty.title', descKey: 'campaigns.card.poverty.desc', participants: 11234, goal: 18000 },
-  { id: 6, icon: '🔥', titleKey: 'campaigns.card.revival.title', descKey: 'campaigns.card.revival.desc', participants: 7650, goal: 12000 },
-];
+interface Campaign {
+  id: string;
+  icon: string;
+  title: string;
+  description: string;
+  participants: number;
+  goal: number;
+  is_active: boolean;
+  sort_order: number;
+}
 
 const CampaignsTab = () => {
   const { t } = useTranslation();
-  const [joinedIds, setJoinedIds] = useState<number[]>([]);
+  const [joinedIds, setJoinedIds] = useState<string[]>([]);
+  const [campaigns, setCampaigns] = useState<Campaign[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  const handleJoin = (id: number) => {
+  useEffect(() => {
+    const fetchCampaigns = async () => {
+      const { data } = await supabase
+        .from('campaigns')
+        .select('*')
+        .eq('is_active', true)
+        .order('sort_order');
+      if (data) setCampaigns(data);
+      setLoading(false);
+    };
+    fetchCampaigns();
+  }, []);
+
+  const handleJoin = (id: string) => {
     setJoinedIds(prev => prev.includes(id) ? prev : [...prev, id]);
   };
+
+  if (loading) {
+    return (
+      <div className="container py-8 max-w-6xl mx-auto px-4 text-center text-muted-foreground">
+        {t('common.loading')}
+      </div>
+    );
+  }
 
   return (
     <div className="container py-8 max-w-6xl mx-auto px-4">
@@ -39,7 +65,7 @@ const CampaignsTab = () => {
 
       {/* Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-        {campaignsData.map((campaign) => {
+        {campaigns.map((campaign) => {
           const progress = Math.round((campaign.participants / campaign.goal) * 100);
           const joined = joinedIds.includes(campaign.id);
 
@@ -51,11 +77,11 @@ const CampaignsTab = () => {
               <div className="flex items-center gap-3 mb-3">
                 <span className="text-2xl">{campaign.icon}</span>
                 <h3 className="font-serif text-lg font-bold text-foreground">
-                  {t(campaign.titleKey)}
+                  {campaign.title}
                 </h3>
               </div>
               <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
-                {t(campaign.descKey)}
+                {campaign.description}
               </p>
 
               <div className="mb-3">
