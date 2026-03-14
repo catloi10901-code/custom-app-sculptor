@@ -23,6 +23,9 @@ import AdminUsers from "./pages/admin/AdminUsers";
 import AdminSettings from "./pages/admin/AdminSettings";
 import AdminLiveStats from "./pages/admin/AdminLiveStats";
 import AdminCampaigns from "./pages/admin/AdminCampaigns";
+import AdminSiteContent from "./pages/admin/AdminSiteContent";
+import AdminLiveSessions from "./pages/admin/AdminLiveSessions";
+import AdminTestimonials from "./pages/admin/AdminTestimonials";
 import NotFound from "./pages/NotFound";
 import ResetPasswordPage from "./pages/ResetPasswordPage";
 
