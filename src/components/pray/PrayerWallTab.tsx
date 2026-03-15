@@ -24,6 +24,7 @@ const PrayerWallTab = () => {
   const [activeFilter, setActiveFilter] = useState('all');
   const [prayers, setPrayers] = useState<any[]>([]);
   const [amenedPrayers, setAmenedPrayers] = useState<Set<string>>(new Set());
+  const [showLetter, setShowLetter] = useState(false);
   const [loading, setLoading] = useState(true);
   const [realtimeIds, setRealtimeIds] = useState<Set<string>>(new Set());
   const prayersRef = useRef(prayers);
