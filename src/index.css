@@ -202,7 +202,29 @@
   100% { transform: scale(1); opacity: 1; }
 }
 
-/* ===== REDUCED MOTION ===== */
+@keyframes amenBounce {
+  0%   { transform: scale(1); }
+  20%  { transform: scale(1.25); }
+  40%  { transform: scale(0.9); }
+  60%  { transform: scale(1.12); }
+  80%  { transform: scale(0.97); }
+  100% { transform: scale(1); }
+}
+
+@keyframes amenSparkle {
+  0%   { opacity: 1; transform: translate(-50%, -50%) translate(0, 0) scale(1); }
+  100% { opacity: 0; transform: translate(-50%, -50%) translate(var(--sparkle-x), var(--sparkle-y)) scale(0); }
+}
+
+.animate-amen-bounce {
+  animation: amenBounce 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.animate-amen-sparkle {
+  animation: amenSparkle 0.6s ease-out both;
+}
+
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
