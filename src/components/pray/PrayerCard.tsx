@@ -72,7 +72,7 @@ const PrayerCard = ({ prayer, index, hasAmened, onToggleAmen, isRealtime, onMous
 
   return (
     <div
-      className="relative rounded-2xl overflow-hidden transition-all duration-300 group"
+      className="relative rounded-2xl overflow-hidden transition-all duration-300 group h-full flex flex-col"
       style={{
         ...animationStyle,
         boxShadow: `0 4px 24px -4px ${colors.glow}`,
