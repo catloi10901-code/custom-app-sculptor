@@ -98,7 +98,7 @@ const PrayerCard = ({ prayer, index, hasAmened, onToggleAmen, isRealtime, onMous
           <span>{colors.emoji}</span>
           {topicLabels[prayer.topic] || prayer.topic}
         </span>
-        <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-4 line-clamp-4">{prayer.content}</p>
+        <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-4 line-clamp-4 flex-1">{prayer.content}</p>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-1.5 text-[0.88rem] text-muted-foreground">
             🙏 <span className="text-primary font-bold">{prayer.amen_count}</span> {t('prayerWall.amenLabel')}
