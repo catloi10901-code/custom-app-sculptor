@@ -155,7 +155,6 @@ const PrayerWallTab = () => {
                   : 'border-border bg-transparent text-muted-foreground hover:bg-gold-dim hover:border-primary hover:text-primary'
               }`}
             >
-              <span className="text-sm">{filterEmojis[f.id]}</span>
               {f.label}
             </button>
           ))}
