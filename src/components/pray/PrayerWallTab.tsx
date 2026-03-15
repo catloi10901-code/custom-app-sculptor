@@ -145,7 +145,7 @@ const PrayerWallTab = () => {
                 className="px-4 py-2.5 rounded-lg border border-primary/30 bg-primary/10 text-primary font-semibold text-sm transition-all duration-300 hover:bg-primary/20 flex items-center gap-2"
               >
                 <Mail className="w-4 h-4" />
-                Tâm Thư
+                {t('prayerWall.heartLetter')}
               </button>
               <a href="#submit-form" className="px-5 py-2.5 rounded-lg bg-primary text-primary-foreground font-bold text-sm transition-all duration-300 hover:bg-gold-light shadow-lg shadow-primary/20">
                 {t('prayerWall.sendBtn')}
@@ -163,7 +163,7 @@ const PrayerWallTab = () => {
               onClick={(e) => e.stopPropagation()}
             >
               <div className="sticky top-0 z-10 flex items-center justify-between px-6 py-4 bg-card/95 backdrop-blur-sm border-b border-border">
-                <h3 className="font-serif text-primary text-lg">📜 Tâm Thư</h3>
+                <h3 className="font-serif text-primary text-lg">📜 {t('prayerWall.heartLetter')}</h3>
                 <button onClick={() => setShowLetter(false)} className="p-1.5 rounded-lg hover:bg-secondary transition-colors">
                   <X className="w-5 h-5 text-muted-foreground" />
                 </button>

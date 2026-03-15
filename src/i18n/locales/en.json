@@ -493,5 +493,8 @@
   "campaigns.card.poverty.title": "End Poverty",
   "campaigns.card.poverty.desc": "Intercede for millions suffering from hunger and deprivation.",
   "campaigns.card.revival.title": "Spiritual Revival",
-  "campaigns.card.revival.desc": "Pray for a great spiritual awakening across the globe."
+  "campaigns.card.revival.desc": "Pray for a great spiritual awakening across the globe.",
+
+  "prayerWall.heartLetter": "Heart Letter",
+  "prayerWall.amenLabel": "Amen"
 }

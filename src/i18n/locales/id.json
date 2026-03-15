@@ -376,5 +376,8 @@
   "campaigns.card.poverty.title": "Akhiri Kemiskinan",
   "campaigns.card.poverty.desc": "Bersyafaat bagi jutaan yang menderita kelaparan dan kekurangan.",
   "campaigns.card.revival.title": "Kebangunan Rohani",
-  "campaigns.card.revival.desc": "Berdoa untuk kebangunan rohani besar di seluruh dunia."
+  "campaigns.card.revival.desc": "Berdoa untuk kebangunan rohani besar di seluruh dunia.",
+
+  "prayerWall.heartLetter": "Surat Hati",
+  "prayerWall.amenLabel": "Amin"
 }

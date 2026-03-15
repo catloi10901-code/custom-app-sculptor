@@ -493,5 +493,8 @@
   "campaigns.card.poverty.title": "Xóa Đói Nghèo",
   "campaigns.card.poverty.desc": "Cầu thay cho hàng triệu người đang chịu đói khổ và thiếu thốn.",
   "campaigns.card.revival.title": "Phục Hưng Tâm Linh",
-  "campaigns.card.revival.desc": "Cầu nguyện cho sự phục hưng tâm linh vĩ đại trên toàn cầu."
+  "campaigns.card.revival.desc": "Cầu nguyện cho sự phục hưng tâm linh vĩ đại trên toàn cầu.",
+
+  "prayerWall.heartLetter": "Tâm Thư",
+  "prayerWall.amenLabel": "Amen"
 }

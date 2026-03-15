@@ -376,5 +376,8 @@
   "campaigns.card.poverty.title": "القضاء على الفقر",
   "campaigns.card.poverty.desc": "تشفع من أجل الملايين الذين يعانون من الجوع والحرمان.",
   "campaigns.card.revival.title": "الصحوة الروحية",
-  "campaigns.card.revival.desc": "صلِّ من أجل صحوة روحية عظيمة حول العالم."
+  "campaigns.card.revival.desc": "صلِّ من أجل صحوة روحية عظيمة حول العالم.",
+
+  "prayerWall.heartLetter": "رسالة من القلب",
+  "prayerWall.amenLabel": "آمين"
 }

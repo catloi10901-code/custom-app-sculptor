@@ -376,5 +376,8 @@
   "campaigns.card.poverty.title": "빈곤 퇴치",
   "campaigns.card.poverty.desc": "기아와 결핍으로 고통받는 수백만 명을 위해 중보하세요.",
   "campaigns.card.revival.title": "영적 부흥",
-  "campaigns.card.revival.desc": "전 세계적인 위대한 영적 각성을 위해 기도하세요."
+  "campaigns.card.revival.desc": "전 세계적인 위대한 영적 각성을 위해 기도하세요.",
+
+  "prayerWall.heartLetter": "마음의 편지",
+  "prayerWall.amenLabel": "아멘"
 }

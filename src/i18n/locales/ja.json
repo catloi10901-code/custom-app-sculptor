@@ -376,5 +376,8 @@
   "campaigns.card.poverty.title": "貧困の根絶",
   "campaigns.card.poverty.desc": "飢餓と困窮に苦しむ何百万人のために執り成しましょう。",
   "campaigns.card.revival.title": "霊的覚醒",
-  "campaigns.card.revival.desc": "世界中で偉大な霊的覚醒のために祈りましょう。"
+  "campaigns.card.revival.desc": "世界中で偉大な霊的覚醒のために祈りましょう。",
+
+  "prayerWall.heartLetter": "心の手紙",
+  "prayerWall.amenLabel": "アーメン"
 }

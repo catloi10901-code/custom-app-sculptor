@@ -376,5 +376,8 @@
   "campaigns.card.poverty.title": "Eliminare la Povertà",
   "campaigns.card.poverty.desc": "Intercedi per milioni che soffrono di fame e privazioni.",
   "campaigns.card.revival.title": "Risveglio Spirituale",
-  "campaigns.card.revival.desc": "Prega per un grande risveglio spirituale in tutto il mondo."
+  "campaigns.card.revival.desc": "Prega per un grande risveglio spirituale in tutto il mondo.",
+
+  "prayerWall.heartLetter": "Lettera dal Cuore",
+  "prayerWall.amenLabel": "Amen"
 }
