@@ -145,7 +145,7 @@ const PrayerWallTab = () => {
                 className="px-4 py-2.5 rounded-lg border border-primary/30 bg-primary/10 text-primary font-semibold text-sm transition-all duration-300 hover:bg-primary/20 flex items-center gap-2"
               >
                 <Mail className="w-4 h-4" />
-                Tâm Thư
+                {t('prayerWall.heartLetter')}
               </button>
               <a href="#submit-form" className="px-5 py-2.5 rounded-lg bg-primary text-primary-foreground font-bold text-sm transition-all duration-300 hover:bg-gold-light shadow-lg shadow-primary/20">
                 {t('prayerWall.sendBtn')}
