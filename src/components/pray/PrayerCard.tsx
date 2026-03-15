@@ -72,7 +72,7 @@ const PrayerCard = ({ prayer, index, hasAmened, onToggleAmen, isRealtime, onMous
 
   return (
     <div
-      className="relative rounded-2xl overflow-hidden transition-all duration-300 group"
+      className="relative rounded-2xl overflow-hidden transition-all duration-300 group h-full flex flex-col"
       style={{
         ...animationStyle,
         boxShadow: `0 4px 24px -4px ${colors.glow}`,
@@ -83,7 +83,7 @@ const PrayerCard = ({ prayer, index, hasAmened, onToggleAmen, isRealtime, onMous
       {/* Top gradient border */}
       <div className={`h-1 w-full bg-gradient-to-r ${colors.gradient} transition-all duration-300 group-hover:h-1.5`} />
 
-      <div className="bg-card border border-t-0 border-border rounded-b-2xl p-4 sm:p-6">
+      <div className="bg-card border border-t-0 border-border rounded-b-2xl p-4 sm:p-6 flex-1 flex flex-col">
         <div className="flex items-center gap-3 mb-3">
           <div className={`w-10 h-10 rounded-full bg-card border-[2px] ${colors.avatarBorder} flex items-center justify-center text-lg flex-shrink-0`}>
             {avatarEmojis[index % avatarEmojis.length]}
@@ -98,7 +98,7 @@ const PrayerCard = ({ prayer, index, hasAmened, onToggleAmen, isRealtime, onMous
           <span>{colors.emoji}</span>
           {topicLabels[prayer.topic] || prayer.topic}
         </span>
-        <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-4 line-clamp-4">{prayer.content}</p>
+        <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-4 line-clamp-4 flex-1">{prayer.content}</p>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-1.5 text-[0.88rem] text-muted-foreground">
             🙏 <span className="text-primary font-bold">{prayer.amen_count}</span> {t('prayerWall.amenLabel')}
