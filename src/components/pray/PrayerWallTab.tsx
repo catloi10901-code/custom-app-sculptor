@@ -163,7 +163,7 @@ const PrayerWallTab = () => {
               onClick={(e) => e.stopPropagation()}
             >
               <div className="sticky top-0 z-10 flex items-center justify-between px-6 py-4 bg-card/95 backdrop-blur-sm border-b border-border">
-                <h3 className="font-serif text-primary text-lg">📜 Tâm Thư</h3>
+                <h3 className="font-serif text-primary text-lg">📜 {t('prayerWall.heartLetter')}</h3>
                 <button onClick={() => setShowLetter(false)} className="p-1.5 rounded-lg hover:bg-secondary transition-colors">
                   <X className="w-5 h-5 text-muted-foreground" />
                 </button>
