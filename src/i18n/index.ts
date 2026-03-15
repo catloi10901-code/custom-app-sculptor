@@ -16,6 +16,8 @@ import id from './locales/id.json';
 import th from './locales/th.json';
 import ar from './locales/ar.json';
 
+const savedLang = localStorage.getItem('i18n-lang') || 'vi';
+
 i18n.use(initReactI18next).init({
   resources: {
     en: { translation: en },
@@ -34,9 +36,13 @@ i18n.use(initReactI18next).init({
     th: { translation: th },
     ar: { translation: ar },
   },
-  lng: 'vi',
+  lng: savedLang,
   fallbackLng: 'en',
   interpolation: { escapeValue: false },
+});
+
+i18n.on('languageChanged', (lng) => {
+  localStorage.setItem('i18n-lang', lng);
 });
 
 export default i18n;
