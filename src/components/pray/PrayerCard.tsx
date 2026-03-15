@@ -35,7 +35,14 @@ interface PrayerCardProps {
 
 const PrayerCard = ({ prayer, index, hasAmened, onToggleAmen, isRealtime, onMouseEnter, onMouseLeave }: PrayerCardProps) => {
   const { t } = useTranslation();
+  const [isAnimating, setIsAnimating] = useState(false);
   const colors = topicColorMap[prayer.topic] || defaultColors;
+
+  const handleAmen = (id: string) => {
+    setIsAnimating(true);
+    onToggleAmen(id);
+    setTimeout(() => setIsAnimating(false), 700);
+  };
 
   const topicLabels: Record<string, string> = {
     peace: t('topic.peace'),
