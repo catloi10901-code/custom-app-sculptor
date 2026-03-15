@@ -103,9 +103,40 @@ const PrayerCard = ({ prayer, index, hasAmened, onToggleAmen, isRealtime, onMous
           <div className="flex items-center gap-1.5 text-[0.88rem] text-muted-foreground">
             🙏 <span className="text-primary font-bold">{prayer.amen_count}</span> Amen
           </div>
-          <button onClick={() => onToggleAmen(prayer.id)} className={`px-3.5 py-1.5 rounded-md text-[0.82rem] font-bold cursor-pointer transition-all duration-300 ${hasAmened ? 'bg-primary text-primary-foreground' : 'bg-gold-dim border border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground'}`}>
-            {hasAmened ? t('prayerWall.amened') : t('prayerWall.amen')}
-          </button>
+          <div className="relative">
+            {/* Sparkle particles */}
+            {isAnimating && (
+              <div className="absolute inset-0 pointer-events-none">
+                {[...Array(6)].map((_, i) => (
+                  <span
+                    key={i}
+                    className="absolute text-[0.6rem] animate-amen-sparkle"
+                    style={{
+                      left: '50%',
+                      top: '50%',
+                      '--sparkle-x': `${Math.cos((i * 60) * Math.PI / 180) * 28}px`,
+                      '--sparkle-y': `${Math.sin((i * 60) * Math.PI / 180) * 28}px`,
+                      animationDelay: `${i * 0.05}s`,
+                    } as React.CSSProperties}
+                  >
+                    ✨
+                  </span>
+                ))}
+              </div>
+            )}
+            <button
+              onClick={() => handleAmen(prayer.id)}
+              className={`px-3.5 py-1.5 rounded-md text-[0.82rem] font-bold cursor-pointer transition-all duration-300 ${
+                isAnimating ? 'animate-amen-bounce' : ''
+              } ${
+                hasAmened
+                  ? 'bg-primary text-primary-foreground'
+                  : 'bg-gold-dim border border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground'
+              }`}
+            >
+              {hasAmened ? t('prayerWall.amened') : t('prayerWall.amen')}
+            </button>
+          </div>
         </div>
       </div>
     </div>
