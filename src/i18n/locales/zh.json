@@ -376,5 +376,8 @@
   "campaigns.card.poverty.title": "消除贫困",
   "campaigns.card.poverty.desc": "为数百万忍受饥饿和匮乏的人代祷。",
   "campaigns.card.revival.title": "灵性复兴",
-  "campaigns.card.revival.desc": "为全球伟大的灵性觉醒祷告。"
+  "campaigns.card.revival.desc": "为全球伟大的灵性觉醒祷告。",
+
+  "prayerWall.heartLetter": "心灵书信",
+  "prayerWall.amenLabel": "阿们"
 }

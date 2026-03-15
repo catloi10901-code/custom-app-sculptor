@@ -376,5 +376,8 @@
   "campaigns.card.poverty.title": "ยุติความยากจน",
   "campaigns.card.poverty.desc": "อธิษฐานเผื่อผู้คนนับล้านที่ทนทุกข์จากความหิวโหยและความขาดแคลน",
   "campaigns.card.revival.title": "การฟื้นฟูจิตวิญญาณ",
-  "campaigns.card.revival.desc": "อธิษฐานเพื่อการตื่นขึ้นทางจิตวิญญาณครั้งยิ่งใหญ่ทั่วโลก"
+  "campaigns.card.revival.desc": "อธิษฐานเพื่อการตื่นขึ้นทางจิตวิญญาณครั้งยิ่งใหญ่ทั่วโลก",
+
+  "prayerWall.heartLetter": "จดหมายจากใจ",
+  "prayerWall.amenLabel": "อาเมน"
 }

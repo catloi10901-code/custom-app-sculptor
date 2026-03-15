@@ -376,5 +376,8 @@
   "campaigns.card.poverty.title": "गरीबी उन्मूलन",
   "campaigns.card.poverty.desc": "भूख और अभाव से पीड़ित लाखों लोगों के लिए मध्यस्थता करें।",
   "campaigns.card.revival.title": "आध्यात्मिक पुनरुत्थान",
-  "campaigns.card.revival.desc": "दुनिया भर में एक महान आध्यात्मिक जागृति के लिए प्रार्थना करें।"
+  "campaigns.card.revival.desc": "दुनिया भर में एक महान आध्यात्मिक जागृति के लिए प्रार्थना करें।",
+
+  "prayerWall.heartLetter": "हृदय पत्र",
+  "prayerWall.amenLabel": "आमीन"
 }

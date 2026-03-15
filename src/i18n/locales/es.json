@@ -376,5 +376,8 @@
   "campaigns.card.poverty.title": "Acabar con la Pobreza",
   "campaigns.card.poverty.desc": "Intercede por millones que sufren hambre y privaciones.",
   "campaigns.card.revival.title": "Avivamiento Espiritual",
-  "campaigns.card.revival.desc": "Ora por un gran despertar espiritual en todo el mundo."
+  "campaigns.card.revival.desc": "Ora por un gran despertar espiritual en todo el mundo.",
+
+  "prayerWall.heartLetter": "Carta del Corazón",
+  "prayerWall.amenLabel": "Amén"
 }

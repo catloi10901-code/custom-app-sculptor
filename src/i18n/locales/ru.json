@@ -376,5 +376,8 @@
   "campaigns.card.poverty.title": "Искоренение Бедности",
   "campaigns.card.poverty.desc": "Ходатайствуйте за миллионы, страдающих от голода и лишений.",
   "campaigns.card.revival.title": "Духовное Пробуждение",
-  "campaigns.card.revival.desc": "Молитесь о великом духовном пробуждении по всему миру."
+  "campaigns.card.revival.desc": "Молитесь о великом духовном пробуждении по всему миру.",
+
+  "prayerWall.heartLetter": "Письмо от Сердца",
+  "prayerWall.amenLabel": "Аминь"
 }

@@ -376,5 +376,8 @@
   "campaigns.card.poverty.title": "Armut Beenden",
   "campaigns.card.poverty.desc": "Fürbitte für Millionen, die unter Hunger und Entbehrung leiden.",
   "campaigns.card.revival.title": "Geistliche Erweckung",
-  "campaigns.card.revival.desc": "Beten Sie für eine große geistliche Erweckung auf der ganzen Welt."
+  "campaigns.card.revival.desc": "Beten Sie für eine große geistliche Erweckung auf der ganzen Welt.",
+
+  "prayerWall.heartLetter": "Herzensbrief",
+  "prayerWall.amenLabel": "Amen"
 }
