@@ -83,7 +83,7 @@ const PrayerCard = ({ prayer, index, hasAmened, onToggleAmen, isRealtime, onMous
       {/* Top gradient border */}
       <div className={`h-1 w-full bg-gradient-to-r ${colors.gradient} transition-all duration-300 group-hover:h-1.5`} />
 
-      <div className="bg-card border border-t-0 border-border rounded-b-2xl p-4 sm:p-6">
+      <div className="bg-card border border-t-0 border-border rounded-b-2xl p-4 sm:p-6 flex-1 flex flex-col">
         <div className="flex items-center gap-3 mb-3">
           <div className={`w-10 h-10 rounded-full bg-card border-[2px] ${colors.avatarBorder} flex items-center justify-center text-lg flex-shrink-0`}>
             {avatarEmojis[index % avatarEmojis.length]}
