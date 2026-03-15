@@ -19,20 +19,35 @@ const AboutPage = () => {
     { icon: '🌍', title: t('about.value.global'), desc: t('about.value.globalDesc') },
   ];
 
+  const renderIntroText = () => {
+    const raw = t('about.introText');
+    // Replace <strong>...</strong> and <highlight>...</highlight> with React elements
+    const parts = raw.split(/(<strong>.*?<\/strong>|<highlight>.*?<\/highlight>)/g);
+    return parts.map((part, i) => {
+      if (part.startsWith('<strong>')) {
+        return <strong key={i} className="text-foreground">{part.replace(/<\/?strong>/g, '')}</strong>;
+      }
+      if (part.startsWith('<highlight>')) {
+        return <span key={i} className="text-primary font-semibold">{part.replace(/<\/?highlight>/g, '')}</span>;
+      }
+      return part;
+    });
+  };
+
   return (
     <div>
       <section className="py-20 text-center" style={{ background: 'linear-gradient(180deg, rgba(197,160,89,0.06) 0%, transparent 100%)' }}>
         <div className="container">
-          <h1 className="font-serif text-primary mb-4">HOLY PRAY TODAY</h1>
-          <p className="text-primary/80 text-lg font-semibold mb-3">Bàn Thờ Số — Cầu nguyện cho muôn dân</p>
-          <p className="text-muted-foreground text-base max-w-[750px] mx-auto italic leading-relaxed">Hiệp một trong Thánh Linh, lay động Thiên Đình.</p>
+          <h1 className="font-serif text-primary mb-4">{t('about.heroTitle')}</h1>
+          <p className="text-primary/80 text-lg font-semibold mb-3">{t('about.heroTagline')}</p>
+          <p className="text-muted-foreground text-base max-w-[750px] mx-auto italic leading-relaxed">{t('about.heroQuote')}</p>
         </div>
       </section>
 
       <section className="py-16">
         <div className="container max-w-[800px] text-center">
           <p className="text-muted-foreground text-lg leading-[1.9]">
-            <strong className="text-foreground">HOLYPray</strong> là bàn thờ cầu nguyện số toàn cầu, nơi mọi người có thể lắng lại, cầu nguyện, hiệp nguyện, theo dõi tác động, và bước vào một hệ sinh thái được xây trên <span className="text-primary font-semibold">sự thánh khiết</span>, <span className="text-primary font-semibold">tình yêu thương</span>, <span className="text-primary font-semibold">minh bạch</span> và <span className="text-primary font-semibold">quản trị trung tín</span>.
+            {renderIntroText()}
           </p>
         </div>
       </section>
