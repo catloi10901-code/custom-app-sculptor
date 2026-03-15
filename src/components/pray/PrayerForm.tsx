@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/hooks/useAuth';
 import { toast } from 'sonner';
+import { Select, SelectTrigger, SelectContent, SelectItem, SelectValue } from '@/components/ui/select';
 
 interface PrayerFormProps {
   onSuccess: () => void;
@@ -17,6 +18,23 @@ const PrayerForm = ({ onSuccess }: PrayerFormProps) => {
   const [formContent, setFormContent] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [aiGenerating, setAiGenerating] = useState(false);
+
+  const countries = [
+    { value: '🇻🇳 Việt Nam', label: '🇻🇳 Việt Nam' },
+    { value: '🇺🇸 USA', label: '🇺🇸 USA' },
+    { value: '🇬🇧 UK', label: '🇬🇧 UK' },
+    { value: '🇰🇷 Korea', label: '🇰🇷 Korea' },
+    { value: '🇯🇵 Japan', label: '🇯🇵 Japan' },
+  ];
+
+  const topics = [
+    { value: 'peace', icon: '☮️' },
+    { value: 'poverty', icon: '🤲' },
+    { value: 'healing', icon: '💚' },
+    { value: 'family', icon: '👨‍👩‍👧‍👦' },
+    { value: 'nation', icon: '🏛️' },
+    { value: 'prosperity', icon: '✨' },
+  ];
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -48,6 +66,8 @@ const PrayerForm = ({ onSuccess }: PrayerFormProps) => {
     setAiGenerating(false);
   };
 
+  const triggerClass = "w-full px-4 py-3 h-auto bg-black/20 border border-border rounded-lg text-foreground text-[0.95rem] transition-all duration-300 focus:outline-none focus:border-primary focus:ring-0 focus:ring-offset-0";
+
   return (
     <form id="submit-form" onSubmit={handleSubmit} className="bg-card border border-primary rounded-2xl p-8">
       <h3 className="font-serif text-primary mb-5 text-xl">{t('prayerWall.formTitle')}</h3>
@@ -58,26 +78,30 @@ const PrayerForm = ({ onSuccess }: PrayerFormProps) => {
         </div>
         <div>
           <label className="block text-[0.85rem] font-bold text-muted-foreground mb-2">{t('profile.country')}</label>
-          <select value={formCountry} onChange={e => setFormCountry(e.target.value)} className="w-full px-4 py-3 bg-black/20 border border-border rounded-lg text-foreground text-[0.95rem] transition-all duration-300 focus:outline-none focus:border-primary">
-            <option value="">{t('prayerWall.selectCountry')}</option>
-            <option>🇻🇳 Việt Nam</option>
-            <option>🇺🇸 USA</option>
-            <option>🇬🇧 UK</option>
-            <option>🇰🇷 Korea</option>
-            <option>🇯🇵 Japan</option>
-          </select>
+          <Select value={formCountry} onValueChange={setFormCountry}>
+            <SelectTrigger className={triggerClass}>
+              <SelectValue placeholder={t('prayerWall.selectCountry')} />
+            </SelectTrigger>
+            <SelectContent>
+              {countries.map(c => (
+                <SelectItem key={c.value} value={c.value}>{c.label}</SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
         </div>
       </div>
       <div className="mb-4">
         <label className="block text-[0.85rem] font-bold text-muted-foreground mb-2">{t('prayerWall.topic')}</label>
-        <select value={formTopic} onChange={e => setFormTopic(e.target.value)} className="w-full px-4 py-3 bg-black/20 border border-border rounded-lg text-foreground text-[0.95rem] transition-all duration-300 focus:outline-none focus:border-primary">
-          <option value="peace">{t('topic.peace')}</option>
-          <option value="poverty">{t('topic.poverty')}</option>
-          <option value="healing">{t('topic.healing')}</option>
-          <option value="family">{t('topic.family')}</option>
-          <option value="nation">{t('topic.nation')}</option>
-          <option value="prosperity">{t('topic.prosperity')}</option>
-        </select>
+        <Select value={formTopic} onValueChange={setFormTopic}>
+          <SelectTrigger className={triggerClass}>
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            {topics.map(tp => (
+              <SelectItem key={tp.value} value={tp.value}>{tp.icon} {t(`topic.${tp.value}`)}</SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
       </div>
       <div className="mb-4">
         <div className="flex items-center justify-between mb-2">
