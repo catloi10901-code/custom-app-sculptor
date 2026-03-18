@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { SEOHead } from '@/components/layout/SEOHead';
+import SEOHead from '@/components/layout/SEOHead';
 
 const CookiePolicyPage = () => {
   return (

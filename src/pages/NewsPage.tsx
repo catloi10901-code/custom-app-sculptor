@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { supabase } from '@/integrations/supabase/client';
-import { SEOHead } from '@/components/layout/SEOHead';
+import SEOHead from '@/components/layout/SEOHead';
 import { Badge } from '@/components/ui/badge';
 import { format } from 'date-fns';
 import { Calendar, Eye, ArrowRight } from 'lucide-react';
