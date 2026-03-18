@@ -116,9 +116,9 @@ const HeroSection = () => {
           </p>
 
           <div className="flex gap-2.5 sm:gap-4 flex-wrap justify-center lg:justify-start mb-8 sm:mb-14" style={{ animation: 'fadeUp 0.9s ease 0.6s both' }}>
-            <Link to="/pray" className="inline-flex items-center gap-2 px-4 sm:px-7 py-2.5 sm:py-3.5 rounded-lg bg-primary text-primary-foreground font-bold text-[0.82rem] sm:text-[0.95rem] tracking-wide no-underline shadow-[0_4px_20px_rgba(197,160,89,0.35)] transition-all duration-300 hover:bg-gold-light hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(197,160,89,0.5)]">
+            <button type="button" onClick={() => setPrayerDialogOpen(true)} className="inline-flex items-center gap-2 px-4 sm:px-7 py-2.5 sm:py-3.5 rounded-lg bg-primary text-primary-foreground font-bold text-[0.82rem] sm:text-[0.95rem] tracking-wide no-underline shadow-[0_4px_20px_rgba(197,160,89,0.35)] transition-all duration-300 hover:bg-gold-light hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(197,160,89,0.5)]">
               {t('hero.cta1')}
-            </Link>
+            </button>
             <Link to="/about" className="inline-flex items-center gap-2 px-4 sm:px-7 py-2.5 sm:py-3.5 rounded-lg bg-transparent text-primary border-[1.5px] border-primary font-bold text-[0.82rem] sm:text-[0.95rem] no-underline transition-all duration-300 hover:bg-gold-dim hover:-translate-y-0.5">
               {t('hero.cta2')}
             </Link>
