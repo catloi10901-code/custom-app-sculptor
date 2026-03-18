@@ -117,7 +117,7 @@ const PrayerForm = ({ onSuccess, defaultTopic }: PrayerFormProps) => {
             {aiGenerating ? t('prayerWall.aiGenerating') : t('prayerWall.aiSuggest')}
           </button>
         </div>
-        <textarea rows={6} value={formContent} onChange={e => setFormContent(e.target.value)} placeholder={t('prayerWall.placeholder')} className="w-full px-4 py-3 bg-black/20 border border-border rounded-lg text-foreground text-[0.95rem] resize-y min-h-[180px] transition-all duration-300 focus:outline-none focus:border-primary focus:shadow-[0_0_0_3px_rgba(197,160,89,0.15)]" />
+        <textarea ref={textareaRef} rows={6} value={formContent} onChange={e => { setFormContent(e.target.value); autoResize(e.target); }} placeholder={t('prayerWall.placeholder')} className="w-full px-4 py-3 bg-black/20 border border-border rounded-lg text-foreground text-[0.95rem] resize-none min-h-[180px] transition-all duration-300 focus:outline-none focus:border-primary focus:shadow-[0_0_0_3px_rgba(197,160,89,0.15)] overflow-hidden" />
       </div>
       <button type="submit" disabled={submitting} className="w-full py-3.5 rounded-lg bg-gradient-to-r from-primary to-gold-light text-primary-foreground font-bold text-base transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_8px_30px_rgba(197,160,89,0.4)] disabled:opacity-50">
         {submitting ? t('prayerWall.submitting') : t('prayerWall.submitBtn')}
