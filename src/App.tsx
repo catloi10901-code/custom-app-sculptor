@@ -26,6 +26,7 @@ import AdminCampaigns from "./pages/admin/AdminCampaigns";
 import AdminSiteContent from "./pages/admin/AdminSiteContent";
 import AdminLiveSessions from "./pages/admin/AdminLiveSessions";
 import AdminTestimonials from "./pages/admin/AdminTestimonials";
+import AdminCategories from "./pages/admin/AdminCategories";
 import NotFound from "./pages/NotFound";
 import ResetPasswordPage from "./pages/ResetPasswordPage";
 
@@ -60,6 +61,7 @@ const App = () => (
               <Route path="settings" element={<AdminSettings />} />
               <Route path="campaigns" element={<AdminCampaigns />} />
               <Route path="site-content" element={<AdminSiteContent />} />
+              <Route path="categories" element={<AdminCategories />} />
               <Route path="live-sessions" element={<AdminLiveSessions />} />
               <Route path="testimonials" element={<AdminTestimonials />} />
             </Route>
