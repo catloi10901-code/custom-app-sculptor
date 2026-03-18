@@ -9,6 +9,7 @@ import PrayerFormDialog from '@/components/pray/PrayerFormDialog';
 const HeroSection = () => {
   const { t } = useTranslation();
   const [stats, setStats] = useState({ prayers: 0, nations: 0, members: 0, donated: 0 });
+  const [prayerDialogOpen, setPrayerDialogOpen] = useState(false);
 
   useEffect(() => {
     const fetchNations = async () => {
