@@ -15,6 +15,11 @@ import LibraryPage from "./pages/LibraryPage";
 import AboutPage from "./pages/AboutPage";
 import GivePage from "./pages/GivePage";
 import BlogPostPage from "./pages/BlogPostPage";
+import NewsPage from "./pages/NewsPage";
+import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
+import TermsPage from "./pages/TermsPage";
+import CookiePolicyPage from "./pages/CookiePolicyPage";
+import GDPRPage from "./pages/GDPRPage";
 import ProfilePage from "./pages/ProfilePage";
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import AdminPosts from "./pages/admin/AdminPosts";
@@ -53,6 +58,11 @@ const App = () => (
               <Route path="/about" element={<AboutPage />} />
               <Route path="/give" element={<GivePage />} />
               <Route path="/profile" element={<ProfilePage />} />
+              <Route path="/news" element={<NewsPage />} />
+              <Route path="/privacy" element={<PrivacyPolicyPage />} />
+              <Route path="/terms" element={<TermsPage />} />
+              <Route path="/cookie-policy" element={<CookiePolicyPage />} />
+              <Route path="/gdpr" element={<GDPRPage />} />
             </Route>
             <Route path="/admin" element={<AdminLayout />}>
               <Route index element={<AdminDashboard />} />
