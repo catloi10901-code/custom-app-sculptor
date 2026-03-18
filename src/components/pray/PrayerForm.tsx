@@ -7,14 +7,15 @@ import { Select, SelectTrigger, SelectContent, SelectItem, SelectValue } from '@
 
 interface PrayerFormProps {
   onSuccess: () => void;
+  defaultTopic?: string;
 }
 
-const PrayerForm = ({ onSuccess }: PrayerFormProps) => {
+const PrayerForm = ({ onSuccess, defaultTopic }: PrayerFormProps) => {
   const { t } = useTranslation();
   const { user } = useAuth();
   const [formName, setFormName] = useState('');
   const [formCountry, setFormCountry] = useState('');
-  const [formTopic, setFormTopic] = useState('peace');
+  const [formTopic, setFormTopic] = useState(defaultTopic || 'peace');
   const [formContent, setFormContent] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [aiGenerating, setAiGenerating] = useState(false);
