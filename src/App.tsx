@@ -66,6 +66,8 @@ const App = () => (
               <Route path="categories" element={<AdminCategories />} />
               <Route path="live-sessions" element={<AdminLiveSessions />} />
               <Route path="testimonials" element={<AdminTestimonials />} />
+              <Route path="jobs" element={<AdminJobPositions />} />
+              <Route path="applications" element={<AdminApplications />} />
             </Route>
             <Route path="/reset-password" element={<ResetPasswordPage />} />
             <Route path="*" element={<NotFound />} />

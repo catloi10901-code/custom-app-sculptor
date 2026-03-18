@@ -17,6 +17,8 @@ import {
   Quote,
   Mail,
   Tag,
+  Briefcase,
+  FileCheck,
 } from "lucide-react";
 
 const adminNav = [
