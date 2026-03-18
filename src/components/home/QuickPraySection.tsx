@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import PrayerFormDialog from '@/components/pray/PrayerFormDialog';
 
 const cards = [
   { icon: '🕊', titleKey: 'card.peace.title', descKey: 'card.peace.desc', topic: 'peace' },
@@ -9,6 +11,13 @@ const cards = [
 
 const QuickPraySection = () => {
   const { t } = useTranslation();
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [selectedTopic, setSelectedTopic] = useState('peace');
+
+  const handleCardClick = (topic: string) => {
+    setSelectedTopic(topic);
+    setDialogOpen(true);
+  };
 
   return (
     <section className="py-20">
@@ -20,12 +29,12 @@ const QuickPraySection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
           {cards.map((card) => (
-            <Link
+            <button
               key={card.topic}
-              to={`/pray?topic=${card.topic}`}
-              className="group relative overflow-hidden bg-card border border-border rounded-2xl p-7 text-center cursor-pointer transition-all duration-300 no-underline hover:border-primary/60 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(0,0,0,0.4)] h-full flex flex-col"
+              type="button"
+              onClick={() => handleCardClick(card.topic)}
+              className="group relative overflow-hidden bg-card border border-border rounded-2xl p-7 text-center cursor-pointer transition-all duration-300 hover:border-primary/60 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(0,0,0,0.4)] h-full flex flex-col text-left"
             >
-              {/* Hover glow */}
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(197,160,89,0.1),transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <span className="text-[2.5rem] block mb-3 relative z-10">{card.icon}</span>
               <h3 className="text-lg text-primary mb-2 relative z-10">{t(card.titleKey)}</h3>
@@ -35,7 +44,7 @@ const QuickPraySection = () => {
                   {t('card.pray')}
                 </span>
               </div>
-            </Link>
+            </button>
           ))}
         </div>
 
@@ -45,6 +54,12 @@ const QuickPraySection = () => {
           </Link>
         </div>
       </div>
+
+      <PrayerFormDialog
+        open={dialogOpen}
+        onOpenChange={setDialogOpen}
+        defaultTopic={selectedTopic}
+      />
     </section>
   );
 };
