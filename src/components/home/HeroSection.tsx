@@ -151,6 +151,7 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+      <PrayerFormDialog open={prayerDialogOpen} onOpenChange={setPrayerDialogOpen} />
     </section>
   );
 };
