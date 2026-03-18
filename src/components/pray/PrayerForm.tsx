@@ -59,7 +59,7 @@ const PrayerForm = ({ onSuccess, defaultTopic }: PrayerFormProps) => {
     });
 
     if (error) { toast.error(t('prayerWall.submitError')); console.error(error); }
-    else { toast.success(t('prayerWall.submitSuccess')); setFormName(''); setFormCountry(''); setFormTopic('peace'); setFormContent(''); onSuccess(); }
+    else { toast.success(t('prayerWall.submitSuccess')); setFormName(''); setFormCountry(''); setFormTopic('peace'); setFormContent(''); if (textareaRef.current) { textareaRef.current.style.height = 'auto'; } onSuccess(); }
     setSubmitting(false);
   };
 
