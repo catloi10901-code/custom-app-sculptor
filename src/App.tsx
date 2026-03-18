@@ -61,6 +61,7 @@ const App = () => (
               <Route path="settings" element={<AdminSettings />} />
               <Route path="campaigns" element={<AdminCampaigns />} />
               <Route path="site-content" element={<AdminSiteContent />} />
+              <Route path="categories" element={<AdminCategories />} />
               <Route path="live-sessions" element={<AdminLiveSessions />} />
               <Route path="testimonials" element={<AdminTestimonials />} />
             </Route>

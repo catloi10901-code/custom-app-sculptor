@@ -24,6 +24,7 @@ const adminNav = [
   { path: "/admin/live-stats", labelKey: "Live Stats", icon: BarChart3 },
   { path: "/admin/site-content", labelKey: "Nội dung web", icon: Globe },
   { path: "/admin/live-sessions", labelKey: "Phiên Live", icon: Radio },
+  { path: "/admin/categories", labelKey: "Chuyên mục", icon: Tag },
   { path: "/admin/posts", labelKey: "admin.posts.title", icon: FileText },
   { path: "/admin/prayers", labelKey: "admin.prayers.title", icon: MessageSquare },
   { path: "/admin/campaigns", labelKey: "Chiến dịch", icon: Flag },
