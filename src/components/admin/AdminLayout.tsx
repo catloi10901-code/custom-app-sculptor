@@ -16,6 +16,7 @@ import {
   Radio,
   Quote,
   Mail,
+  Tag,
 } from "lucide-react";
 
 const adminNav = [
