@@ -7,6 +7,7 @@ import { Select, SelectTrigger, SelectContent, SelectItem, SelectValue } from '@
 
 interface PrayerFormProps {
   onSuccess: () => void;
+  defaultTopic?: string;
 }
 
 const PrayerForm = ({ onSuccess }: PrayerFormProps) => {
