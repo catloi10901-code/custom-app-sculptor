@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import HeroGlobe2D from './HeroGlobe2D';
 import AnimatedCounter from '@/components/ui/AnimatedCounter';
+import PrayerFormDialog from '@/components/pray/PrayerFormDialog';
 
 const HeroSection = () => {
   const { t } = useTranslation();
