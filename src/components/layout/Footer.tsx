@@ -77,18 +77,20 @@ const Footer = () => {
           <div>
             <h4 className="font-serif text-primary text-[0.9rem] mb-4 tracking-wide">{t('footer.impact')}</h4>
             <ul className="list-none space-y-2.5">
-              <li><a href="#" className="text-muted-foreground no-underline text-[0.9rem] transition-all duration-300 hover:text-primary">{t('footer.word')}</a></li>
+              <li><Link to="/word" className="text-muted-foreground no-underline text-[0.9rem] transition-all duration-300 hover:text-primary">{t('footer.word')}</Link></li>
               <li><Link to="/pray?tab=campaigns" className="text-muted-foreground no-underline text-[0.9rem] transition-all duration-300 hover:text-primary">{t('footer.campaigns')}</Link></li>
-              <li><a href="#" className="text-muted-foreground no-underline text-[0.9rem] transition-all duration-300 hover:text-primary">{t('footer.calendar')}</a></li>
+              <li><Link to="/pray?tab=calendar" className="text-muted-foreground no-underline text-[0.9rem] transition-all duration-300 hover:text-primary">{t('footer.calendar')}</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-serif text-primary text-[0.9rem] mb-4 tracking-wide">{t('footer.org')}</h4>
             <ul className="list-none space-y-2.5">
-              {[t('footer.about'), t('footer.report'), t('footer.partners'), t('footer.careers'), t('footer.news')].map((item) => (
-                <li key={item}><a href="#" className="text-muted-foreground no-underline text-[0.9rem] transition-all duration-300 hover:text-primary">{item}</a></li>
-              ))}
+              <li><Link to="/about" className="text-muted-foreground no-underline text-[0.9rem] transition-all duration-300 hover:text-primary">{t('footer.about')}</Link></li>
+              <li><Link to="/impact" className="text-muted-foreground no-underline text-[0.9rem] transition-all duration-300 hover:text-primary">{t('footer.report')}</Link></li>
+              <li><Link to="/about" className="text-muted-foreground no-underline text-[0.9rem] transition-all duration-300 hover:text-primary">{t('footer.partners')}</Link></li>
+              <li><Link to="/about" className="text-muted-foreground no-underline text-[0.9rem] transition-all duration-300 hover:text-primary">{t('footer.careers')}</Link></li>
+              <li><Link to="/word" className="text-muted-foreground no-underline text-[0.9rem] transition-all duration-300 hover:text-primary">{t('footer.news')}</Link></li>
             </ul>
           </div>
 
