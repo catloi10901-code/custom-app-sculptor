@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 const LiveTicker = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { t } = useTranslation();
 
   const tickerItems = [
     { emoji: '🙏', name: 'Nguyễn Thị Hoa', action: t('ticker.prayed'), flag: '🇻🇳', country: 'Việt Nam' },
