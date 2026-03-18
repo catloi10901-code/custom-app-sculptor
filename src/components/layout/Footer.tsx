@@ -90,7 +90,7 @@ const Footer = () => {
               <li><Link to="/impact" className="text-muted-foreground no-underline text-[0.9rem] transition-all duration-300 hover:text-primary">{t('footer.report')}</Link></li>
               <li><Link to="/about" className="text-muted-foreground no-underline text-[0.9rem] transition-all duration-300 hover:text-primary">{t('footer.partners')}</Link></li>
               <li><Link to="/about" className="text-muted-foreground no-underline text-[0.9rem] transition-all duration-300 hover:text-primary">{t('footer.careers')}</Link></li>
-              <li><Link to="/word" className="text-muted-foreground no-underline text-[0.9rem] transition-all duration-300 hover:text-primary">{t('footer.news')}</Link></li>
+              <li><Link to="/news" className="text-muted-foreground no-underline text-[0.9rem] transition-all duration-300 hover:text-primary">{t('footer.news')}</Link></li>
             </ul>
           </div>
 
