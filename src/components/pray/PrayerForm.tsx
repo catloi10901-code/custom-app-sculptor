@@ -68,7 +68,7 @@ const PrayerForm = ({ onSuccess, defaultTopic }: PrayerFormProps) => {
     try {
       const { data, error } = await supabase.functions.invoke('generate-prayer', { body: { topic: formTopic, language: 'vi' } });
       if (error) throw error;
-      if (data?.prayer) { setFormContent(data.prayer); toast.success(t('prayerWall.aiSuccess')); }
+      if (data?.prayer) { setFormContent(data.prayer); toast.success(t('prayerWall.aiSuccess')); setTimeout(() => { if (textareaRef.current) autoResize(textareaRef.current); }, 0); }
     } catch (err: any) { console.error(err); toast.error(err?.message || t('prayerWall.aiFail')); }
     setAiGenerating(false);
   };
