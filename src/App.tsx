@@ -27,6 +27,8 @@ import AdminSiteContent from "./pages/admin/AdminSiteContent";
 import AdminLiveSessions from "./pages/admin/AdminLiveSessions";
 import AdminTestimonials from "./pages/admin/AdminTestimonials";
 import AdminCategories from "./pages/admin/AdminCategories";
+import AdminJobPositions from "./pages/admin/AdminJobPositions";
+import AdminApplications from "./pages/admin/AdminApplications";
 import NotFound from "./pages/NotFound";
 import ResetPasswordPage from "./pages/ResetPasswordPage";
 
@@ -64,6 +66,8 @@ const App = () => (
               <Route path="categories" element={<AdminCategories />} />
               <Route path="live-sessions" element={<AdminLiveSessions />} />
               <Route path="testimonials" element={<AdminTestimonials />} />
+              <Route path="jobs" element={<AdminJobPositions />} />
+              <Route path="applications" element={<AdminApplications />} />
             </Route>
             <Route path="/reset-password" element={<ResetPasswordPage />} />
             <Route path="*" element={<NotFound />} />
