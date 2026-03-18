@@ -42,7 +42,7 @@ const Footer = () => {
               <div className="w-9 h-9 rounded-full bg-gold-dim border-[1.5px] border-primary flex items-center justify-center text-base">✦</div>
               <span className="font-serif text-2xl font-bold text-primary">HOLYPray</span>
             </Link>
-            <p className="text-[0.95rem] text-muted-foreground mt-3 max-w-[300px] leading-[1.7]">{t('footer.desc')}</p>
+            <p className="text-[0.95rem] text-muted-foreground mt-2 max-w-[300px] leading-[1.7]">{t('footer.desc')}</p>
             <div className="flex flex-col sm:flex-row gap-2 mt-4">
               <input
                 type="email"
@@ -60,12 +60,12 @@ const Footer = () => {
                 {t('footer.subscribe')}
               </button>
             </div>
-            <div className="flex gap-2.5 mt-4">
+            <div className="flex gap-3 mt-5">
               {['𝕏', 'f', 'in', '📷', '▶'].map((icon, i) => (
-                <a key={i} href="#" className="w-[38px] h-[38px] rounded-full bg-gold-dim border border-border flex items-center justify-center text-base cursor-pointer transition-all duration-300 text-primary no-underline hover:bg-primary hover:text-primary-foreground">
+                <a key={i} href="#" className="w-11 h-11 rounded-full bg-gold-dim border border-border flex items-center justify-center text-lg cursor-pointer transition-all duration-300 text-primary no-underline hover:bg-primary hover:text-primary-foreground">
                   {icon}
                 </a>
-            ))}
+              ))}
             </div>
             <div className="flex items-center gap-5 mt-5 flex-wrap">
               {[logo7center, logo9s, logoGifpp, logoPartner4].map((logo, i) => (
