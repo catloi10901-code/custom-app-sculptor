@@ -79,6 +79,7 @@ const App = () => (
               <Route path="testimonials" element={<AdminTestimonials />} />
               <Route path="jobs" element={<AdminJobPositions />} />
               <Route path="applications" element={<AdminApplications />} />
+              <Route path="newsletter" element={<AdminNewsletter />} />
             </Route>
             <Route path="/reset-password" element={<ResetPasswordPage />} />
             <Route path="*" element={<NotFound />} />
