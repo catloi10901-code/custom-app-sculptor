@@ -48,7 +48,7 @@ const App = () => (
               <Route path="/library" element={<LibraryPage />} />
               <Route path="/word/:slug" element={<BlogPostPage />} />
               <Route path="/about" element={<AboutPage />} />
-              {/* <Route path="/give" element={<GivePage />} /> */}
+              <Route path="/give" element={<GivePage />} />
               <Route path="/profile" element={<ProfilePage />} />
             </Route>
             <Route path="/admin" element={<AdminLayout />}>

@@ -97,9 +97,11 @@ const Footer = () => {
           <div>
             <h4 className="font-serif text-primary text-[0.9rem] mb-4 tracking-wide">{t('footer.legal')}</h4>
             <ul className="list-none space-y-2.5">
-              {[t('footer.privacy'), t('footer.terms'), t('footer.cookie'), t('footer.gdpr'), t('footer.contact')].map((item) => (
-                <li key={item}><a href="#" className="text-muted-foreground no-underline text-[0.9rem] transition-all duration-300 hover:text-primary">{item}</a></li>
-              ))}
+              <li><a href="#" className="text-muted-foreground no-underline text-[0.9rem] transition-all duration-300 hover:text-primary">{t('footer.privacy')}</a></li>
+              <li><a href="#" className="text-muted-foreground no-underline text-[0.9rem] transition-all duration-300 hover:text-primary">{t('footer.terms')}</a></li>
+              <li><a href="#" className="text-muted-foreground no-underline text-[0.9rem] transition-all duration-300 hover:text-primary">{t('footer.cookie')}</a></li>
+              <li><a href="#" className="text-muted-foreground no-underline text-[0.9rem] transition-all duration-300 hover:text-primary">{t('footer.gdpr')}</a></li>
+              <li><Link to="/about" className="text-muted-foreground no-underline text-[0.9rem] transition-all duration-300 hover:text-primary">{t('footer.contact')}</Link></li>
             </ul>
           </div>
         </div>
