@@ -47,7 +47,7 @@ serve(async (req) => {
           messages: [
             {
               role: "system",
-              content: `You are a journalist writing for UNPray, a global prayer and humanitarian platform. Write factual, hopeful articles about real-world events. ${langInstruction}
+              content: `You are a journalist writing for HOLYPray, a global prayer and humanitarian platform. Write factual, hopeful articles about real-world events. ${langInstruction}
               
 You MUST respond with valid JSON only, no markdown, no extra text. Use this exact format:
 {
