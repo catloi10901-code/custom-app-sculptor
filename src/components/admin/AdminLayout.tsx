@@ -30,6 +30,8 @@ const adminNav = [
   { path: "/admin/campaigns", labelKey: "Chiến dịch", icon: Flag },
   { path: "/admin/testimonials", labelKey: "Lời chứng", icon: Quote },
   { path: "/admin/users", labelKey: "admin.users.title", icon: Users },
+  { path: "/admin/jobs", labelKey: "Vị trí tuyển dụng", icon: Briefcase },
+  { path: "/admin/applications", labelKey: "Đơn ứng tuyển", icon: FileCheck },
   { path: "/admin/newsletter", labelKey: "Newsletter", icon: Mail },
   { path: "/admin/settings", labelKey: "admin.settings.title", icon: Settings },
 ];
