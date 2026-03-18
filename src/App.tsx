@@ -58,6 +58,11 @@ const App = () => (
               <Route path="/about" element={<AboutPage />} />
               <Route path="/give" element={<GivePage />} />
               <Route path="/profile" element={<ProfilePage />} />
+              <Route path="/news" element={<NewsPage />} />
+              <Route path="/privacy" element={<PrivacyPolicyPage />} />
+              <Route path="/terms" element={<TermsPage />} />
+              <Route path="/cookie-policy" element={<CookiePolicyPage />} />
+              <Route path="/gdpr" element={<GDPRPage />} />
             </Route>
             <Route path="/admin" element={<AdminLayout />}>
               <Route index element={<AdminDashboard />} />

@@ -97,10 +97,10 @@ const Footer = () => {
           <div>
             <h4 className="font-serif text-primary text-[0.9rem] mb-4 tracking-wide">{t('footer.legal')}</h4>
             <ul className="list-none space-y-2.5">
-              <li><a href="#" className="text-muted-foreground no-underline text-[0.9rem] transition-all duration-300 hover:text-primary">{t('footer.privacy')}</a></li>
-              <li><a href="#" className="text-muted-foreground no-underline text-[0.9rem] transition-all duration-300 hover:text-primary">{t('footer.terms')}</a></li>
-              <li><a href="#" className="text-muted-foreground no-underline text-[0.9rem] transition-all duration-300 hover:text-primary">{t('footer.cookie')}</a></li>
-              <li><a href="#" className="text-muted-foreground no-underline text-[0.9rem] transition-all duration-300 hover:text-primary">{t('footer.gdpr')}</a></li>
+              <li><Link to="/privacy" className="text-muted-foreground no-underline text-[0.9rem] transition-all duration-300 hover:text-primary">{t('footer.privacy')}</Link></li>
+              <li><Link to="/terms" className="text-muted-foreground no-underline text-[0.9rem] transition-all duration-300 hover:text-primary">{t('footer.terms')}</Link></li>
+              <li><Link to="/cookie-policy" className="text-muted-foreground no-underline text-[0.9rem] transition-all duration-300 hover:text-primary">{t('footer.cookie')}</Link></li>
+              <li><Link to="/gdpr" className="text-muted-foreground no-underline text-[0.9rem] transition-all duration-300 hover:text-primary">{t('footer.gdpr')}</Link></li>
               <li><Link to="/about" className="text-muted-foreground no-underline text-[0.9rem] transition-all duration-300 hover:text-primary">{t('footer.contact')}</Link></li>
             </ul>
           </div>
