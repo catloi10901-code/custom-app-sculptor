@@ -9,20 +9,20 @@ interface SEOProps {
 }
 
 const defaultMeta = {
-  title: 'UNPray — Nền Tảng Cầu Nguyện Toàn Cầu',
+  title: 'HOLYPray — Nền Tảng Cầu Nguyện Toàn Cầu',
   description: 'Kết nối hàng triệu người cầu nguyện trên toàn thế giới. Gửi lời cầu nguyện, tham gia cộng đồng đức tin, và tạo tác động tích cực.',
   ogImage: '/og-image.jpg',
 };
 
 const pageMeta: Record<string, SEOProps> = {
-  '/': { title: 'UNPray — Nền Tảng Cầu Nguyện Toàn Cầu', description: defaultMeta.description },
-  '/pray': { title: 'Cầu Nguyện | UNPray', description: 'Gửi lời cầu nguyện và hiệp lời với cộng đồng toàn cầu. Prayer Wall, Live Sessions, và Cộng đồng đức tin.' },
-  '/impact': { title: 'Tác Động | UNPray', description: 'Xem tác động của UNPray trên toàn cầu. Câu chuyện thay đổi cuộc sống, dự án nhân đạo, và báo cáo minh bạch.' },
-  '/word': { title: 'Lời Chúa | UNPray', description: 'Suy ngẫm, học hỏi và được nuôi dưỡng bởi Lời Ngài. Tĩnh nguyện, giảng dạy, và lời chứng.' },
-  '/library': { title: 'Thư Viện | UNPray', description: 'Kho tàng lời cầu nguyện được phân loại theo chủ đề. Tìm kiếm và khám phá.' },
-  '/about': { title: 'Về Chúng Tôi | UNPray', description: 'Tìm hiểu về sứ mệnh, tầm nhìn và đội ngũ UNPray. Kết nối thế giới qua cầu nguyện.' },
-  '/give': { title: 'Dâng Hiến | UNPray', description: 'Dâng hiến cho các dự án nhân đạo. Mỗi đô la được phân bổ minh bạch.' },
-  '/profile': { title: 'Hồ Sơ | UNPray', description: 'Quản lý hồ sơ cá nhân, xem lịch sử cầu nguyện và dâng hiến.' },
+  '/': { title: 'HOLYPray — Nền Tảng Cầu Nguyện Toàn Cầu', description: defaultMeta.description },
+  '/pray': { title: 'Cầu Nguyện | HOLYPray', description: 'Gửi lời cầu nguyện và hiệp lời với cộng đồng toàn cầu. Prayer Wall, Live Sessions, và Cộng đồng đức tin.' },
+  '/impact': { title: 'Tác Động | HOLYPray', description: 'Xem tác động của HOLYPray trên toàn cầu. Câu chuyện thay đổi cuộc sống, dự án nhân đạo, và báo cáo minh bạch.' },
+  '/word': { title: 'Lời Chúa | HOLYPray', description: 'Suy ngẫm, học hỏi và được nuôi dưỡng bởi Lời Ngài. Tĩnh nguyện, giảng dạy, và lời chứng.' },
+  '/library': { title: 'Thư Viện | HOLYPray', description: 'Kho tàng lời cầu nguyện được phân loại theo chủ đề. Tìm kiếm và khám phá.' },
+  '/about': { title: 'Về Chúng Tôi | HOLYPray', description: 'Tìm hiểu về sứ mệnh, tầm nhìn và đội ngũ HOLYPray. Kết nối thế giới qua cầu nguyện.' },
+  '/give': { title: 'Dâng Hiến | HOLYPray', description: 'Dâng hiến cho các dự án nhân đạo. Mỗi đô la được phân bổ minh bạch.' },
+  '/profile': { title: 'Hồ Sơ | HOLYPray', description: 'Quản lý hồ sơ cá nhân, xem lịch sử cầu nguyện và dâng hiến.' },
 };
 
 const SEOHead = ({ title, description, ogImage, type = 'website' }: SEOProps) => {
@@ -67,7 +67,7 @@ const SEOHead = ({ title, description, ogImage, type = 'website' }: SEOProps) =>
     ldScript.textContent = JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'WebSite',
-      name: 'UNPray',
+      name: 'HOLYPray',
       url: window.location.origin,
       description: finalDesc,
       potentialAction: {
