@@ -117,7 +117,7 @@
   "auth.login": "ログイン",
   "auth.signup": "新規登録",
   "auth.forgotSub": "パスワードリセットリンクを受け取るメールを入力",
-  "auth.loginSub": "UNPrayへようこそ",
+  "auth.loginSub": "HOLYPrayへようこそ",
   "auth.signupSub": "グローバル祈りコミュニティに参加",
   "auth.displayName": "表示名",
   "auth.password": "パスワード",
