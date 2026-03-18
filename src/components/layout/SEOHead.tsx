@@ -67,7 +67,7 @@ const SEOHead = ({ title, description, ogImage, type = 'website' }: SEOProps) =>
     ldScript.textContent = JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'WebSite',
-      name: 'UNPray',
+      name: 'HOLYPray',
       url: window.location.origin,
       description: finalDesc,
       potentialAction: {
