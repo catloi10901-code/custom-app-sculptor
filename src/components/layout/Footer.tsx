@@ -60,12 +60,12 @@ const Footer = () => {
                 {t('footer.subscribe')}
               </button>
             </div>
-            <div className="flex gap-2.5 mt-4">
+            <div className="flex gap-3 mt-5">
               {['𝕏', 'f', 'in', '📷', '▶'].map((icon, i) => (
-                <a key={i} href="#" className="w-[38px] h-[38px] rounded-full bg-gold-dim border border-border flex items-center justify-center text-base cursor-pointer transition-all duration-300 text-primary no-underline hover:bg-primary hover:text-primary-foreground">
+                <a key={i} href="#" className="w-11 h-11 rounded-full bg-gold-dim border border-border flex items-center justify-center text-lg cursor-pointer transition-all duration-300 text-primary no-underline hover:bg-primary hover:text-primary-foreground">
                   {icon}
                 </a>
-            ))}
+              ))}
             </div>
             <div className="flex items-center gap-5 mt-5 flex-wrap">
               {[logo7center, logo9s, logoGifpp, logoPartner4].map((logo, i) => (
