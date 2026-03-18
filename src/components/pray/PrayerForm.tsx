@@ -19,6 +19,12 @@ const PrayerForm = ({ onSuccess, defaultTopic }: PrayerFormProps) => {
   const [formContent, setFormContent] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [aiGenerating, setAiGenerating] = useState(false);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  const autoResize = useCallback((el: HTMLTextAreaElement) => {
+    el.style.height = 'auto';
+    el.style.height = `${Math.max(el.scrollHeight, 180)}px`;
+  }, []);
 
   const countries = [
     { value: '🇻🇳 Việt Nam', label: '🇻🇳 Việt Nam' },
