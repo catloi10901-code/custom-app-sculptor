@@ -21,3 +21,7 @@ services:
 networks:
   default:
     name: app-network
+
+# cd custom-app-sculptor
+# docker cp supabase/migrations supabase-db:/migrations && \
+# docker exec -it supabase-db bash -c 'for f in /migrations/*.sql; do psql -U postgres -d postgres -f "$f"; done'
