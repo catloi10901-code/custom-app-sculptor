@@ -10,6 +10,7 @@
   "nav.logout": "Выйти",
   "nav.profile": "Профиль",
   "nav.admin": "Панель админа",
+  "nav.news": "Новости",
 
   "hero.badge": "ПРЯМОЙ ЭФИР • 47 СТРАН МОЛЯТСЯ",
   "hero.title1": "Соединяя Миллионы Сердец —",
@@ -52,7 +53,7 @@
   "impact.change4": "↑ 6 новых проектов",
   "impact.cta": "Полный Отчёт →",
 
-  "section.testimonials.title": "Свидетельства и Лидеры",
+  "section.testimonials.title": "Свидетельства",
   "section.testimonials.sub": "Голоса, которые доверяют и поддерживают HOLYPray",
   "testimonial.1.quote": "\"HOLYPray соединил нашу церковь с глобальным молитвенным сообществом.\"",
   "testimonial.1.name": "Пастор Дэвид Чен",

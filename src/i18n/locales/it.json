@@ -10,6 +10,7 @@
   "nav.logout": "Esci",
   "nav.profile": "Profilo",
   "nav.admin": "Pannello Admin",
+  "nav.news": "News",
 
   "hero.badge": "IN DIRETTA • 47 NAZIONI IN PREGHIERA",
   "hero.title1": "Connettere Milioni di Cuori —",
@@ -52,7 +53,7 @@
   "impact.change4": "↑ 6 nuovi progetti",
   "impact.cta": "Vedi Rapporto Completo →",
 
-  "section.testimonials.title": "Testimonianze e Leader",
+  "section.testimonials.title": "Testimonianze",
   "section.testimonials.sub": "Voci che si fidano e sostengono HOLYPray",
   "testimonial.1.quote": "\"HOLYPray ha connesso la nostra chiesa con una comunità globale di preghiera. Ogni preghiera fa davvero la differenza.\"",
   "testimonial.1.name": "Pastore David Chen",

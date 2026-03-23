@@ -10,6 +10,7 @@
   "nav.logout": "Abmelden",
   "nav.profile": "Profil",
   "nav.admin": "Admin-Panel",
+  "nav.news": "Nachrichten",
 
   "hero.badge": "LIVE • 47 NATIONEN BETEN",
   "hero.title1": "Millionen Herzen Verbinden —",
@@ -52,7 +53,7 @@
   "impact.change4": "↑ 6 neue Projekte",
   "impact.cta": "Vollständigen Bericht →",
 
-  "section.testimonials.title": "Zeugnisse & Leiter",
+  "section.testimonials.title": "Zeugnisse",
   "section.testimonials.sub": "Stimmen, die HOLYPray vertrauen und unterstützen",
   "testimonial.1.quote": "\"HOLYPray hat unsere Kirche mit einer globalen Gebetsgemeinschaft verbunden. Jedes Gebet macht wirklich einen Unterschied.\"",
   "testimonial.1.name": "Pastor David Chen",

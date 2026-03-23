@@ -1,9 +1,9 @@
-import { useState, useEffect, useCallback, useRef } from 'react';
-import { useTranslation } from 'react-i18next';
-import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/hooks/useAuth';
-import { toast } from 'sonner';
+import { supabase } from '@/integrations/supabase/client';
 import { Mail, X } from 'lucide-react';
+import { useCallback, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { toast } from 'sonner';
 import PrayerCard from './PrayerCard';
 import PrayerForm from './PrayerForm';
 
@@ -26,10 +26,6 @@ const PrayerWallTab = () => {
   const [amenedPrayers, setAmenedPrayers] = useState<Set<string>>(new Set());
   const [showLetter, setShowLetter] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [realtimeIds, setRealtimeIds] = useState<Set<string>>(new Set());
-  const prayersRef = useRef(prayers);
-  prayersRef.current = prayers;
-  const hoveringRef = useRef(false);
 
   const filters = [
     { id: 'all', label: t('filter.all') },
@@ -59,61 +55,10 @@ const PrayerWallTab = () => {
 
   useEffect(() => { fetchPrayers(); fetchUserAmens(); }, [fetchPrayers, fetchUserAmens]);
 
-  // Realtime: prepend new prayers directly from payload
+
+  // Seed prayers once on mount
   useEffect(() => {
-    const channel = supabase.channel('prayers-realtime')
-      .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'prayers' }, (payload) => {
-        const newPrayer = payload.new as any;
-        if (!newPrayer.is_approved) return;
-        if (activeFilter !== 'all' && newPrayer.topic !== activeFilter) return;
-        // If hovering, skip adding new prayers to avoid disruption
-        if (hoveringRef.current) return;
-        setRealtimeIds(prev => new Set(prev).add(newPrayer.id));
-        setPrayers(prev => {
-          if (prev.some(p => p.id === newPrayer.id)) return prev;
-          return [newPrayer, ...prev].slice(0, 50);
-        });
-      })
-      .on('postgres_changes', { event: 'UPDATE', schema: 'public', table: 'prayers' }, (payload) => {
-        const updated = payload.new as any;
-        setPrayers(prev => prev.map(p => p.id === updated.id ? updated : p));
-      })
-      .on('postgres_changes', { event: 'DELETE', schema: 'public', table: 'prayers' }, (payload) => {
-        const deleted = payload.old as any;
-        setPrayers(prev => prev.filter(p => p.id !== deleted.id));
-      })
-      .subscribe();
-    return () => { supabase.removeChannel(channel); };
-  }, [activeFilter]);
-
-  // Auto-seed prayers every ~600ms, pause on hover
-  useEffect(() => {
-    let interval: ReturnType<typeof setInterval> | null = null;
-
-    const start = () => {
-      if (!interval) {
-        interval = setInterval(() => {
-          if (hoveringRef.current) return; // Skip seed while hovering
-          supabase.functions.invoke('seed-prayers').catch(() => {});
-        }, 600);
-      }
-    };
-
-    const stop = () => {
-      if (interval) { clearInterval(interval); interval = null; }
-    };
-
-    const onVisibility = () => {
-      document.hidden ? stop() : start();
-    };
-
-    if (!document.hidden) start();
-    document.addEventListener('visibilitychange', onVisibility);
-
-    return () => {
-      stop();
-      document.removeEventListener('visibilitychange', onVisibility);
-    };
+    supabase.functions.invoke('seed-prayers').catch(() => {});
   }, []);
 
   const toggleAmen = async (prayerId: string) => {
@@ -265,9 +210,7 @@ const PrayerWallTab = () => {
                 index={i}
                 hasAmened={amenedPrayers.has(prayer.id)}
                 onToggleAmen={toggleAmen}
-                isRealtime={realtimeIds.has(prayer.id)}
-                onMouseEnter={() => { hoveringRef.current = true; }}
-                onMouseLeave={() => { hoveringRef.current = false; }}
+
               />
             ))}
           </div>

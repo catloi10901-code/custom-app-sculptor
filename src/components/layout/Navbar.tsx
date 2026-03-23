@@ -1,20 +1,20 @@
-import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
-import { Menu, X, User, LogOut, Shield } from 'lucide-react';
-import LanguageSwitcher from './LanguageSwitcher';
-import GlobalSearch from './GlobalSearch';
-import AuthModal from '@/components/auth/AuthModal';
-import { useAuth } from '@/hooks/useAuth';
+import AuthModal from "@/components/auth/AuthModal";
+import { useAuth } from "@/hooks/useAuth";
+import { LogOut, Menu, Shield, User, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { Link, useLocation } from "react-router-dom";
+import GlobalSearch from "./GlobalSearch";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const navItems = [
-  { path: '/', label: 'nav.home' },
-  { path: '/pray', label: 'nav.pray' },
-  { path: '/impact', label: 'nav.impact' },
-  { path: '/word', label: 'nav.word' },
-  { path: '/library', label: 'nav.library' },
-  { path: '/about', label: 'nav.about' },
-  // { path: '/give', label: 'nav.give' },
+  { path: "/about", label: "nav.about" },
+  { path: "/pray", label: "nav.pray" },
+  { path: "/impact", label: "nav.impact" },
+  { path: "/word", label: "nav.word" },
+  { path: "/library", label: "nav.library" },
+  { path: "/news", label: "nav.news" },
+  { path: "/give", label: "nav.give" },
 ];
 
 const Navbar = () => {
@@ -28,8 +28,8 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -41,18 +41,16 @@ const Navbar = () => {
     if (!userMenuOpen) return;
     const handleClickOutside = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      if (!target.closest('[data-user-menu]')) setUserMenuOpen(false);
+      if (!target.closest("[data-user-menu]")) setUserMenuOpen(false);
     };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [userMenuOpen]);
 
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-[1000] h-[60px] backdrop-blur-[20px] border-b border-border transition-all duration-300 ${
-          scrolled ? 'bg-blue-deep/95' : 'bg-[rgba(26,47,82,0.95)]'
-        }`}
+        className={`fixed top-0 left-0 right-0 z-[1000] h-[60px] backdrop-blur-[20px] border-b border-border transition-all duration-300 ${scrolled ? "bg-blue-deep/95" : "bg-[rgba(26,47,82,0.95)]"}`}
       >
         <div className="container h-full flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2.5 no-underline">
@@ -66,9 +64,7 @@ const Navbar = () => {
                 <Link
                   to={item.path}
                   className={`px-2.5 py-1.5 rounded-md text-[0.8rem] font-medium transition-all duration-300 no-underline whitespace-nowrap ${
-                    location.pathname === item.path
-                      ? 'text-primary bg-gold-dim'
-                      : 'text-muted-foreground hover:text-primary hover:bg-gold-dim'
+                    location.pathname === item.path ? "text-primary bg-gold-dim" : "text-muted-foreground hover:text-primary hover:bg-gold-dim"
                   }`}
                 >
                   {t(item.label)}
@@ -88,23 +84,26 @@ const Navbar = () => {
                   className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gold-dim border border-primary/30 text-primary text-[0.82rem] font-semibold cursor-pointer transition-all hover:bg-primary/20"
                 >
                   <User className="w-4 h-4" />
-                  <span className="hidden sm:inline max-w-[100px] truncate">{profile?.display_name || t('common.user')}</span>
+                  <span className="hidden sm:inline max-w-[100px] truncate">{profile?.display_name || t("common.user")}</span>
                 </button>
                 {userMenuOpen && (
                   <div className="absolute right-0 top-full mt-1.5 w-[180px] bg-card border border-border rounded-xl shadow-2xl overflow-hidden z-[1001]">
                     <Link to="/profile" className="flex items-center gap-2 px-4 py-2.5 text-[0.85rem] text-foreground no-underline hover:bg-gold-dim hover:text-primary transition-all">
-                      <User className="w-4 h-4" /> {t('nav.profile')}
+                      <User className="w-4 h-4" /> {t("nav.profile")}
                     </Link>
                     {isAdmin && (
                       <Link to="/admin" className="flex items-center gap-2 px-4 py-2.5 text-[0.85rem] text-foreground no-underline hover:bg-gold-dim hover:text-primary transition-all">
-                        <Shield className="w-4 h-4" /> {t('nav.admin')}
+                        <Shield className="w-4 h-4" /> {t("nav.admin")}
                       </Link>
                     )}
                     <button
-                      onClick={() => { signOut(); setUserMenuOpen(false); }}
+                      onClick={() => {
+                        signOut();
+                        setUserMenuOpen(false);
+                      }}
                       className="flex items-center gap-2 w-full px-4 py-2.5 text-[0.85rem] text-foreground bg-transparent border-none cursor-pointer hover:bg-destructive/10 hover:text-destructive transition-all"
                     >
-                      <LogOut className="w-4 h-4" /> {t('nav.logout')}
+                      <LogOut className="w-4 h-4" /> {t("nav.logout")}
                     </button>
                   </div>
                 )}
@@ -114,15 +113,11 @@ const Navbar = () => {
                 onClick={() => setAuthOpen(true)}
                 className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-lg border-[1.5px] border-primary bg-transparent text-primary text-[0.82rem] font-bold transition-all duration-300 cursor-pointer hover:bg-gold-dim hover:-translate-y-0.5"
               >
-                {t('nav.login')}
+                {t("nav.login")}
               </button>
             )}
 
-            <button
-              className="flex md:hidden flex-col gap-[5px] p-2 bg-transparent border-none cursor-pointer"
-              onClick={() => setMobileOpen(!mobileOpen)}
-              aria-label="Menu"
-            >
+            <button className="flex md:hidden flex-col gap-[5px] p-2 bg-transparent border-none cursor-pointer" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Menu">
               {mobileOpen ? <X className="w-6 h-6 text-primary" /> : <Menu className="w-6 h-6 text-primary" />}
             </button>
           </div>
@@ -136,19 +131,25 @@ const Navbar = () => {
               key={item.path}
               to={item.path}
               className={`text-foreground no-underline text-lg font-semibold px-5 py-4 rounded-lg border border-border transition-all duration-300 ${
-                location.pathname === item.path ? 'text-primary bg-gold-dim border-primary' : 'hover:text-primary hover:bg-gold-dim'
+                location.pathname === item.path ? "text-primary bg-gold-dim border-primary" : "hover:text-primary hover:bg-gold-dim"
               }`}
             >
               {t(item.label)}
             </Link>
           ))}
           {!user ? (
-            <button onClick={() => { setAuthOpen(true); setMobileOpen(false); }} className="text-center mt-4 px-7 py-3.5 rounded-lg bg-primary text-primary-foreground font-bold text-[0.95rem] shadow-[0_4px_20px_rgba(197,160,89,0.35)]">
-              {t('nav.login')}
+            <button
+              onClick={() => {
+                setAuthOpen(true);
+                setMobileOpen(false);
+              }}
+              className="text-center mt-4 px-7 py-3.5 rounded-lg bg-primary text-primary-foreground font-bold text-[0.95rem] shadow-[0_4px_20px_rgba(197,160,89,0.35)]"
+            >
+              {t("nav.login")}
             </button>
           ) : (
             <button onClick={signOut} className="text-center mt-4 px-7 py-3.5 rounded-lg border border-border text-foreground font-bold text-[0.95rem]">
-              {t('nav.logout')}
+              {t("nav.logout")}
             </button>
           )}
         </div>

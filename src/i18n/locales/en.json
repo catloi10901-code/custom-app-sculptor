@@ -10,6 +10,7 @@
   "nav.logout": "Logout",
   "nav.profile": "Profile",
   "nav.admin": "Admin Panel",
+  "nav.news": "News",
 
   "hero.badge": "LIVE • 47 NATIONS PRAYING",
   "hero.title1": "Connecting Millions of Hearts —",
@@ -52,7 +53,7 @@
   "impact.change4": "↑ 6 new projects",
   "impact.cta": "View Full Report →",
 
-  "section.testimonials.title": "Testimonials & Leaders",
+  "section.testimonials.title": "Testimonials",
   "section.testimonials.sub": "Voices that trust and stand with HOLYPray",
   "testimonial.1.quote": "\"HOLYPray connected our church with a global prayer community. Every prayer truly makes a difference.\"",
   "testimonial.1.name": "Pastor David Chen",

@@ -10,6 +10,7 @@
   "nav.logout": "Keluar",
   "nav.profile": "Profil",
   "nav.admin": "Panel Admin",
+  "nav.news": "Berita",
 
   "hero.badge": "LANGSUNG • 47 NEGARA BERDOA",
   "hero.title1": "Menghubungkan Jutaan Hati —",
@@ -52,7 +53,7 @@
   "impact.change4": "↑ 6 proyek baru",
   "impact.cta": "Lihat Laporan Lengkap →",
 
-  "section.testimonials.title": "Kesaksian & Pemimpin",
+  "section.testimonials.title": "Kesaksian",
   "section.testimonials.sub": "Suara yang mempercayai dan mendukung HOLYPray",
   "testimonial.1.quote": "\"HOLYPray menghubungkan gereja kami dengan komunitas doa global.\"",
   "testimonial.1.name": "Pendeta David Chen",

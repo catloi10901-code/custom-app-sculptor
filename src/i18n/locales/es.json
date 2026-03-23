@@ -10,6 +10,7 @@
   "nav.logout": "Cerrar sesión",
   "nav.profile": "Perfil",
   "nav.admin": "Panel Admin",
+  "nav.news": "Noticias",
 
   "hero.badge": "EN VIVO • 47 NACIONES ORANDO",
   "hero.title1": "Conectando Millones de Corazones —",
@@ -52,7 +53,7 @@
   "impact.change4": "↑ 6 nuevos proyectos",
   "impact.cta": "Ver Informe Completo →",
 
-  "section.testimonials.title": "Testimonios y Líderes",
+  "section.testimonials.title": "Testimonios ",
   "section.testimonials.sub": "Voces que confían y apoyan a HOLYPray",
   "testimonial.1.quote": "\"HOLYPray conectó nuestra iglesia con una comunidad global de oración. Cada oración realmente marca la diferencia.\"",
   "testimonial.1.name": "Pastor David Chen",

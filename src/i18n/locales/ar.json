@@ -10,6 +10,7 @@
   "nav.logout": "تسجيل الخروج",
   "nav.profile": "الملف الشخصي",
   "nav.admin": "لوحة الإدارة",
+  "nav.news": "الأخبار",
 
   "hero.badge": "مباشر • 47 دولة تصلي",
   "hero.title1": "ربط ملايين القلوب —",
@@ -52,7 +53,7 @@
   "impact.change4": "↑ 6 مشاريع جديدة",
   "impact.cta": "عرض التقرير الكامل →",
 
-  "section.testimonials.title": "شهادات وقادة",
+  "section.testimonials.title": "شهادات",
   "section.testimonials.sub": "أصوات تثق وتدعم HOLYPray",
   "testimonial.1.quote": "\"ربط HOLYPray كنيستنا بمجتمع صلاة عالمي.\"",
   "testimonial.1.name": "القس ديفيد تشن",

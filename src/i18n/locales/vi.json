@@ -10,6 +10,7 @@
   "nav.logout": "Đăng Xuất",
   "nav.profile": "Hồ Sơ",
   "nav.admin": "Admin Panel",
+  "nav.news": "Tin Tức",
 
   "hero.badge": "LIVE • 47 QUỐC GIA ĐANG CẦU NGUYỆN",
   "hero.title1": "Kết Nối Hàng Triệu Trái Tim —",
@@ -52,7 +53,7 @@
   "impact.change4": "↑ 6 dự án mới",
   "impact.cta": "Xem Báo Cáo Đầy Đủ →",
 
-  "section.testimonials.title": "Lời Chứng & Lãnh Đạo",
+  "section.testimonials.title": "Lời Chứng",
   "section.testimonials.sub": "Những tiếng nói tin tưởng và đồng hành với HOLYPray",
   "testimonial.1.quote": "\"HOLYPray đã kết nối hội thánh chúng tôi với cộng đồng cầu nguyện toàn cầu. Mỗi lời cầu nguyện thực sự tạo ra sự thay đổi.\"",
   "testimonial.1.name": "Mục sư David Chen",
