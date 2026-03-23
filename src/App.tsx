@@ -36,6 +36,7 @@ import AdminJobPositions from "./pages/admin/AdminJobPositions";
 import AdminApplications from "./pages/admin/AdminApplications";
 import AdminNewsletter from "./pages/admin/AdminNewsletter";
 import NotFound from "./pages/NotFound";
+import TestimonialsPage from "./pages/TestimonialsPage";
 import ResetPasswordPage from "./pages/ResetPasswordPage";
 
 const queryClient = new QueryClient();
@@ -64,6 +65,7 @@ const App = () => (
               <Route path="/terms" element={<TermsPage />} />
               <Route path="/cookie-policy" element={<CookiePolicyPage />} />
               <Route path="/gdpr" element={<GDPRPage />} />
+              <Route path="/testimonials" element={<TestimonialsPage />} />
             </Route>
             <Route path="/admin" element={<AdminLayout />}>
               <Route index element={<AdminDashboard />} />

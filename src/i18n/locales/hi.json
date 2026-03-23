@@ -11,7 +11,6 @@
   "nav.profile": "प्रोफ़ाइल",
   "nav.admin": "एडमिन पैनल",
   "nav.news": "न्यूज़",
-
   "hero.badge": "लाइव • 47 देश प्रार्थना कर रहे हैं",
   "hero.title1": "लाखों दिलों को जोड़ना —",
   "hero.title2": "दुनिया के लिए एक प्रार्थना।",
@@ -22,7 +21,6 @@
   "hero.stat.nations": "देश",
   "hero.stat.members": "सदस्य",
   "hero.stat.donated": "दान किया",
-
   "section.quickpray.title": "अभी प्रार्थना करें",
   "section.quickpray.sub": "एक विषय चुनें और 30 सेकंड में अपनी प्रार्थना भेजें",
   "card.peace.title": "विश्व शांति",
@@ -33,14 +31,12 @@
   "card.healing.desc": "पीड़ित लोगों की शारीरिक और आध्यात्मिक चंगाई के लिए प्रार्थना करें।",
   "card.pray": "प्रार्थना करें →",
   "section.prayerwall.link": "पूरी प्रार्थना दीवार देखें →",
-
   "section.map.title": "वैश्विक प्रार्थना मानचित्र",
   "section.map.sub": "रीयल-टाइम अपडेट • 47 देश एक साथ मध्यस्थता कर रहे हैं",
   "section.map.live": "लोग अभी प्रार्थना कर रहे हैं",
   "section.map.legend.prayers": "प्रार्थनाएं",
   "section.map.legend.active": "उच्च गतिविधि",
   "section.map.legend.new": "नए सदस्य",
-
   "section.impact.title": "मापने योग्य प्रभाव",
   "section.impact.sub": "पारदर्शिता एक विशेषता है, बाद का विचार नहीं",
   "impact.stat1": "प्रार्थनाएं",
@@ -52,7 +48,6 @@
   "impact.change3": "↑ +3 नए देश",
   "impact.change4": "↑ 6 नई परियोजनाएं",
   "impact.cta": "पूरी रिपोर्ट देखें →",
-
   "section.testimonials.title": "गवाहियां और नेता",
   "section.testimonials.sub": "HOLYPray पर भरोसा करने वाली आवाजें",
   "testimonial.1.quote": "\"HOLYPray ने हमारे चर्च को एक वैश्विक प्रार्थना समुदाय से जोड़ा।\"",
@@ -64,12 +59,10 @@
   "testimonial.3.quote": "\"यह पहला मंच है जो आध्यात्मिक गहराई को वास्तविक सामाजिक प्रभाव के साथ जोड़ता है।\"",
   "testimonial.3.name": "रेव. अमारा डिआलो",
   "testimonial.3.org": "धार्मिक नेता, डकार सेनेगल",
-
   "section.give.title": "आपका दान प्रभाव बनाता है",
   "section.give.sub": "हर डॉलर मानवीय परियोजनाओं में पारदर्शी रूप से आवंटित किया जाता है।",
   "section.give.cta": "♡ अभी दान करें",
   "section.give.cta2": "बजट आवंटन देखें",
-
   "live.title": "लाइव प्रार्थना सत्र",
   "live.viewAll": "सभी देखें →",
   "live.viewers": "दर्शक",
@@ -81,11 +74,9 @@
   "live.card3.time": "⏰ कल 06:00",
   "live.card3.title": "भोर प्रार्थना सत्र",
   "live.card3.host": "HOLYPray समुदाय",
-
   "ticker.prayed": "ने अभी प्रार्थना की",
   "ticker.amened": "ने आमीन कहा",
   "ticker.donated": "ने दान किया",
-
   "footer.desc": "लाखों दिलों को जोड़ना, शांतिपूर्ण दुनिया के लिए एक प्रार्थना।",
   "footer.impact": "वैश्विक प्रभाव",
   "footer.word": "परमेश्वर का वचन",
@@ -113,7 +104,6 @@
   "footer.emailExists": "यह ईमेल पहले से सदस्य है!",
   "footer.emailFail": "सदस्यता नहीं हो सकी",
   "footer.emailSuccess": "सफलतापूर्वक सदस्यता! 🎉",
-
   "auth.forgotPassword": "पासवर्ड भूल गए",
   "auth.login": "लॉगिन",
   "auth.signup": "साइन अप",
@@ -132,7 +122,6 @@
   "auth.loginSuccess": "लॉगिन सफल!",
   "auth.signupSuccess": "साइन अप सफल! कृपया अपना ईमेल जांचें।",
   "auth.resetEmailSent": "रीसेट ईमेल भेजा गया!",
-
   "reset.title": "पासवर्ड रीसेट",
   "reset.waiting": "लिंक सत्यापित हो रहा है... कृपया प्रतीक्षा करें।",
   "reset.newTitle": "नया पासवर्ड सेट करें",
@@ -143,7 +132,6 @@
   "reset.mismatch": "पासवर्ड मेल नहीं खाते!",
   "reset.tooShort": "पासवर्ड कम से कम 6 अक्षरों का होना चाहिए",
   "reset.success": "पासवर्ड सफलतापूर्वक रीसेट!",
-
   "give.title": "♡ दान",
   "give.sub": "हर डॉलर मानवीय परियोजनाओं में पारदर्शी रूप से आवंटित किया जाता है।",
   "give.chooseAmount": "राशि चुनें",
@@ -165,7 +153,6 @@
   "give.loginRequired": "दान करने के लिए लॉगिन करें",
   "give.error": "दान प्रक्रिया नहीं हो सकी",
   "give.thanks": "${{amount}} दान के लिए धन्यवाद! ♡",
-
   "profile.loginRequired": "अपनी प्रोफ़ाइल देखने के लिए लॉगिन करें",
   "profile.prayers": "प्रार्थनाएं",
   "profile.amensReceived": "प्राप्त आमीन",
@@ -185,12 +172,10 @@
   "profile.saveBtn": "💾 सहेजें",
   "profile.updateError": "प्रोफ़ाइल अपडेट नहीं हो सकी",
   "profile.updateSuccess": "प्रोफ़ाइल अपडेट! ✨",
-
   "pray.tab.wall": "प्रार्थना",
   "pray.tab.live": "लाइव",
   "pray.tab.community": "समुदाय",
   "pray.tab.calendar": "प्रार्थना कैलेंडर",
-
   "prayerWall.title": "🙏 प्रार्थना दीवार",
   "prayerWall.sub": "प्रार्थना भेजें और वैश्विक समुदाय के साथ मध्यस्थता करें",
   "prayerWall.sendBtn": "+ प्रार्थना भेजें",
@@ -221,7 +206,6 @@
   "prayerWall.minutesAgo": "{{count}} मिनट पहले",
   "prayerWall.hoursAgo": "{{count}} घंटे पहले",
   "prayerWall.daysAgo": "{{count}} दिन पहले",
-
   "filter.all": "सभी",
   "topic.peace": "🕊️ शांति",
   "topic.prosperity": "🌟 समृद्धि",
@@ -230,7 +214,6 @@
   "topic.recovery": "🔄 पुनर्प्राप्ति",
   "topic.family": "👨‍👩‍👧 परिवार",
   "topic.nation": "🏛️ राष्ट्र",
-
   "community.title": "🤝 समुदाय",
   "community.newPost": "+ नई पोस्ट बनाएं",
   "community.titlePlaceholder": "शीर्षक...",
@@ -255,7 +238,6 @@
   "community.badgePrayer": "प्रार्थना",
   "community.badgeNews": "समाचार",
   "community.badgeDiscussion": "चर्चा",
-
   "liveSessions.banner": "लाइव प्रार्थना सत्र चल रहा है",
   "liveSessions.viewers": "दर्शक",
   "liveSessions.liveTitle": "विश्व शांति के लिए प्रार्थना",
@@ -268,14 +250,12 @@
   "liveSessions.healingTitle": "चंगाई प्रार्थना",
   "liveSessions.worshipTitle": "आराधना और प्रार्थना रात",
   "liveSessions.globalTitle": "वैश्विक प्रार्थना",
-
   "calendar.prev": "← पिछला",
   "calendar.next": "अगला →",
   "calendar.month": "मार्च 2026",
   "calendar.upcoming": "📅 आगामी कार्यक्रम",
   "calendar.joined": "✓ शामिल",
   "calendar.join": "जुड़ें",
-
   "word.title": "📖 परमेश्वर का वचन",
   "word.sub": "हर दिन उनके वचन से सीखें और पोषित हों",
   "word.all": "सभी",
@@ -286,7 +266,6 @@
   "word.verse.title": "✨ आज का वचन",
   "word.verse.text": "\"अपनी सारी चिंता उस पर डाल दो, क्योंकि उसे तुम्हारी चिंता है।\"",
   "word.verse.ref": "— 1 पतरस 5:7",
-
   "impact.page.title": "🌍 मापने योग्य प्रभाव",
   "impact.page.sub": "पारदर्शिता एक विशेषता है, बाद का विचार नहीं।",
   "impact.stories.title": "📖 प्रभाव की कहानियां",
@@ -338,7 +317,6 @@
   "impact.ai.source": "स्रोत",
   "impact.ai.loading": "प्रभाव कहानियाँ लोड हो रही हैं...",
   "impact.ai.deleted": "लेख हटाया गया",
-
   "about.heroTitle": "HOLY PRAY TODAY",
   "about.heroTagline": "डिजिटल वेदी — सभी लोगों के लिए प्रार्थना",
   "about.heroQuote": "पवित्र आत्मा में एक होकर, स्वर्ग को हिलाना।",
@@ -360,12 +338,10 @@
   "about.joinText": "हर प्रार्थना, हर दान बदलाव लाता है। इस वैश्विक आंदोलन का हिस्सा बनें।",
   "about.startPraying": "✦ प्रार्थना शुरू करें",
   "about.giveNow": "♡ दान करें",
-
   "library.title": "📚 प्रार्थना पुस्तकालय",
   "library.sub": "विषय के अनुसार प्रार्थनाओं का खजाना",
   "library.all": "📚 सभी",
   "library.read": "📖 पढ़ें",
-
   "blog.loading": "लोड हो रहा है...",
   "blog.notFound": "पोस्ट नहीं मिली",
   "blog.backToWord": "← परमेश्वर के वचन पर वापस",
@@ -383,10 +359,8 @@
   "blog.loginRequired": "टिप्पणी के लिए लॉगिन करें",
   "blog.commentError": "टिप्पणी जमा नहीं हो सकी",
   "blog.commentSuccess": "टिप्पणी जमा! 💬",
-
   "common.loading": "लोड हो रहा है...",
   "common.user": "उपयोगकर्ता",
-
   "search.label": "खोजें",
   "search.placeholder": "प्रार्थनाएं, पोस्ट, चर्चाएं खोजें...",
   "search.searching": "खोज रहा है...",
@@ -394,7 +368,6 @@
   "search.hint": "खोजने के लिए कीवर्ड टाइप करें...",
   "search.select": "चुनें",
   "search.close": "बंद करें",
-
   "pray.tab.campaigns": "अभियान",
   "campaigns.active": "सक्रिय अभियान",
   "campaigns.title": "🎯 प्रार्थना अभियान",
@@ -415,10 +388,8 @@
   "campaigns.card.poverty.desc": "भूख और अभाव से पीड़ित लाखों लोगों के लिए मध्यस्थता करें।",
   "campaigns.card.revival.title": "आध्यात्मिक पुनरुत्थान",
   "campaigns.card.revival.desc": "दुनिया भर में एक महान आध्यात्मिक जागृति के लिए प्रार्थना करें।",
-
   "prayerWall.heartLetter": "हृदय पत्र",
   "prayerWall.amenLabel": "आमीन",
-
   "hl.to": "प्रति",
   "hl.toVal": "दुनिया भर के प्रिय परमेश्वर के सेवकों और मसीही परिवारों को",
   "hl.from": "प्रेषक",
@@ -452,5 +423,60 @@
   "hl.c7": "पवित्र आत्मा हर प्रार्थना में हमारा मार्गदर्शन करें।",
   "hl.sign1": "परमेश्वर के राज्य के लिए पूरे दिल से,",
   "hl.sign2": "हल्लेलूयाह! आमीन। 🙌🕊",
-  "hl.sign3": "Abraham Nguyen Quang Huy – सह-अध्यक्ष, 9S UNION\n(तूफान की आँख दुबई – यूएई से एक पुकार, 1 मार्च 2026)"
+  "hl.sign3": "Abraham Nguyen Quang Huy – सह-अध्यक्ष, 9S UNION\n(तूफान की आँख दुबई – यूएई से एक पुकार, 1 मार्च 2026)",
+  "section.partners.title": "साझेदार",
+  "section.partners.sub": "हमारे साथ चलने वाले संगठन",
+  "nav.testimonials": "Testimonials",
+  "testimonials.badge": "STORIES OF FAITH",
+  "testimonials.title": "Witness & Testimonials",
+  "testimonials.sub": "Real stories of God's power — transformed lives through prayer.",
+  "testimonials.cta": "Share Your Testimony",
+  "testimonials.loading": "Loading...",
+  "testimonials.empty": "No testimonials yet. Be the first to share!",
+  "testimonials.readMore": "Read more",
+  "testimonials.readLess": "Read less",
+  "testimonials.maxFiles": "You can upload up to 5 files",
+  "testimonials.uploadError": "Error uploading file",
+  "testimonials.submitError": "Submission failed, please try again",
+  "testimonials.submitting": "Submitting...",
+  "testimonials.submit": "✦ Submit Testimony",
+  "testimonials.contactOptional": "Contact info (optional)",
+  "testimonials.section.personal": "1. Personal Information",
+  "testimonials.section.content": "2. Testimony Content",
+  "testimonials.section.media": "3. Photos / Videos",
+  "testimonials.section.confirm": "4. Confirmation",
+  "testimonials.field.name": "Your name",
+  "testimonials.field.birthYear": "Birth year",
+  "testimonials.field.phone": "Phone",
+  "testimonials.field.address": "Address",
+  "testimonials.field.testimonyTitle": "Testimony title",
+  "testimonials.field.before": "Situation before prayer",
+  "testimonials.field.after": "What happened after prayer?",
+  "testimonials.field.current": "Current situation",
+  "testimonials.field.message": "Message to share",
+  "testimonials.placeholder.name": "Your full name",
+  "testimonials.placeholder.address": "City, Country",
+  "testimonials.placeholder.title": "e.g. I was healed after prayer",
+  "testimonials.placeholder.before": "Briefly describe the situation before prayer...",
+  "testimonials.placeholder.after": "The most important part — what changed?",
+  "testimonials.placeholder.current": "How are you doing now?",
+  "testimonials.placeholder.message": "A feeling or message to share with everyone...",
+  "testimonials.upload.hint": "Drag & drop or click to select files",
+  "testimonials.upload.types": "JPG, PNG, GIF, MP4, MOV — max 50MB per file",
+  "testimonials.confirm.text": "I confirm this is true and I consent to sharing this testimony on HOLYPray.",
+  "testimonials.error.name": "Please enter your name",
+  "testimonials.error.title": "Please enter a testimony title",
+  "testimonials.error.before": "Please describe your situation before prayer",
+  "testimonials.error.after": "Please describe what happened after prayer",
+  "testimonials.error.confirm": "Please confirm the information is true",
+  "testimonials.thanks.title": "Thank You!",
+  "testimonials.thanks.sub": "Your testimony has been submitted and will be reviewed before publishing. God bless you!",
+  "testimonials.thanks.back": "Back to Testimonials",
+  "common.cancel": "Cancel",
+  "testimonials.field.country": "Country",
+  "testimonials.field.dob": "Date of birth",
+  "testimonials.dob.day": "Day",
+  "testimonials.dob.month": "Month",
+  "testimonials.dob.year": "Year",
+  "testimonials.confirm.public": "I agree to display my personal information (name, country) publicly so others can see."
 }

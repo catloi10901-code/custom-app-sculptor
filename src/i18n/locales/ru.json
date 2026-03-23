@@ -11,7 +11,6 @@
   "nav.profile": "Профиль",
   "nav.admin": "Панель админа",
   "nav.news": "Новости",
-
   "hero.badge": "ПРЯМОЙ ЭФИР • 47 СТРАН МОЛЯТСЯ",
   "hero.title1": "Соединяя Миллионы Сердец —",
   "hero.title2": "Одна Молитва За Мир.",
@@ -22,7 +21,6 @@
   "hero.stat.nations": "СТРАНЫ",
   "hero.stat.members": "УЧАСТНИКИ",
   "hero.stat.donated": "ПОЖЕРТВОВАНО",
-
   "section.quickpray.title": "Молитесь Сейчас",
   "section.quickpray.sub": "Выберите тему и отправьте молитву за 30 секунд",
   "card.peace.title": "Мир во Всём Мире",
@@ -33,14 +31,12 @@
   "card.healing.desc": "Молитесь за физическое и духовное исцеление страдающих.",
   "card.pray": "Молиться →",
   "section.prayerwall.link": "Полная стена молитв →",
-
   "section.map.title": "Глобальная Карта Молитв",
   "section.map.sub": "Обновления в реальном времени • 47 стран молятся вместе",
   "section.map.live": "человек молятся прямо сейчас",
   "section.map.legend.prayers": "Молитвы",
   "section.map.legend.active": "Высокая активность",
   "section.map.legend.new": "Новые участники",
-
   "section.impact.title": "Измеримое Влияние",
   "section.impact.sub": "Прозрачность — это функция, а не запоздалая мысль",
   "impact.stat1": "Молитвы",
@@ -52,7 +48,6 @@
   "impact.change3": "↑ +3 новые страны",
   "impact.change4": "↑ 6 новых проектов",
   "impact.cta": "Полный Отчёт →",
-
   "section.testimonials.title": "Свидетельства",
   "section.testimonials.sub": "Голоса, которые доверяют и поддерживают HOLYPray",
   "testimonial.1.quote": "\"HOLYPray соединил нашу церковь с глобальным молитвенным сообществом.\"",
@@ -64,12 +59,10 @@
   "testimonial.3.quote": "\"Первая платформа, сочетающая духовную глубину с реальным социальным влиянием.\"",
   "testimonial.3.name": "Рев. Амара Диалло",
   "testimonial.3.org": "Религиозный лидер, Дакар Сенегал",
-
   "section.give.title": "Ваше Пожертвование Создаёт Влияние",
   "section.give.sub": "Каждый доллар прозрачно распределяется на гуманитарные проекты.",
   "section.give.cta": "♡ Пожертвовать Сейчас",
   "section.give.cta2": "Распределение Бюджета",
-
   "live.title": "Прямые Эфиры Молитв",
   "live.viewAll": "Все →",
   "live.viewers": "зрителей",
@@ -81,11 +74,9 @@
   "live.card3.time": "⏰ Завтра 06:00",
   "live.card3.title": "Утренняя Молитва",
   "live.card3.host": "Сообщество HOLYPray",
-
   "ticker.prayed": "только что помолился из",
   "ticker.amened": "сказал Аминь из",
   "ticker.donated": "пожертвовал из",
-
   "footer.desc": "Соединяя миллионы сердец, одна молитва за мирный мир.",
   "footer.impact": "Глобальное Влияние",
   "footer.word": "Слово Божье",
@@ -113,7 +104,6 @@
   "footer.emailExists": "Этот email уже подписан!",
   "footer.emailFail": "Не удалось подписаться",
   "footer.emailSuccess": "Подписка оформлена! 🎉",
-
   "auth.forgotPassword": "Забыли Пароль",
   "auth.login": "Войти",
   "auth.signup": "Регистрация",
@@ -132,7 +122,6 @@
   "auth.loginSuccess": "Вход выполнен!",
   "auth.signupSuccess": "Регистрация успешна! Проверьте email.",
   "auth.resetEmailSent": "Email для сброса отправлен!",
-
   "reset.title": "Сброс Пароля",
   "reset.waiting": "Проверка ссылки... Подождите.",
   "reset.newTitle": "Установить Новый Пароль",
@@ -143,7 +132,6 @@
   "reset.mismatch": "Пароли не совпадают!",
   "reset.tooShort": "Пароль должен быть не менее 6 символов",
   "reset.success": "Пароль успешно сброшен!",
-
   "give.title": "♡ Пожертвовать",
   "give.sub": "Каждый доллар прозрачно распределяется на гуманитарные проекты.",
   "give.chooseAmount": "Выбрать Сумму",
@@ -165,7 +153,6 @@
   "give.loginRequired": "Войдите для пожертвования",
   "give.error": "Не удалось обработать пожертвование",
   "give.thanks": "Спасибо за пожертвование ${{amount}}! ♡",
-
   "profile.loginRequired": "Войдите для просмотра профиля",
   "profile.prayers": "Молитвы",
   "profile.amensReceived": "Полученные Аминь",
@@ -185,12 +172,10 @@
   "profile.saveBtn": "💾 Сохранить",
   "profile.updateError": "Не удалось обновить профиль",
   "profile.updateSuccess": "Профиль обновлён! ✨",
-
   "pray.tab.wall": "Молитва",
   "pray.tab.live": "Прямой Эфир",
   "pray.tab.community": "Сообщество",
   "pray.tab.calendar": "Молитвенный Календарь",
-
   "prayerWall.title": "🙏 Стена Молитв",
   "prayerWall.sub": "Отправьте молитву и молитесь вместе с глобальным сообществом",
   "prayerWall.sendBtn": "+ Отправить Молитву",
@@ -221,7 +206,6 @@
   "prayerWall.minutesAgo": "{{count}} мин. назад",
   "prayerWall.hoursAgo": "{{count}} ч. назад",
   "prayerWall.daysAgo": "{{count}} дн. назад",
-
   "filter.all": "Все",
   "topic.peace": "🕊️ Мир",
   "topic.prosperity": "🌟 Процветание",
@@ -230,7 +214,6 @@
   "topic.recovery": "🔄 Восстановление",
   "topic.family": "👨‍👩‍👧 Семья",
   "topic.nation": "🏛️ Нация",
-
   "community.title": "🤝 Сообщество",
   "community.newPost": "+ Новая Публикация",
   "community.titlePlaceholder": "Заголовок...",
@@ -255,7 +238,6 @@
   "community.badgePrayer": "Молитва",
   "community.badgeNews": "Новости",
   "community.badgeDiscussion": "Обсуждение",
-
   "liveSessions.banner": "Прямой эфир молитвы",
   "liveSessions.viewers": "зрителей",
   "liveSessions.liveTitle": "Молитва за Мир",
@@ -268,14 +250,12 @@
   "liveSessions.healingTitle": "Молитва Исцеления",
   "liveSessions.worshipTitle": "Ночь Поклонения",
   "liveSessions.globalTitle": "Глобальная Молитва",
-
   "calendar.prev": "← Назад",
   "calendar.next": "Далее →",
   "calendar.month": "Март 2026",
   "calendar.upcoming": "📅 Предстоящие События",
   "calendar.joined": "✓ Участвую",
   "calendar.join": "Участвовать",
-
   "word.title": "📖 Слово Божье",
   "word.sub": "Размышляйте, учитесь и питайтесь Его Словом каждый день",
   "word.all": "Все",
@@ -286,7 +266,6 @@
   "word.verse.title": "✨ Стих Дня",
   "word.verse.text": "\"Все заботы ваши возложите на Него, ибо Он печётся о вас.\"",
   "word.verse.ref": "— 1 Петра 5:7",
-
   "impact.page.title": "🌍 Измеримое Влияние",
   "impact.page.sub": "Прозрачность — это функция, а не запоздалая мысль.",
   "impact.stories.title": "📖 Истории Влияния",
@@ -338,7 +317,6 @@
   "impact.ai.source": "Источник",
   "impact.ai.loading": "Загрузка историй воздействия...",
   "impact.ai.deleted": "Статья удалена",
-
   "about.heroTitle": "HOLY PRAY TODAY",
   "about.heroTagline": "Цифровой Алтарь — Молитва за все народы",
   "about.heroQuote": "Едины в Духе Святом, сотрясаем Небеса.",
@@ -360,12 +338,10 @@
   "about.joinText": "Каждая молитва, каждое пожертвование создаёт изменение.",
   "about.startPraying": "✦ Начать Молиться",
   "about.giveNow": "♡ Пожертвовать",
-
   "library.title": "📚 Библиотека Молитв",
   "library.sub": "Сокровищница молитв по темам",
   "library.all": "📚 Все",
   "library.read": "📖 Читать",
-
   "blog.loading": "Загрузка...",
   "blog.notFound": "Публикация не найдена",
   "blog.backToWord": "← Назад к Слову Божьему",
@@ -383,10 +359,8 @@
   "blog.loginRequired": "Войдите для комментирования",
   "blog.commentError": "Не удалось отправить комментарий",
   "blog.commentSuccess": "Комментарий отправлен! 💬",
-
   "common.loading": "Загрузка...",
   "common.user": "Пользователь",
-
   "search.label": "Поиск",
   "search.placeholder": "Поиск молитв, публикаций, обсуждений...",
   "search.searching": "Поиск...",
@@ -394,7 +368,6 @@
   "search.hint": "Введите ключевое слово для поиска...",
   "search.select": "выбрать",
   "search.close": "закрыть",
-
   "pray.tab.campaigns": "Кампании",
   "campaigns.active": "Активные кампании",
   "campaigns.title": "🎯 Молитвенные Кампании",
@@ -415,10 +388,8 @@
   "campaigns.card.poverty.desc": "Ходатайствуйте за миллионы, страдающих от голода и лишений.",
   "campaigns.card.revival.title": "Духовное Пробуждение",
   "campaigns.card.revival.desc": "Молитесь о великом духовном пробуждении по всему миру.",
-
   "prayerWall.heartLetter": "Письмо из сердца",
   "prayerWall.amenLabel": "Аминь",
-
   "hl.to": "КОМУ",
   "hl.toVal": "Возлюбленным служителям Божьим и христианским семьям по всему миру",
   "hl.from": "ОТ",
@@ -452,5 +423,60 @@
   "hl.c7": "Да ведёт нас Святой Дух в каждой молитве.",
   "hl.sign1": "Всем сердцем ради Царства Божьего,",
   "hl.sign2": "Аллилуйя! Аминь. 🙌🕊",
-  "hl.sign3": "Abraham Nguyen Quang Huy – Сопредседатель, 9S UNION\n(Призыв из эпицентра шторма, Дубай – ОАЭ, 1 марта 2026 г.)"
+  "hl.sign3": "Abraham Nguyen Quang Huy – Сопредседатель, 9S UNION\n(Призыв из эпицентра шторма, Дубай – ОАЭ, 1 марта 2026 г.)",
+  "section.partners.title": "Партнёры",
+  "section.partners.sub": "Организации, сотрудничающие с нами",
+  "nav.testimonials": "Testimonials",
+  "testimonials.badge": "STORIES OF FAITH",
+  "testimonials.title": "Witness & Testimonials",
+  "testimonials.sub": "Real stories of God's power — transformed lives through prayer.",
+  "testimonials.cta": "Share Your Testimony",
+  "testimonials.loading": "Loading...",
+  "testimonials.empty": "No testimonials yet. Be the first to share!",
+  "testimonials.readMore": "Read more",
+  "testimonials.readLess": "Read less",
+  "testimonials.maxFiles": "You can upload up to 5 files",
+  "testimonials.uploadError": "Error uploading file",
+  "testimonials.submitError": "Submission failed, please try again",
+  "testimonials.submitting": "Submitting...",
+  "testimonials.submit": "✦ Submit Testimony",
+  "testimonials.contactOptional": "Contact info (optional)",
+  "testimonials.section.personal": "1. Personal Information",
+  "testimonials.section.content": "2. Testimony Content",
+  "testimonials.section.media": "3. Photos / Videos",
+  "testimonials.section.confirm": "4. Confirmation",
+  "testimonials.field.name": "Your name",
+  "testimonials.field.birthYear": "Birth year",
+  "testimonials.field.phone": "Phone",
+  "testimonials.field.address": "Address",
+  "testimonials.field.testimonyTitle": "Testimony title",
+  "testimonials.field.before": "Situation before prayer",
+  "testimonials.field.after": "What happened after prayer?",
+  "testimonials.field.current": "Current situation",
+  "testimonials.field.message": "Message to share",
+  "testimonials.placeholder.name": "Your full name",
+  "testimonials.placeholder.address": "City, Country",
+  "testimonials.placeholder.title": "e.g. I was healed after prayer",
+  "testimonials.placeholder.before": "Briefly describe the situation before prayer...",
+  "testimonials.placeholder.after": "The most important part — what changed?",
+  "testimonials.placeholder.current": "How are you doing now?",
+  "testimonials.placeholder.message": "A feeling or message to share with everyone...",
+  "testimonials.upload.hint": "Drag & drop or click to select files",
+  "testimonials.upload.types": "JPG, PNG, GIF, MP4, MOV — max 50MB per file",
+  "testimonials.confirm.text": "I confirm this is true and I consent to sharing this testimony on HOLYPray.",
+  "testimonials.error.name": "Please enter your name",
+  "testimonials.error.title": "Please enter a testimony title",
+  "testimonials.error.before": "Please describe your situation before prayer",
+  "testimonials.error.after": "Please describe what happened after prayer",
+  "testimonials.error.confirm": "Please confirm the information is true",
+  "testimonials.thanks.title": "Thank You!",
+  "testimonials.thanks.sub": "Your testimony has been submitted and will be reviewed before publishing. God bless you!",
+  "testimonials.thanks.back": "Back to Testimonials",
+  "common.cancel": "Cancel",
+  "testimonials.field.country": "Country",
+  "testimonials.field.dob": "Date of birth",
+  "testimonials.dob.day": "Day",
+  "testimonials.dob.month": "Month",
+  "testimonials.dob.year": "Year",
+  "testimonials.confirm.public": "I agree to display my personal information (name, country) publicly so others can see."
 }

@@ -11,7 +11,6 @@
   "nav.profile": "Profil",
   "nav.admin": "Panel Admin",
   "nav.news": "Berita",
-
   "hero.badge": "LANGSUNG • 47 NEGARA BERDOA",
   "hero.title1": "Menghubungkan Jutaan Hati —",
   "hero.title2": "Satu Doa Untuk Dunia.",
@@ -22,7 +21,6 @@
   "hero.stat.nations": "NEGARA",
   "hero.stat.members": "ANGGOTA",
   "hero.stat.donated": "DIDONASIKAN",
-
   "section.quickpray.title": "Berdoa Sekarang",
   "section.quickpray.sub": "Pilih topik dan kirim doamu dalam 30 detik",
   "card.peace.title": "Perdamaian Dunia",
@@ -33,14 +31,12 @@
   "card.healing.desc": "Berdoa untuk penyembuhan fisik dan rohani bagi yang menderita.",
   "card.pray": "Berdoa →",
   "section.prayerwall.link": "Lihat dinding doa lengkap →",
-
   "section.map.title": "Peta Doa Global",
   "section.map.sub": "Pembaruan real-time • 47 negara bersyafaat bersama",
   "section.map.live": "orang sedang berdoa sekarang",
   "section.map.legend.prayers": "Doa",
   "section.map.legend.active": "Aktivitas tinggi",
   "section.map.legend.new": "Anggota baru",
-
   "section.impact.title": "Dampak Terukur",
   "section.impact.sub": "Transparansi adalah fitur, bukan renungan",
   "impact.stat1": "Doa",
@@ -52,7 +48,6 @@
   "impact.change3": "↑ +3 negara baru",
   "impact.change4": "↑ 6 proyek baru",
   "impact.cta": "Lihat Laporan Lengkap →",
-
   "section.testimonials.title": "Kesaksian",
   "section.testimonials.sub": "Suara yang mempercayai dan mendukung HOLYPray",
   "testimonial.1.quote": "\"HOLYPray menghubungkan gereja kami dengan komunitas doa global.\"",
@@ -64,12 +59,10 @@
   "testimonial.3.quote": "\"Platform pertama yang menggabungkan kedalaman rohani dengan dampak sosial nyata.\"",
   "testimonial.3.name": "Rev. Amara Diallo",
   "testimonial.3.org": "Pemimpin agama, Dakar Senegal",
-
   "section.give.title": "Donasimu Menciptakan Dampak",
   "section.give.sub": "Setiap dolar dialokasikan secara transparan untuk proyek kemanusiaan.",
   "section.give.cta": "♡ Donasi Sekarang",
   "section.give.cta2": "Lihat Alokasi Anggaran",
-
   "live.title": "Sesi Doa Langsung",
   "live.viewAll": "Lihat semua →",
   "live.viewers": "penonton",
@@ -81,11 +74,9 @@
   "live.card3.time": "⏰ 06:00 Besok",
   "live.card3.title": "Doa Subuh",
   "live.card3.host": "Komunitas HOLYPray",
-
   "ticker.prayed": "baru saja berdoa dari",
   "ticker.amened": "mengatakan Amin dari",
   "ticker.donated": "berdonasi dari",
-
   "footer.desc": "Menghubungkan jutaan hati, satu doa untuk dunia yang damai.",
   "footer.impact": "Dampak Global",
   "footer.word": "Firman Tuhan",
@@ -113,7 +104,6 @@
   "footer.emailExists": "Email ini sudah berlangganan!",
   "footer.emailFail": "Tidak dapat berlangganan",
   "footer.emailSuccess": "Berlangganan berhasil! 🎉",
-
   "auth.forgotPassword": "Lupa Kata Sandi",
   "auth.login": "Masuk",
   "auth.signup": "Daftar",
@@ -132,7 +122,6 @@
   "auth.loginSuccess": "Login berhasil!",
   "auth.signupSuccess": "Pendaftaran berhasil! Periksa email Anda.",
   "auth.resetEmailSent": "Email reset terkirim!",
-
   "reset.title": "Reset Kata Sandi",
   "reset.waiting": "Memverifikasi tautan... Tunggu sebentar.",
   "reset.newTitle": "Atur Kata Sandi Baru",
@@ -143,7 +132,6 @@
   "reset.mismatch": "Kata sandi tidak cocok!",
   "reset.tooShort": "Kata sandi minimal 6 karakter",
   "reset.success": "Kata sandi berhasil direset!",
-
   "give.title": "♡ Donasi",
   "give.sub": "Setiap dolar dialokasikan secara transparan untuk proyek kemanusiaan.",
   "give.chooseAmount": "Pilih Jumlah",
@@ -165,7 +153,6 @@
   "give.loginRequired": "Masuk untuk berdonasi",
   "give.error": "Tidak dapat memproses donasi",
   "give.thanks": "Terima kasih telah berdonasi ${{amount}}! ♡",
-
   "profile.loginRequired": "Masuk untuk melihat profil",
   "profile.prayers": "Doa",
   "profile.amensReceived": "Amin diterima",
@@ -185,12 +172,10 @@
   "profile.saveBtn": "💾 Simpan",
   "profile.updateError": "Tidak dapat memperbarui profil",
   "profile.updateSuccess": "Profil diperbarui! ✨",
-
   "pray.tab.wall": "Doa",
   "pray.tab.live": "Langsung",
   "pray.tab.community": "Komunitas",
   "pray.tab.calendar": "Kalender Doa",
-
   "prayerWall.title": "🙏 Dinding Doa",
   "prayerWall.sub": "Kirim doa dan bersyafaat bersama komunitas global",
   "prayerWall.sendBtn": "+ Kirim Doa",
@@ -221,7 +206,6 @@
   "prayerWall.minutesAgo": "{{count}} menit lalu",
   "prayerWall.hoursAgo": "{{count}} jam lalu",
   "prayerWall.daysAgo": "{{count}} hari lalu",
-
   "filter.all": "Semua",
   "topic.peace": "🕊️ Perdamaian",
   "topic.prosperity": "🌟 Kemakmuran",
@@ -230,7 +214,6 @@
   "topic.recovery": "🔄 Pemulihan",
   "topic.family": "👨‍👩‍👧 Keluarga",
   "topic.nation": "🏛️ Bangsa",
-
   "community.title": "🤝 Komunitas",
   "community.newPost": "+ Buat Postingan",
   "community.titlePlaceholder": "Judul...",
@@ -255,7 +238,6 @@
   "community.badgePrayer": "Doa",
   "community.badgeNews": "Berita",
   "community.badgeDiscussion": "Diskusi",
-
   "liveSessions.banner": "Sesi doa langsung berlangsung",
   "liveSessions.viewers": "penonton",
   "liveSessions.liveTitle": "Doa untuk Perdamaian Dunia",
@@ -268,14 +250,12 @@
   "liveSessions.healingTitle": "Doa Penyembuhan",
   "liveSessions.worshipTitle": "Malam Pujian & Doa",
   "liveSessions.globalTitle": "Doa Global",
-
   "calendar.prev": "← Sebelumnya",
   "calendar.next": "Selanjutnya →",
   "calendar.month": "Maret 2026",
   "calendar.upcoming": "📅 Acara Mendatang",
   "calendar.joined": "✓ Bergabung",
   "calendar.join": "Gabung",
-
   "word.title": "📖 Firman Tuhan",
   "word.sub": "Renungkan, pelajari, dan diperkaya oleh Firman-Nya setiap hari",
   "word.all": "Semua",
@@ -286,7 +266,6 @@
   "word.verse.title": "✨ Ayat Hari Ini",
   "word.verse.text": "\"Serahkanlah segala kekuatiranmu kepada-Nya, sebab Ia yang memelihara kamu.\"",
   "word.verse.ref": "— 1 Petrus 5:7",
-
   "impact.page.title": "🌍 Dampak Terukur",
   "impact.page.sub": "Transparansi adalah fitur, bukan renungan.",
   "impact.stories.title": "📖 Cerita Dampak",
@@ -338,7 +317,6 @@
   "impact.ai.source": "Sumber",
   "impact.ai.loading": "Memuat cerita dampak...",
   "impact.ai.deleted": "Artikel dihapus",
-
   "about.heroTitle": "HOLY PRAY TODAY",
   "about.heroTagline": "Altar Digital — Doa untuk Semua Bangsa",
   "about.heroQuote": "Bersatu dalam Roh Kudus, menggerakkan Surga.",
@@ -360,12 +338,10 @@
   "about.joinText": "Setiap doa, setiap donasi menciptakan perubahan.",
   "about.startPraying": "✦ Mulai Berdoa",
   "about.giveNow": "♡ Donasi",
-
   "library.title": "📚 Perpustakaan Doa",
   "library.sub": "Harta karun doa berdasarkan topik, siap digunakan dan dibagikan",
   "library.all": "📚 Semua",
   "library.read": "📖 Baca",
-
   "blog.loading": "Memuat...",
   "blog.notFound": "Postingan tidak ditemukan",
   "blog.backToWord": "← Kembali ke Firman Tuhan",
@@ -383,10 +359,8 @@
   "blog.loginRequired": "Masuk untuk berkomentar",
   "blog.commentError": "Tidak dapat mengirim komentar",
   "blog.commentSuccess": "Komentar terkirim! 💬",
-
   "common.loading": "Memuat...",
   "common.user": "Pengguna",
-
   "search.label": "Cari",
   "search.placeholder": "Cari doa, postingan, diskusi...",
   "search.searching": "Mencari...",
@@ -394,7 +368,6 @@
   "search.hint": "Ketik kata kunci untuk mencari...",
   "search.select": "pilih",
   "search.close": "tutup",
-
   "pray.tab.campaigns": "Kampanye",
   "campaigns.active": "Kampanye aktif",
   "campaigns.title": "🎯 Kampanye Doa",
@@ -415,10 +388,8 @@
   "campaigns.card.poverty.desc": "Bersyafaat bagi jutaan yang menderita kelaparan dan kekurangan.",
   "campaigns.card.revival.title": "Kebangunan Rohani",
   "campaigns.card.revival.desc": "Berdoa untuk kebangunan rohani besar di seluruh dunia.",
-
   "prayerWall.heartLetter": "Surat Hati",
   "prayerWall.amenLabel": "Amin",
-
   "hl.to": "KEPADA",
   "hl.toVal": "Para Hamba Tuhan dan Keluarga Kristen yang Terkasih di Seluruh Dunia",
   "hl.from": "DARI",
@@ -452,5 +423,60 @@
   "hl.c7": "Semoga Roh Kudus membimbing kita dalam setiap doa.",
   "hl.sign1": "Sepenuh hati untuk Kerajaan Allah,",
   "hl.sign2": "Haleluya! Amin. 🙌🕊",
-  "hl.sign3": "Abraham Nguyen Quang Huy – Ketua Bersama, 9S UNION\n(Seruan dari mata badai, Dubai – UEA, 1 Maret 2026)"
+  "hl.sign3": "Abraham Nguyen Quang Huy – Ketua Bersama, 9S UNION\n(Seruan dari mata badai, Dubai – UEA, 1 Maret 2026)",
+  "section.partners.title": "Mitra",
+  "section.partners.sub": "Organisasi yang bermitra dengan kami",
+  "nav.testimonials": "Testimonials",
+  "testimonials.badge": "STORIES OF FAITH",
+  "testimonials.title": "Witness & Testimonials",
+  "testimonials.sub": "Real stories of God's power — transformed lives through prayer.",
+  "testimonials.cta": "Share Your Testimony",
+  "testimonials.loading": "Loading...",
+  "testimonials.empty": "No testimonials yet. Be the first to share!",
+  "testimonials.readMore": "Read more",
+  "testimonials.readLess": "Read less",
+  "testimonials.maxFiles": "You can upload up to 5 files",
+  "testimonials.uploadError": "Error uploading file",
+  "testimonials.submitError": "Submission failed, please try again",
+  "testimonials.submitting": "Submitting...",
+  "testimonials.submit": "✦ Submit Testimony",
+  "testimonials.contactOptional": "Contact info (optional)",
+  "testimonials.section.personal": "1. Personal Information",
+  "testimonials.section.content": "2. Testimony Content",
+  "testimonials.section.media": "3. Photos / Videos",
+  "testimonials.section.confirm": "4. Confirmation",
+  "testimonials.field.name": "Your name",
+  "testimonials.field.birthYear": "Birth year",
+  "testimonials.field.phone": "Phone",
+  "testimonials.field.address": "Address",
+  "testimonials.field.testimonyTitle": "Testimony title",
+  "testimonials.field.before": "Situation before prayer",
+  "testimonials.field.after": "What happened after prayer?",
+  "testimonials.field.current": "Current situation",
+  "testimonials.field.message": "Message to share",
+  "testimonials.placeholder.name": "Your full name",
+  "testimonials.placeholder.address": "City, Country",
+  "testimonials.placeholder.title": "e.g. I was healed after prayer",
+  "testimonials.placeholder.before": "Briefly describe the situation before prayer...",
+  "testimonials.placeholder.after": "The most important part — what changed?",
+  "testimonials.placeholder.current": "How are you doing now?",
+  "testimonials.placeholder.message": "A feeling or message to share with everyone...",
+  "testimonials.upload.hint": "Drag & drop or click to select files",
+  "testimonials.upload.types": "JPG, PNG, GIF, MP4, MOV — max 50MB per file",
+  "testimonials.confirm.text": "I confirm this is true and I consent to sharing this testimony on HOLYPray.",
+  "testimonials.error.name": "Please enter your name",
+  "testimonials.error.title": "Please enter a testimony title",
+  "testimonials.error.before": "Please describe your situation before prayer",
+  "testimonials.error.after": "Please describe what happened after prayer",
+  "testimonials.error.confirm": "Please confirm the information is true",
+  "testimonials.thanks.title": "Thank You!",
+  "testimonials.thanks.sub": "Your testimony has been submitted and will be reviewed before publishing. God bless you!",
+  "testimonials.thanks.back": "Back to Testimonials",
+  "common.cancel": "Cancel",
+  "testimonials.field.country": "Country",
+  "testimonials.field.dob": "Date of birth",
+  "testimonials.dob.day": "Day",
+  "testimonials.dob.month": "Month",
+  "testimonials.dob.year": "Year",
+  "testimonials.confirm.public": "I agree to display my personal information (name, country) publicly so others can see."
 }

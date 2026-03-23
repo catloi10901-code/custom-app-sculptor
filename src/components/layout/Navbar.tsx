@@ -10,6 +10,7 @@ import LanguageSwitcher from "./LanguageSwitcher";
 const navItems = [
   { path: "/about", label: "nav.about" },
   { path: "/pray", label: "nav.pray" },
+  { path: "/testimonials", label: "nav.testimonials" },
   { path: "/impact", label: "nav.impact" },
   { path: "/word", label: "nav.word" },
   { path: "/library", label: "nav.library" },

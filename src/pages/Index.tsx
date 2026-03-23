@@ -5,6 +5,7 @@ import LiveWidgetSection from '@/components/home/LiveWidgetSection';
 import WorldMapSection from '@/components/home/WorldMapSection';
 import ImpactStatsSection from '@/components/home/ImpactStatsSection';
 import TestimonialsSection from '@/components/home/TestimonialsSection';
+import PartnerLogosSection from '@/components/home/PartnerLogosSection';
 
 
 const Index = () => {
@@ -22,7 +23,9 @@ const Index = () => {
       <ImpactStatsSection />
       <div className="h-px bg-border" />
       <TestimonialsSection />
-      
+      <div className="h-px bg-border" />
+      <PartnerLogosSection />
+
     </div>
   );
 };

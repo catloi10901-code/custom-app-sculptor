@@ -11,7 +11,6 @@
   "nav.profile": "个人资料",
   "nav.admin": "管理面板",
   "nav.news": "新闻",
-
   "hero.badge": "直播 • 47个国家正在祈祷",
   "hero.title1": "连接数百万颗心 —",
   "hero.title2": "为世界献上一份祈祷。",
@@ -22,7 +21,6 @@
   "hero.stat.nations": "国家",
   "hero.stat.members": "成员",
   "hero.stat.donated": "已捐赠",
-
   "section.quickpray.title": "立即祈祷",
   "section.quickpray.sub": "选择一个主题，30秒内发送你的祈祷",
   "card.peace.title": "世界和平",
@@ -33,14 +31,12 @@
   "card.healing.desc": "为受苦之人的身体和灵性医治祈祷。",
   "card.pray": "祈祷 →",
   "section.prayerwall.link": "查看完整祈祷墙 →",
-
   "section.map.title": "全球祈祷地图",
   "section.map.sub": "实时更新 • 47个国家共同代求",
   "section.map.live": "人正在祈祷",
   "section.map.legend.prayers": "祈祷",
   "section.map.legend.active": "高活跃度",
   "section.map.legend.new": "新成员",
-
   "section.impact.title": "可衡量的影响",
   "section.impact.sub": "透明是一种特性，而非事后补救",
   "impact.stat1": "祈祷",
@@ -52,7 +48,6 @@
   "impact.change3": "↑ +3个新国家",
   "impact.change4": "↑ 6个新项目",
   "impact.cta": "查看完整报告 →",
-
   "section.testimonials.title": "见证与领袖",
   "section.testimonials.sub": "信任并支持HOLYPray的声音",
   "testimonial.1.quote": "\"HOLYPray将我们的教会与全球祈祷社区连接起来。每一个祈祷都真正产生影响。\"",
@@ -64,12 +59,10 @@
   "testimonial.3.quote": "\"这是我见过的第一个将灵性深度与真正社会影响结合的平台。\"",
   "testimonial.3.name": "阿马拉·迪亚洛牧师",
   "testimonial.3.org": "宗教领袖，塞内加尔达喀尔",
-
   "section.give.title": "你的奉献创造影响",
   "section.give.sub": "每一美元都透明地分配到人道主义项目。一次性或定期奉献。",
   "section.give.cta": "♡ 立即奉献",
   "section.give.cta2": "查看预算分配",
-
   "live.title": "直播祈祷会",
   "live.viewAll": "查看全部 →",
   "live.viewers": "观众",
@@ -81,11 +74,9 @@
   "live.card3.time": "⏰ 明天06:00",
   "live.card3.title": "晨祷会",
   "live.card3.host": "HOLYPray社区",
-
   "ticker.prayed": "刚刚从以下地点祈祷",
   "ticker.amened": "从以下地点说了阿们",
   "ticker.donated": "从以下地点捐赠",
-
   "footer.desc": "连接数百万颗心，为和平世界献上一份祈祷。",
   "footer.impact": "全球影响",
   "footer.word": "神的话语",
@@ -113,7 +104,6 @@
   "footer.emailExists": "此邮箱已订阅！",
   "footer.emailFail": "无法订阅",
   "footer.emailSuccess": "订阅成功！🎉",
-
   "auth.forgotPassword": "忘记密码",
   "auth.login": "登录",
   "auth.signup": "注册",
@@ -132,7 +122,6 @@
   "auth.loginSuccess": "登录成功！",
   "auth.signupSuccess": "注册成功！请查收邮件确认。",
   "auth.resetEmailSent": "重置邮件已发送！",
-
   "reset.title": "重置密码",
   "reset.waiting": "正在验证链接...请稍候。",
   "reset.newTitle": "设置新密码",
@@ -143,7 +132,6 @@
   "reset.mismatch": "密码不匹配！",
   "reset.tooShort": "密码至少需要6个字符",
   "reset.success": "密码重置成功！",
-
   "give.title": "♡ 奉献",
   "give.sub": "每一美元都透明地分配到人道主义项目。",
   "give.chooseAmount": "选择金额",
@@ -165,7 +153,6 @@
   "give.loginRequired": "请登录后奉献",
   "give.error": "无法处理捐赠",
   "give.thanks": "感谢你捐赠${{amount}}！♡",
-
   "profile.loginRequired": "请登录查看个人资料",
   "profile.prayers": "祈祷",
   "profile.amensReceived": "收到的阿们",
@@ -185,12 +172,10 @@
   "profile.saveBtn": "💾 保存",
   "profile.updateError": "无法更新个人资料",
   "profile.updateSuccess": "个人资料已更新！✨",
-
   "pray.tab.wall": "祈祷",
   "pray.tab.live": "直播",
   "pray.tab.community": "社区",
   "pray.tab.calendar": "祈祷日历",
-
   "prayerWall.title": "🙏 祈祷墙",
   "prayerWall.sub": "发送祈祷，与全球社区共同代求",
   "prayerWall.sendBtn": "+ 发送祈祷",
@@ -221,7 +206,6 @@
   "prayerWall.minutesAgo": "{{count}}分钟前",
   "prayerWall.hoursAgo": "{{count}}小时前",
   "prayerWall.daysAgo": "{{count}}天前",
-
   "filter.all": "全部",
   "topic.peace": "🕊️ 和平",
   "topic.prosperity": "🌟 繁荣",
@@ -230,7 +214,6 @@
   "topic.recovery": "🔄 恢复",
   "topic.family": "👨‍👩‍👧 家庭",
   "topic.nation": "🏛️ 国家",
-
   "community.title": "🤝 社区",
   "community.newPost": "+ 创建新帖子",
   "community.titlePlaceholder": "帖子标题...",
@@ -255,7 +238,6 @@
   "community.badgePrayer": "祈祷",
   "community.badgeNews": "新闻",
   "community.badgeDiscussion": "讨论",
-
   "liveSessions.banner": "直播祈祷会进行中",
   "liveSessions.viewers": "观众",
   "liveSessions.liveTitle": "为世界和平祈祷",
@@ -268,14 +250,12 @@
   "liveSessions.healingTitle": "医治祈祷",
   "liveSessions.worshipTitle": "敬拜祈祷之夜",
   "liveSessions.globalTitle": "全球祈祷",
-
   "calendar.prev": "← 上一月",
   "calendar.next": "下一月 →",
   "calendar.month": "2026年3月",
   "calendar.upcoming": "📅 即将到来的活动",
   "calendar.joined": "✓ 已加入",
   "calendar.join": "加入",
-
   "word.title": "📖 神的话语",
   "word.sub": "每天反思、学习并从祂的话语中获得滋养",
   "word.all": "全部",
@@ -286,7 +266,6 @@
   "word.verse.title": "✨ 今日经文",
   "word.verse.text": "\"你们要将一切的忧虑卸给神，因为祂顾念你们。\"",
   "word.verse.ref": "— 彼得前书 5:7",
-
   "impact.page.title": "🌍 可衡量的影响",
   "impact.page.sub": "透明是一种特性，而非事后补救。每一美元都被追踪和清楚报告。",
   "impact.stories.title": "📖 影响故事",
@@ -338,7 +317,6 @@
   "impact.ai.source": "来源",
   "impact.ai.loading": "正在加载影响力故事...",
   "impact.ai.deleted": "文章已删除",
-
   "about.heroTitle": "HOLY PRAY TODAY",
   "about.heroTagline": "数字祭坛 — 为万民祈祷",
   "about.heroQuote": "在圣灵里合一，震动天堂。",
@@ -360,12 +338,10 @@
   "about.joinText": "每一个祈祷、每一份捐赠都在创造改变。成为这个全球运动的一部分。",
   "about.startPraying": "✦ 开始祈祷",
   "about.giveNow": "♡ 奉献",
-
   "library.title": "📚 祈祷图书馆",
   "library.sub": "按主题分类的祈祷宝库，随时使用和分享",
   "library.all": "📚 全部",
   "library.read": "📖 阅读",
-
   "blog.loading": "加载中...",
   "blog.notFound": "帖子未找到",
   "blog.backToWord": "← 返回神的话语",
@@ -383,10 +359,8 @@
   "blog.loginRequired": "请登录后评论",
   "blog.commentError": "无法提交评论",
   "blog.commentSuccess": "评论已提交！💬",
-
   "common.loading": "加载中...",
   "common.user": "用户",
-
   "search.label": "搜索",
   "search.placeholder": "搜索祈祷、帖子、讨论...",
   "search.searching": "搜索中...",
@@ -394,7 +368,6 @@
   "search.hint": "输入关键词搜索...",
   "search.select": "选择",
   "search.close": "关闭",
-
   "pray.tab.campaigns": "活动",
   "campaigns.active": "进行中的活动",
   "campaigns.title": "🎯 祷告活动",
@@ -415,10 +388,8 @@
   "campaigns.card.poverty.desc": "为数百万忍受饥饿和匮乏的人代祷。",
   "campaigns.card.revival.title": "灵性复兴",
   "campaigns.card.revival.desc": "为全球伟大的灵性觉醒祷告。",
-
   "prayerWall.heartLetter": "心灵书信",
   "prayerWall.amenLabel": "阿们",
-
   "hl.to": "致",
   "hl.toVal": "全世界亲爱的神的仆人和基督徒家庭",
   "hl.from": "来自",
@@ -452,5 +423,60 @@
   "hl.c7": "愿圣灵在每一次祷告中引导我们。",
   "hl.sign1": "全心全意为神的国度，",
   "hl.sign2": "哈利路亚！阿们。🙌🕊",
-  "hl.sign3": "Abraham Nguyen Quang Huy – 联合主席，9S UNION\n（来自风暴之眼迪拜——阿联酋的呼唤，2026年3月1日）"
+  "hl.sign3": "Abraham Nguyen Quang Huy – 联合主席，9S UNION\n（来自风暴之眼迪拜——阿联酋的呼唤，2026年3月1日）",
+  "section.partners.title": "合作伙伴",
+  "section.partners.sub": "与我们同行的机构",
+  "nav.testimonials": "Testimonials",
+  "testimonials.badge": "STORIES OF FAITH",
+  "testimonials.title": "Witness & Testimonials",
+  "testimonials.sub": "Real stories of God's power — transformed lives through prayer.",
+  "testimonials.cta": "Share Your Testimony",
+  "testimonials.loading": "Loading...",
+  "testimonials.empty": "No testimonials yet. Be the first to share!",
+  "testimonials.readMore": "Read more",
+  "testimonials.readLess": "Read less",
+  "testimonials.maxFiles": "You can upload up to 5 files",
+  "testimonials.uploadError": "Error uploading file",
+  "testimonials.submitError": "Submission failed, please try again",
+  "testimonials.submitting": "Submitting...",
+  "testimonials.submit": "✦ Submit Testimony",
+  "testimonials.contactOptional": "Contact info (optional)",
+  "testimonials.section.personal": "1. Personal Information",
+  "testimonials.section.content": "2. Testimony Content",
+  "testimonials.section.media": "3. Photos / Videos",
+  "testimonials.section.confirm": "4. Confirmation",
+  "testimonials.field.name": "Your name",
+  "testimonials.field.birthYear": "Birth year",
+  "testimonials.field.phone": "Phone",
+  "testimonials.field.address": "Address",
+  "testimonials.field.testimonyTitle": "Testimony title",
+  "testimonials.field.before": "Situation before prayer",
+  "testimonials.field.after": "What happened after prayer?",
+  "testimonials.field.current": "Current situation",
+  "testimonials.field.message": "Message to share",
+  "testimonials.placeholder.name": "Your full name",
+  "testimonials.placeholder.address": "City, Country",
+  "testimonials.placeholder.title": "e.g. I was healed after prayer",
+  "testimonials.placeholder.before": "Briefly describe the situation before prayer...",
+  "testimonials.placeholder.after": "The most important part — what changed?",
+  "testimonials.placeholder.current": "How are you doing now?",
+  "testimonials.placeholder.message": "A feeling or message to share with everyone...",
+  "testimonials.upload.hint": "Drag & drop or click to select files",
+  "testimonials.upload.types": "JPG, PNG, GIF, MP4, MOV — max 50MB per file",
+  "testimonials.confirm.text": "I confirm this is true and I consent to sharing this testimony on HOLYPray.",
+  "testimonials.error.name": "Please enter your name",
+  "testimonials.error.title": "Please enter a testimony title",
+  "testimonials.error.before": "Please describe your situation before prayer",
+  "testimonials.error.after": "Please describe what happened after prayer",
+  "testimonials.error.confirm": "Please confirm the information is true",
+  "testimonials.thanks.title": "Thank You!",
+  "testimonials.thanks.sub": "Your testimony has been submitted and will be reviewed before publishing. God bless you!",
+  "testimonials.thanks.back": "Back to Testimonials",
+  "common.cancel": "Cancel",
+  "testimonials.field.country": "Country",
+  "testimonials.field.dob": "Date of birth",
+  "testimonials.dob.day": "Day",
+  "testimonials.dob.month": "Month",
+  "testimonials.dob.year": "Year",
+  "testimonials.confirm.public": "I agree to display my personal information (name, country) publicly so others can see."
 }

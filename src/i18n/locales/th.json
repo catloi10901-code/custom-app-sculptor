@@ -11,7 +11,6 @@
   "nav.profile": "โปรไฟล์",
   "nav.admin": "แผงผู้ดูแล",
   "nav.news": "ข่าวสาร",
-
   "hero.badge": "สด • 47 ประเทศกำลังอธิษฐาน",
   "hero.title1": "เชื่อมต่อหัวใจนับล้าน —",
   "hero.title2": "คำอธิษฐานเพื่อโลก",
@@ -22,7 +21,6 @@
   "hero.stat.nations": "ประเทศ",
   "hero.stat.members": "สมาชิก",
   "hero.stat.donated": "บริจาคแล้ว",
-
   "section.quickpray.title": "อธิษฐานตอนนี้",
   "section.quickpray.sub": "เลือกหัวข้อและส่งคำอธิษฐานใน 30 วินาที",
   "card.peace.title": "สันติภาพโลก",
@@ -33,14 +31,12 @@
   "card.healing.desc": "อธิษฐานเพื่อการรักษาร่างกายและจิตวิญญาณ",
   "card.pray": "อธิษฐาน →",
   "section.prayerwall.link": "ดูกำแพงอธิษฐานทั้งหมด →",
-
   "section.map.title": "แผนที่อธิษฐานโลก",
   "section.map.sub": "อัปเดตแบบเรียลไทม์ • 47 ประเทศอธิษฐานร่วมกัน",
   "section.map.live": "คนกำลังอธิษฐานตอนนี้",
   "section.map.legend.prayers": "คำอธิษฐาน",
   "section.map.legend.active": "กิจกรรมสูง",
   "section.map.legend.new": "สมาชิกใหม่",
-
   "section.impact.title": "ผลกระทบที่วัดได้",
   "section.impact.sub": "ความโปร่งใสเป็นคุณสมบัติ ไม่ใช่ความคิดภายหลัง",
   "impact.stat1": "คำอธิษฐาน",
@@ -52,7 +48,6 @@
   "impact.change3": "↑ +3 ประเทศใหม่",
   "impact.change4": "↑ 6 โครงการใหม่",
   "impact.cta": "ดูรายงานฉบับเต็ม →",
-
   "section.testimonials.title": "คำรับรองและผู้นำ",
   "section.testimonials.sub": "เสียงที่เชื่อมั่นและสนับสนุน HOLYPray",
   "testimonial.1.quote": "\"HOLYPray เชื่อมคริสตจักรของเรากับชุมชนอธิษฐานทั่วโลก\"",
@@ -64,12 +59,10 @@
   "testimonial.3.quote": "\"แพลตฟอร์มแรกที่ผสมผสานความลึกทางจิตวิญญาณกับผลกระทบทางสังคมจริง\"",
   "testimonial.3.name": "Rev. อมารา ดีอัลโล",
   "testimonial.3.org": "ผู้นำศาสนา ดาการ์ เซเนกัล",
-
   "section.give.title": "การบริจาคของคุณสร้างผลกระทบ",
   "section.give.sub": "ทุกดอลลาร์จัดสรรอย่างโปร่งใสให้โครงการมนุษยธรรม",
   "section.give.cta": "♡ บริจาคตอนนี้",
   "section.give.cta2": "ดูการจัดสรรงบประมาณ",
-
   "live.title": "เซสชันอธิษฐานสด",
   "live.viewAll": "ดูทั้งหมด →",
   "live.viewers": "ผู้ชม",
@@ -81,11 +74,9 @@
   "live.card3.time": "⏰ พรุ่งนี้ 06:00",
   "live.card3.title": "เซสชันอธิษฐานเช้าตรู่",
   "live.card3.host": "ชุมชน HOLYPray",
-
   "ticker.prayed": "เพิ่งอธิษฐานจาก",
   "ticker.amened": "กล่าวอาเมนจาก",
   "ticker.donated": "บริจาคจาก",
-
   "footer.desc": "เชื่อมต่อหัวใจนับล้าน คำอธิษฐานเพื่อโลกที่สงบสุข",
   "footer.impact": "ผลกระทบโลก",
   "footer.word": "พระวจนะ",
@@ -113,7 +104,6 @@
   "footer.emailExists": "อีเมลนี้สมัครแล้ว!",
   "footer.emailFail": "ไม่สามารถสมัครได้",
   "footer.emailSuccess": "สมัครสมาชิกสำเร็จ! 🎉",
-
   "auth.forgotPassword": "ลืมรหัสผ่าน",
   "auth.login": "เข้าสู่ระบบ",
   "auth.signup": "สมัครสมาชิก",
@@ -132,7 +122,6 @@
   "auth.loginSuccess": "เข้าสู่ระบบสำเร็จ!",
   "auth.signupSuccess": "สมัครสำเร็จ! กรุณาตรวจสอบอีเมล",
   "auth.resetEmailSent": "ส่งอีเมลรีเซ็ตแล้ว!",
-
   "reset.title": "รีเซ็ตรหัสผ่าน",
   "reset.waiting": "กำลังยืนยันลิงก์... กรุณารอ",
   "reset.newTitle": "ตั้งรหัสผ่านใหม่",
@@ -143,7 +132,6 @@
   "reset.mismatch": "รหัสผ่านไม่ตรงกัน!",
   "reset.tooShort": "รหัสผ่านต้องมีอย่างน้อย 6 ตัวอักษร",
   "reset.success": "รีเซ็ตรหัสผ่านสำเร็จ!",
-
   "give.title": "♡ บริจาค",
   "give.sub": "ทุกดอลลาร์จัดสรรอย่างโปร่งใสให้โครงการมนุษยธรรม",
   "give.chooseAmount": "เลือกจำนวน",
@@ -165,7 +153,6 @@
   "give.loginRequired": "กรุณาเข้าสู่ระบบเพื่อบริจาค",
   "give.error": "ไม่สามารถดำเนินการบริจาคได้",
   "give.thanks": "ขอบคุณที่บริจาค ${{amount}}! ♡",
-
   "profile.loginRequired": "กรุณาเข้าสู่ระบบเพื่อดูโปรไฟล์",
   "profile.prayers": "คำอธิษฐาน",
   "profile.amensReceived": "อาเมนที่ได้รับ",
@@ -185,12 +172,10 @@
   "profile.saveBtn": "💾 บันทึก",
   "profile.updateError": "ไม่สามารถอัปเดตโปรไฟล์",
   "profile.updateSuccess": "อัปเดตโปรไฟล์แล้ว! ✨",
-
   "pray.tab.wall": "อธิษฐาน",
   "pray.tab.live": "สด",
   "pray.tab.community": "ชุมชน",
   "pray.tab.calendar": "ปฏิทินอธิษฐาน",
-
   "prayerWall.title": "🙏 กำแพงอธิษฐาน",
   "prayerWall.sub": "ส่งคำอธิษฐานและอธิษฐานร่วมกับชุมชนทั่วโลก",
   "prayerWall.sendBtn": "+ ส่งคำอธิษฐาน",
@@ -221,7 +206,6 @@
   "prayerWall.minutesAgo": "{{count}} นาทีที่แล้ว",
   "prayerWall.hoursAgo": "{{count}} ชั่วโมงที่แล้ว",
   "prayerWall.daysAgo": "{{count}} วันที่แล้ว",
-
   "filter.all": "ทั้งหมด",
   "topic.peace": "🕊️ สันติภาพ",
   "topic.prosperity": "🌟 ความเจริญ",
@@ -230,7 +214,6 @@
   "topic.recovery": "🔄 การฟื้นฟู",
   "topic.family": "👨‍👩‍👧 ครอบครัว",
   "topic.nation": "🏛️ ประเทศ",
-
   "community.title": "🤝 ชุมชน",
   "community.newPost": "+ สร้างโพสต์ใหม่",
   "community.titlePlaceholder": "หัวข้อ...",
@@ -255,7 +238,6 @@
   "community.badgePrayer": "อธิษฐาน",
   "community.badgeNews": "ข่าวสาร",
   "community.badgeDiscussion": "สนทนา",
-
   "liveSessions.banner": "เซสชันอธิษฐานสดกำลังดำเนินการ",
   "liveSessions.viewers": "ผู้ชม",
   "liveSessions.liveTitle": "อธิษฐานเพื่อสันติภาพโลก",
@@ -268,14 +250,12 @@
   "liveSessions.healingTitle": "อธิษฐานเพื่อการรักษา",
   "liveSessions.worshipTitle": "คืนนมัสการและอธิษฐาน",
   "liveSessions.globalTitle": "อธิษฐานทั่วโลก",
-
   "calendar.prev": "← ก่อนหน้า",
   "calendar.next": "ถัดไป →",
   "calendar.month": "มีนาคม 2026",
   "calendar.upcoming": "📅 กิจกรรมที่จะมาถึง",
   "calendar.joined": "✓ เข้าร่วมแล้ว",
   "calendar.join": "เข้าร่วม",
-
   "word.title": "📖 พระวจนะ",
   "word.sub": "ไตร่ตรอง เรียนรู้ และรับการหล่อเลี้ยงจากพระวจนะทุกวัน",
   "word.all": "ทั้งหมด",
@@ -286,7 +266,6 @@
   "word.verse.title": "✨ ข้อพระคัมภีร์วันนี้",
   "word.verse.text": "\"จงทอดความกังวลทั้งสิ้นของท่านไว้กับพระองค์ เพราะพระองค์ทรงห่วงใยท่าน\"",
   "word.verse.ref": "— 1 เปโตร 5:7",
-
   "impact.page.title": "🌍 ผลกระทบที่วัดได้",
   "impact.page.sub": "ความโปร่งใสเป็นคุณสมบัติ ไม่ใช่ความคิดภายหลัง",
   "impact.stories.title": "📖 เรื่องราวผลกระทบ",
@@ -338,7 +317,6 @@
   "impact.ai.source": "แหล่งที่มา",
   "impact.ai.loading": "กำลังโหลดเรื่องราวผลกระทบ...",
   "impact.ai.deleted": "ลบบทความแล้ว",
-
   "about.heroTitle": "HOLY PRAY TODAY",
   "about.heroTagline": "แท่นบูชาดิจิทัล — อธิษฐานเพื่อทุกชนชาติ",
   "about.heroQuote": "เป็นหนึ่งเดียวในพระวิญญาณบริสุทธิ์ สั่นสะเทือนสวรรค์",
@@ -360,12 +338,10 @@
   "about.joinText": "ทุกคำอธิษฐาน ทุกการบริจาค สร้างการเปลี่ยนแปลง",
   "about.startPraying": "✦ เริ่มอธิษฐาน",
   "about.giveNow": "♡ บริจาค",
-
   "library.title": "📚 ห้องสมุดอธิษฐาน",
   "library.sub": "ขุมทรัพย์คำอธิษฐานตามหัวข้อ พร้อมใช้และแบ่งปัน",
   "library.all": "📚 ทั้งหมด",
   "library.read": "📖 อ่าน",
-
   "blog.loading": "กำลังโหลด...",
   "blog.notFound": "ไม่พบโพสต์",
   "blog.backToWord": "← กลับไปพระวจนะ",
@@ -383,10 +359,8 @@
   "blog.loginRequired": "เข้าสู่ระบบเพื่อแสดงความคิดเห็น",
   "blog.commentError": "ไม่สามารถส่งความคิดเห็น",
   "blog.commentSuccess": "ส่งความคิดเห็นแล้ว! 💬",
-
   "common.loading": "กำลังโหลด...",
   "common.user": "ผู้ใช้",
-
   "search.label": "ค้นหา",
   "search.placeholder": "ค้นหาคำอธิษฐาน โพสต์ สนทนา...",
   "search.searching": "กำลังค้นหา...",
@@ -394,7 +368,6 @@
   "search.hint": "พิมพ์คำค้นหา...",
   "search.select": "เลือก",
   "search.close": "ปิด",
-
   "pray.tab.campaigns": "แคมเปญ",
   "campaigns.active": "แคมเปญที่กำลังดำเนินอยู่",
   "campaigns.title": "🎯 แคมเปญอธิษฐาน",
@@ -415,10 +388,8 @@
   "campaigns.card.poverty.desc": "อธิษฐานเผื่อผู้คนนับล้านที่ทนทุกข์จากความหิวโหยและความขาดแคลน",
   "campaigns.card.revival.title": "การฟื้นฟูจิตวิญญาณ",
   "campaigns.card.revival.desc": "อธิษฐานเพื่อการตื่นขึ้นทางจิตวิญญาณครั้งยิ่งใหญ่ทั่วโลก",
-
   "prayerWall.heartLetter": "จดหมายจากหัวใจ",
   "prayerWall.amenLabel": "อาเมน",
-
   "hl.to": "ถึง",
   "hl.toVal": "ผู้รับใช้ของพระเจ้าและครอบครัวคริสเตียนที่รักทั่วโลก",
   "hl.from": "จาก",
@@ -452,5 +423,60 @@
   "hl.c7": "ขอพระวิญญาณบริสุทธิ์ทรงนำเราในทุกคำอธิษฐาน",
   "hl.sign1": "ด้วยสุดหัวใจเพื่อราชอาณาจักรของพระเจ้า",
   "hl.sign2": "ฮาเลลูยา! อาเมน 🙌🕊",
-  "hl.sign3": "Abraham Nguyen Quang Huy – ประธานร่วม, 9S UNION\n(เสียงเรียกจากใจกลางพายุ, ดูไบ – สหรัฐอาหรับเอมิเรตส์, 1 มีนาคม 2026)"
+  "hl.sign3": "Abraham Nguyen Quang Huy – ประธานร่วม, 9S UNION\n(เสียงเรียกจากใจกลางพายุ, ดูไบ – สหรัฐอาหรับเอมิเรตส์, 1 มีนาคม 2026)",
+  "section.partners.title": "พาร์ทเนอร์",
+  "section.partners.sub": "องค์กรที่ร่วมเดินทางกับเรา",
+  "nav.testimonials": "Testimonials",
+  "testimonials.badge": "STORIES OF FAITH",
+  "testimonials.title": "Witness & Testimonials",
+  "testimonials.sub": "Real stories of God's power — transformed lives through prayer.",
+  "testimonials.cta": "Share Your Testimony",
+  "testimonials.loading": "Loading...",
+  "testimonials.empty": "No testimonials yet. Be the first to share!",
+  "testimonials.readMore": "Read more",
+  "testimonials.readLess": "Read less",
+  "testimonials.maxFiles": "You can upload up to 5 files",
+  "testimonials.uploadError": "Error uploading file",
+  "testimonials.submitError": "Submission failed, please try again",
+  "testimonials.submitting": "Submitting...",
+  "testimonials.submit": "✦ Submit Testimony",
+  "testimonials.contactOptional": "Contact info (optional)",
+  "testimonials.section.personal": "1. Personal Information",
+  "testimonials.section.content": "2. Testimony Content",
+  "testimonials.section.media": "3. Photos / Videos",
+  "testimonials.section.confirm": "4. Confirmation",
+  "testimonials.field.name": "Your name",
+  "testimonials.field.birthYear": "Birth year",
+  "testimonials.field.phone": "Phone",
+  "testimonials.field.address": "Address",
+  "testimonials.field.testimonyTitle": "Testimony title",
+  "testimonials.field.before": "Situation before prayer",
+  "testimonials.field.after": "What happened after prayer?",
+  "testimonials.field.current": "Current situation",
+  "testimonials.field.message": "Message to share",
+  "testimonials.placeholder.name": "Your full name",
+  "testimonials.placeholder.address": "City, Country",
+  "testimonials.placeholder.title": "e.g. I was healed after prayer",
+  "testimonials.placeholder.before": "Briefly describe the situation before prayer...",
+  "testimonials.placeholder.after": "The most important part — what changed?",
+  "testimonials.placeholder.current": "How are you doing now?",
+  "testimonials.placeholder.message": "A feeling or message to share with everyone...",
+  "testimonials.upload.hint": "Drag & drop or click to select files",
+  "testimonials.upload.types": "JPG, PNG, GIF, MP4, MOV — max 50MB per file",
+  "testimonials.confirm.text": "I confirm this is true and I consent to sharing this testimony on HOLYPray.",
+  "testimonials.error.name": "Please enter your name",
+  "testimonials.error.title": "Please enter a testimony title",
+  "testimonials.error.before": "Please describe your situation before prayer",
+  "testimonials.error.after": "Please describe what happened after prayer",
+  "testimonials.error.confirm": "Please confirm the information is true",
+  "testimonials.thanks.title": "Thank You!",
+  "testimonials.thanks.sub": "Your testimony has been submitted and will be reviewed before publishing. God bless you!",
+  "testimonials.thanks.back": "Back to Testimonials",
+  "common.cancel": "Cancel",
+  "testimonials.field.country": "Country",
+  "testimonials.field.dob": "Date of birth",
+  "testimonials.dob.day": "Day",
+  "testimonials.dob.month": "Month",
+  "testimonials.dob.year": "Year",
+  "testimonials.confirm.public": "I agree to display my personal information (name, country) publicly so others can see."
 }

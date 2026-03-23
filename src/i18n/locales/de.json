@@ -11,7 +11,6 @@
   "nav.profile": "Profil",
   "nav.admin": "Admin-Panel",
   "nav.news": "Nachrichten",
-
   "hero.badge": "LIVE • 47 NATIONEN BETEN",
   "hero.title1": "Millionen Herzen Verbinden —",
   "hero.title2": "Ein Gebet Für die Welt.",
@@ -22,7 +21,6 @@
   "hero.stat.nations": "NATIONEN",
   "hero.stat.members": "MITGLIEDER",
   "hero.stat.donated": "GESPENDET",
-
   "section.quickpray.title": "Jetzt Beten",
   "section.quickpray.sub": "Wähle ein Thema und sende dein Gebet in 30 Sekunden",
   "card.peace.title": "Weltfrieden",
@@ -33,14 +31,12 @@
   "card.healing.desc": "Bete für körperliche und geistliche Heilung der Leidenden.",
   "card.pray": "Beten →",
   "section.prayerwall.link": "Vollständige Gebetswand →",
-
   "section.map.title": "Globale Gebetskarte",
   "section.map.sub": "Echtzeit-Updates • 47 Nationen beten gemeinsam",
   "section.map.live": "Menschen beten gerade",
   "section.map.legend.prayers": "Gebete",
   "section.map.legend.active": "Hohe Aktivität",
   "section.map.legend.new": "Neue Mitglieder",
-
   "section.impact.title": "Messbare Wirkung",
   "section.impact.sub": "Transparenz ist ein Merkmal, kein Nachgedanke",
   "impact.stat1": "Gebete",
@@ -52,7 +48,6 @@
   "impact.change3": "↑ +3 neue Nationen",
   "impact.change4": "↑ 6 neue Projekte",
   "impact.cta": "Vollständigen Bericht →",
-
   "section.testimonials.title": "Zeugnisse",
   "section.testimonials.sub": "Stimmen, die HOLYPray vertrauen und unterstützen",
   "testimonial.1.quote": "\"HOLYPray hat unsere Kirche mit einer globalen Gebetsgemeinschaft verbunden. Jedes Gebet macht wirklich einen Unterschied.\"",
@@ -64,12 +59,10 @@
   "testimonial.3.quote": "\"Die erste Plattform, die spirituelle Tiefe mit echtem sozialen Einfluss verbindet.\"",
   "testimonial.3.name": "Rev. Amara Diallo",
   "testimonial.3.org": "Religionsführer, Dakar Senegal",
-
   "section.give.title": "Dein Spenden Schafft Wirkung",
   "section.give.sub": "Jeder Dollar wird transparent für humanitäre Projekte eingesetzt.",
   "section.give.cta": "♡ Jetzt Spenden",
   "section.give.cta2": "Budgetverteilung Ansehen",
-
   "live.title": "Live-Gebetssitzungen",
   "live.viewAll": "Alle anzeigen →",
   "live.viewers": "Zuschauer",
@@ -81,11 +74,9 @@
   "live.card3.time": "⏰ 06:00 Morgen",
   "live.card3.title": "Morgengebet",
   "live.card3.host": "HOLYPray Gemeinschaft",
-
   "ticker.prayed": "hat gerade gebetet aus",
   "ticker.amened": "sagte Amen aus",
   "ticker.donated": "hat gespendet aus",
-
   "footer.desc": "Millionen Herzen verbinden, ein Gebet für eine friedliche Welt.",
   "footer.impact": "Globale Wirkung",
   "footer.word": "Gottes Wort",
@@ -113,7 +104,6 @@
   "footer.emailExists": "Diese E-Mail ist bereits abonniert!",
   "footer.emailFail": "Abonnement fehlgeschlagen",
   "footer.emailSuccess": "Erfolgreich abonniert! 🎉",
-
   "auth.forgotPassword": "Passwort Vergessen",
   "auth.login": "Anmelden",
   "auth.signup": "Registrieren",
@@ -132,7 +122,6 @@
   "auth.loginSuccess": "Anmeldung erfolgreich!",
   "auth.signupSuccess": "Registrierung erfolgreich! Bitte bestätige deine E-Mail.",
   "auth.resetEmailSent": "E-Mail zum Zurücksetzen gesendet!",
-
   "reset.title": "Passwort Zurücksetzen",
   "reset.waiting": "Link wird überprüft... Bitte warten.",
   "reset.newTitle": "Neues Passwort Festlegen",
@@ -143,7 +132,6 @@
   "reset.mismatch": "Passwörter stimmen nicht überein!",
   "reset.tooShort": "Passwort muss mindestens 6 Zeichen haben",
   "reset.success": "Passwort erfolgreich zurückgesetzt!",
-
   "give.title": "♡ Spenden",
   "give.sub": "Jeder Dollar wird transparent für humanitäre Projekte eingesetzt.",
   "give.chooseAmount": "Betrag Wählen",
@@ -165,7 +153,6 @@
   "give.loginRequired": "Bitte melde dich an, um zu spenden",
   "give.error": "Spende konnte nicht verarbeitet werden",
   "give.thanks": "Danke für deine Spende von ${{amount}}! ♡",
-
   "profile.loginRequired": "Bitte melde dich an, um dein Profil zu sehen",
   "profile.prayers": "Gebete",
   "profile.amensReceived": "Amen erhalten",
@@ -185,12 +172,10 @@
   "profile.saveBtn": "💾 Speichern",
   "profile.updateError": "Profil konnte nicht aktualisiert werden",
   "profile.updateSuccess": "Profil aktualisiert! ✨",
-
   "pray.tab.wall": "Gebet",
   "pray.tab.live": "Live",
   "pray.tab.community": "Gemeinschaft",
   "pray.tab.calendar": "Gebetskalender",
-
   "prayerWall.title": "🙏 Gebetswand",
   "prayerWall.sub": "Sende ein Gebet und bete mit der globalen Gemeinschaft",
   "prayerWall.sendBtn": "+ Gebet Senden",
@@ -221,7 +206,6 @@
   "prayerWall.minutesAgo": "vor {{count}} Min.",
   "prayerWall.hoursAgo": "vor {{count}} Std.",
   "prayerWall.daysAgo": "vor {{count}} Tagen",
-
   "filter.all": "Alle",
   "topic.peace": "🕊️ Frieden",
   "topic.prosperity": "🌟 Wohlstand",
@@ -230,7 +214,6 @@
   "topic.recovery": "🔄 Wiederherstellung",
   "topic.family": "👨‍👩‍👧 Familie",
   "topic.nation": "🏛️ Nation",
-
   "community.title": "🤝 Gemeinschaft",
   "community.newPost": "+ Neuen Beitrag Erstellen",
   "community.titlePlaceholder": "Titel...",
@@ -255,7 +238,6 @@
   "community.badgePrayer": "Gebet",
   "community.badgeNews": "Nachrichten",
   "community.badgeDiscussion": "Diskussion",
-
   "liveSessions.banner": "Live-Gebetssitzung läuft",
   "liveSessions.viewers": "Zuschauer",
   "liveSessions.liveTitle": "Gebet für den Weltfrieden",
@@ -268,14 +250,12 @@
   "liveSessions.healingTitle": "Heilungsgebet",
   "liveSessions.worshipTitle": "Anbetung & Gebetsnacht",
   "liveSessions.globalTitle": "Globales Gebet",
-
   "calendar.prev": "← Zurück",
   "calendar.next": "Weiter →",
   "calendar.month": "März 2026",
   "calendar.upcoming": "📅 Kommende Ereignisse",
   "calendar.joined": "✓ Beigetreten",
   "calendar.join": "Beitreten",
-
   "word.title": "📖 Gottes Wort",
   "word.sub": "Reflektiere, lerne und nähre dich täglich von Seinem Wort",
   "word.all": "Alle",
@@ -286,7 +266,6 @@
   "word.verse.title": "✨ Vers des Tages",
   "word.verse.text": "\"Alle eure Sorge werft auf ihn; denn er sorgt für euch.\"",
   "word.verse.ref": "— 1. Petrus 5:7",
-
   "impact.page.title": "🌍 Messbare Wirkung",
   "impact.page.sub": "Transparenz ist ein Merkmal, kein Nachgedanke. Jeder Dollar wird verfolgt.",
   "impact.stories.title": "📖 Wirkungsgeschichten",
@@ -338,7 +317,6 @@
   "impact.ai.source": "Quelle",
   "impact.ai.loading": "Wirkungsgeschichten werden geladen...",
   "impact.ai.deleted": "Artikel gelöscht",
-
   "about.heroTitle": "HOLY PRAY TODAY",
   "about.heroTagline": "Digitaler Altar — Gebet für alle Völker",
   "about.heroQuote": "Vereint im Heiligen Geist, bewegen wir den Himmel.",
@@ -360,12 +338,10 @@
   "about.joinText": "Jedes Gebet, jede Spende bewirkt Veränderung. Werde Teil dieser globalen Bewegung.",
   "about.startPraying": "✦ Anfangen zu Beten",
   "about.giveNow": "♡ Spenden",
-
   "library.title": "📚 Gebetsbibliothek",
   "library.sub": "Ein Schatz an Gebeten nach Thema, bereit zum Verwenden und Teilen",
   "library.all": "📚 Alle",
   "library.read": "📖 Lesen",
-
   "blog.loading": "Laden...",
   "blog.notFound": "Beitrag nicht gefunden",
   "blog.backToWord": "← Zurück zu Gottes Wort",
@@ -383,10 +359,8 @@
   "blog.loginRequired": "Bitte anmelden zum Kommentieren",
   "blog.commentError": "Kommentar konnte nicht gesendet werden",
   "blog.commentSuccess": "Kommentar gesendet! 💬",
-
   "common.loading": "Laden...",
   "common.user": "Benutzer",
-
   "search.label": "Suchen",
   "search.placeholder": "Gebete, Beiträge, Diskussionen suchen...",
   "search.searching": "Suche...",
@@ -394,7 +368,6 @@
   "search.hint": "Stichwort eingeben zum Suchen...",
   "search.select": "auswählen",
   "search.close": "schließen",
-
   "pray.tab.campaigns": "Kampagnen",
   "campaigns.active": "Aktive Kampagnen",
   "campaigns.title": "🎯 Gebetskampagnen",
@@ -415,10 +388,8 @@
   "campaigns.card.poverty.desc": "Fürbitte für Millionen, die unter Hunger und Entbehrung leiden.",
   "campaigns.card.revival.title": "Geistliche Erweckung",
   "campaigns.card.revival.desc": "Beten Sie für eine große geistliche Erweckung auf der ganzen Welt.",
-
   "prayerWall.heartLetter": "Herzensbrief",
   "prayerWall.amenLabel": "Amen",
-
   "hl.to": "AN",
   "hl.toVal": "Geliebte Diener Gottes und christliche Familien auf der ganzen Welt",
   "hl.from": "VON",
@@ -452,5 +423,60 @@
   "hl.c7": "Möge der Heilige Geist uns in jedem Gebet leiten.",
   "hl.sign1": "Von ganzem Herzen für das Reich Gottes,",
   "hl.sign2": "Halleluja! Amen. 🙌🕊",
-  "hl.sign3": "Abraham Nguyen Quang Huy – Co-Vorsitzender, 9S UNION\n(Ein Ruf aus dem Auge des Sturms, Dubai – VAE, 1. März 2026)"
+  "hl.sign3": "Abraham Nguyen Quang Huy – Co-Vorsitzender, 9S UNION\n(Ein Ruf aus dem Auge des Sturms, Dubai – VAE, 1. März 2026)",
+  "section.partners.title": "Partner",
+  "section.partners.sub": "Organisationen, die uns begleiten",
+  "nav.testimonials": "Testimonials",
+  "testimonials.badge": "STORIES OF FAITH",
+  "testimonials.title": "Witness & Testimonials",
+  "testimonials.sub": "Real stories of God's power — transformed lives through prayer.",
+  "testimonials.cta": "Share Your Testimony",
+  "testimonials.loading": "Loading...",
+  "testimonials.empty": "No testimonials yet. Be the first to share!",
+  "testimonials.readMore": "Read more",
+  "testimonials.readLess": "Read less",
+  "testimonials.maxFiles": "You can upload up to 5 files",
+  "testimonials.uploadError": "Error uploading file",
+  "testimonials.submitError": "Submission failed, please try again",
+  "testimonials.submitting": "Submitting...",
+  "testimonials.submit": "✦ Submit Testimony",
+  "testimonials.contactOptional": "Contact info (optional)",
+  "testimonials.section.personal": "1. Personal Information",
+  "testimonials.section.content": "2. Testimony Content",
+  "testimonials.section.media": "3. Photos / Videos",
+  "testimonials.section.confirm": "4. Confirmation",
+  "testimonials.field.name": "Your name",
+  "testimonials.field.birthYear": "Birth year",
+  "testimonials.field.phone": "Phone",
+  "testimonials.field.address": "Address",
+  "testimonials.field.testimonyTitle": "Testimony title",
+  "testimonials.field.before": "Situation before prayer",
+  "testimonials.field.after": "What happened after prayer?",
+  "testimonials.field.current": "Current situation",
+  "testimonials.field.message": "Message to share",
+  "testimonials.placeholder.name": "Your full name",
+  "testimonials.placeholder.address": "City, Country",
+  "testimonials.placeholder.title": "e.g. I was healed after prayer",
+  "testimonials.placeholder.before": "Briefly describe the situation before prayer...",
+  "testimonials.placeholder.after": "The most important part — what changed?",
+  "testimonials.placeholder.current": "How are you doing now?",
+  "testimonials.placeholder.message": "A feeling or message to share with everyone...",
+  "testimonials.upload.hint": "Drag & drop or click to select files",
+  "testimonials.upload.types": "JPG, PNG, GIF, MP4, MOV — max 50MB per file",
+  "testimonials.confirm.text": "I confirm this is true and I consent to sharing this testimony on HOLYPray.",
+  "testimonials.error.name": "Please enter your name",
+  "testimonials.error.title": "Please enter a testimony title",
+  "testimonials.error.before": "Please describe your situation before prayer",
+  "testimonials.error.after": "Please describe what happened after prayer",
+  "testimonials.error.confirm": "Please confirm the information is true",
+  "testimonials.thanks.title": "Thank You!",
+  "testimonials.thanks.sub": "Your testimony has been submitted and will be reviewed before publishing. God bless you!",
+  "testimonials.thanks.back": "Back to Testimonials",
+  "common.cancel": "Cancel",
+  "testimonials.field.country": "Country",
+  "testimonials.field.dob": "Date of birth",
+  "testimonials.dob.day": "Day",
+  "testimonials.dob.month": "Month",
+  "testimonials.dob.year": "Year",
+  "testimonials.confirm.public": "I agree to display my personal information (name, country) publicly so others can see."
 }
