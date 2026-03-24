@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { supabase } from '@/integrations/supabase/client';
+import useHeroBgImage from '@/hooks/useHeroBgImage';
 import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -793,6 +794,7 @@ const DetailModal = ({ item, onClose }: { item: TestimonySubmission; onClose: ()
 // ── Main page ────────────────────────────────────────────────────────────────
 const TestimonialsPage = () => {
   const { t } = useTranslation();
+  const heroBg = useHeroBgImage('hero_bg_testimonials');
   const [submissions, setSubmissions] = useState<TestimonySubmission[]>([]);
   const [loading, setLoading] = useState(true);
   const [showFormModal, setShowFormModal] = useState(false);
@@ -817,11 +819,16 @@ const TestimonialsPage = () => {
     <div>
       {/* ══ HERO ══ */}
       <section className="relative overflow-hidden py-20 sm:py-28">
+        {heroBg && (
+          <div className="absolute inset-0 overflow-hidden">
+            <img src={heroBg} alt="" aria-hidden className="absolute inset-0 w-full h-full object-cover" style={{ filter: 'blur(8px)', transform: 'scale(1.1)', opacity: 0.6 }} />
+          </div>
+        )}
         <div className="absolute inset-0" style={{
           background: `
             radial-gradient(ellipse 100% 80% at 50% -10%, rgba(197,160,89,0.14) 0%, transparent 60%),
             radial-gradient(ellipse 60% 50% at 80% 80%, rgba(167,139,250,0.08) 0%, transparent 50%),
-            linear-gradient(180deg, hsl(221 68% 30%) 0%, hsl(221 68% 33%) 100%)
+            linear-gradient(180deg, hsl(221 68% 30% / 0.72) 0%, hsl(221 68% 33% / 0.72) 100%)
           `
         }} />
         <div className="absolute top-[10%] right-[8%] w-[280px] h-[280px] rounded-full border border-primary/10 opacity-30" style={{ animation: 'auraPulse 8s ease-in-out infinite alternate' }} />

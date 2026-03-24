@@ -11,7 +11,6 @@
   "nav.profile": "Hồ Sơ",
   "nav.admin": "Admin Panel",
   "nav.news": "Tin Tức",
-
   "hero.badge": "LIVE • 47 QUỐC GIA ĐANG CẦU NGUYỆN",
   "hero.title1": "Kết Nối Hàng Triệu Trái Tim —",
   "hero.title2": "Một Lời Cầu Nguyện Cho Thế Giới.",
@@ -22,7 +21,6 @@
   "hero.stat.nations": "QUỐC GIA",
   "hero.stat.members": "THÀNH VIÊN",
   "hero.stat.donated": "ĐÃ DÂNG HIẾN",
-
   "section.quickpray.title": "Cầu Nguyện Ngay",
   "section.quickpray.sub": "Chọn một chủ đề và gửi lời cầu nguyện trong 30 giây",
   "card.peace.title": "Hòa Bình Thế Giới",
@@ -33,14 +31,12 @@
   "card.healing.desc": "Cầu nguyện cho sự chữa lành thể chất và tâm linh cho những ai đang đau khổ.",
   "card.pray": "Cầu Nguyện →",
   "section.prayerwall.link": "Xem tường cầu nguyện →",
-
   "section.map.title": "Bản Đồ Cầu Nguyện Toàn Cầu",
   "section.map.sub": "Cập nhật theo thời gian thực • 47 quốc gia đang hiệp cầu",
   "section.map.live": "người đang cầu nguyện ngay lúc này",
   "section.map.legend.prayers": "Lời cầu nguyện",
   "section.map.legend.active": "Hoạt động cao",
   "section.map.legend.new": "Thành viên mới",
-
   "section.impact.title": "Tác Động Đo Được",
   "section.impact.sub": "Minh bạch là tính năng, không phải trang phụ",
   "impact.stat1": "Lời Cầu Nguyện",
@@ -52,7 +48,6 @@
   "impact.change3": "↑ +3 quốc gia mới",
   "impact.change4": "↑ 6 dự án mới",
   "impact.cta": "Xem Báo Cáo Đầy Đủ →",
-
   "section.testimonials.title": "Lời Chứng",
   "section.testimonials.sub": "Những tiếng nói tin tưởng và đồng hành với HOLYPray",
   "testimonial.1.quote": "\"HOLYPray đã kết nối hội thánh chúng tôi với cộng đồng cầu nguyện toàn cầu. Mỗi lời cầu nguyện thực sự tạo ra sự thay đổi.\"",
@@ -64,12 +59,10 @@
   "testimonial.3.quote": "\"Đây là nền tảng đầu tiên tôi thấy kết hợp được chiều sâu tâm linh với tác động xã hội thực sự. Đáng tin cậy và đầy hy vọng.\"",
   "testimonial.3.name": "Rev. Amara Diallo",
   "testimonial.3.org": "Lãnh đạo tôn giáo, Dakar Senegal",
-
   "section.give.title": "Sự Dâng Hiến Tạo Ra Tác Động",
   "section.give.sub": "Mỗi đô la được phân bổ minh bạch cho các dự án nhân đạo. Dâng hiến một lần hoặc định kỳ.",
   "section.give.cta": "♡ Dâng Hiến Ngay",
   "section.give.cta2": "Xem Phân Bổ Ngân Sách",
-
   "live.title": "Phiên Cầu Nguyện Trực Tiếp",
   "live.viewAll": "Xem tất cả →",
   "live.viewers": "người xem",
@@ -81,11 +74,9 @@
   "live.card3.time": "⏰ 06:00 Mai",
   "live.card3.title": "Buổi Cầu Nguyện Bình Minh",
   "live.card3.host": "Cộng đồng HOLYPray",
-
   "ticker.prayed": "vừa cầu nguyện từ",
   "ticker.amened": "đã nói Amen từ",
   "ticker.donated": "đã dâng hiến từ",
-
   "footer.desc": "Kết nối hàng triệu trái tim, một lời cầu nguyện cho thế giới hòa bình.",
   "footer.impact": "Tác Động Toàn Cầu",
   "footer.word": "Lời Chúa",
@@ -113,7 +104,6 @@
   "footer.emailExists": "Email này đã đăng ký rồi!",
   "footer.emailFail": "Không thể đăng ký",
   "footer.emailSuccess": "Đăng ký thành công! 🎉",
-
   "auth.forgotPassword": "Quên Mật Khẩu",
   "auth.login": "Đăng Nhập",
   "auth.signup": "Đăng Ký",
@@ -132,7 +122,6 @@
   "auth.loginSuccess": "Đăng nhập thành công!",
   "auth.signupSuccess": "Đăng ký thành công! Vui lòng kiểm tra email để xác nhận.",
   "auth.resetEmailSent": "Email đặt lại mật khẩu đã được gửi! Vui lòng kiểm tra hộp thư.",
-
   "reset.title": "Đặt Lại Mật Khẩu",
   "reset.waiting": "Đang xác thực liên kết... Vui lòng đợi hoặc kiểm tra lại email.",
   "reset.newTitle": "Đặt Mật Khẩu Mới",
@@ -143,7 +132,6 @@
   "reset.mismatch": "Mật khẩu không khớp!",
   "reset.tooShort": "Mật khẩu phải có ít nhất 6 ký tự",
   "reset.success": "Đặt lại mật khẩu thành công!",
-
   "give.title": "♡ Dâng Hiến",
   "give.sub": "Mỗi đô la được phân bổ minh bạch cho các dự án nhân đạo. Dâng hiến một lần hoặc định kỳ.",
   "give.chooseAmount": "Chọn Số Tiền",
@@ -165,7 +153,6 @@
   "give.loginRequired": "Vui lòng đăng nhập để dâng hiến",
   "give.error": "Không thể xử lý dâng hiến",
   "give.thanks": "Cảm ơn bạn đã dâng hiến ${{amount}}! ♡",
-
   "profile.loginRequired": "Vui lòng đăng nhập để xem hồ sơ",
   "profile.prayers": "Lời cầu nguyện",
   "profile.amensReceived": "Amen nhận được",
@@ -185,12 +172,10 @@
   "profile.saveBtn": "💾 Lưu Thay Đổi",
   "profile.updateError": "Không thể cập nhật hồ sơ",
   "profile.updateSuccess": "Đã cập nhật hồ sơ! ✨",
-
   "pray.tab.wall": "Cầu Nguyện",
   "pray.tab.live": "Live",
   "pray.tab.community": "Cộng Đồng",
   "pray.tab.calendar": "Lịch Cầu Nguyện",
-
   "prayerWall.title": "🙏 Tường Cầu Nguyện",
   "prayerWall.sub": "Gửi lời cầu nguyện và hiệp lời với cộng đồng toàn cầu",
   "prayerWall.sendBtn": "+ Gửi Lời Cầu Nguyện",
@@ -221,7 +206,6 @@
   "prayerWall.minutesAgo": "{{count}} phút trước",
   "prayerWall.hoursAgo": "{{count}} giờ trước",
   "prayerWall.daysAgo": "{{count}} ngày trước",
-
   "filter.all": "Tất Cả",
   "topic.peace": "🕊️ Hòa Bình",
   "topic.prosperity": "🌟 Thịnh Vượng",
@@ -230,7 +214,6 @@
   "topic.recovery": "🔄 Phục Hồi",
   "topic.family": "👨‍👩‍👧 Gia Đình",
   "topic.nation": "🏛️ Quốc Gia",
-
   "community.title": "🤝 Cộng Đồng",
   "community.newPost": "+ Tạo Bài Viết Mới",
   "community.titlePlaceholder": "Tiêu đề bài viết...",
@@ -255,7 +238,6 @@
   "community.badgePrayer": "Cầu Nguyện",
   "community.badgeNews": "Tin Tức",
   "community.badgeDiscussion": "Thảo Luận",
-
   "liveSessions.banner": "Phiên cầu nguyện trực tiếp đang diễn ra",
   "liveSessions.viewers": "người xem",
   "liveSessions.liveTitle": "Cầu Nguyện Cho Hòa Bình Thế Giới",
@@ -268,14 +250,12 @@
   "liveSessions.healingTitle": "Cầu Nguyện Chữa Lành",
   "liveSessions.worshipTitle": "Đêm Thờ Phượng & Cầu Nguyện",
   "liveSessions.globalTitle": "Cầu Nguyện Toàn Cầu",
-
   "calendar.prev": "← Trước",
   "calendar.next": "Sau →",
   "calendar.month": "Tháng 3, 2026",
   "calendar.upcoming": "📅 Sự Kiện Sắp Tới",
   "calendar.joined": "✓ Đã tham gia",
   "calendar.join": "Tham gia",
-
   "word.title": "📖 Lời Chúa",
   "word.sub": "Suy ngẫm, học hỏi và được nuôi dưỡng bởi Lời Ngài mỗi ngày",
   "word.all": "Tất Cả",
@@ -286,7 +266,6 @@
   "word.verse.title": "✨ Câu Kinh Thánh Hôm Nay",
   "word.verse.text": "\"Hãy trao mọi lo lắng cho Ngài, vì Ngài hay săn sóc anh em.\"",
   "word.verse.ref": "— 1 Phi-e-rơ 5:7",
-
   "impact.page.title": "🌍 Tác Động Đo Được",
   "impact.page.sub": "Minh bạch là tính năng, không phải trang phụ. Mỗi đô la được theo dõi và báo cáo rõ ràng.",
   "impact.stories.title": "📖 Câu Chuyện Tác Động",
@@ -305,7 +284,6 @@
   "impact.stories.4.desc": "Hơn 8,000 người dân giờ đã có nguồn nước sạch, giảm 70% bệnh tật liên quan đến nước.",
   "impact.fund.title": "💰 Phân Bổ Ngân Sách",
   "impact.fund.sub": "Mỗi đô la được phân bổ minh bạch",
-
   "about.heroTitle": "HOLY PRAY TODAY",
   "about.heroTagline": "Bàn Thờ Số — Cầu nguyện cho muôn dân",
   "about.heroQuote": "Hiệp một trong Thánh Linh, lay động Thiên Đình.",
@@ -327,12 +305,10 @@
   "about.joinText": "Mỗi lời cầu nguyện, mỗi sự dâng hiến đều tạo ra thay đổi. Hãy trở thành một phần của phong trào toàn cầu này.",
   "about.startPraying": "✦ Bắt Đầu Cầu Nguyện",
   "about.giveNow": "♡ Dâng Hiến",
-
   "library.title": "📚 Thư Viện Cầu Nguyện",
   "library.sub": "Kho tàng lời cầu nguyện theo chủ đề, sẵn sàng cho bạn sử dụng và chia sẻ",
   "library.all": "📚 Tất Cả",
   "library.read": "📖 Đọc",
-
   "blog.loading": "Đang tải...",
   "blog.notFound": "Không tìm thấy bài viết",
   "blog.backToWord": "← Quay lại Lời Chúa",
@@ -350,10 +326,8 @@
   "blog.loginRequired": "Vui lòng đăng nhập để bình luận",
   "blog.commentError": "Không thể gửi bình luận",
   "blog.commentSuccess": "Bình luận đã được gửi! 💬",
-
   "common.loading": "Đang tải...",
   "common.user": "User",
-
   "search.label": "Tìm kiếm",
   "search.placeholder": "Tìm kiếm lời cầu nguyện, bài viết, thảo luận...",
   "search.searching": "Đang tìm kiếm...",
@@ -361,7 +335,6 @@
   "search.hint": "Nhập từ khóa để tìm kiếm...",
   "search.select": "chọn",
   "search.close": "đóng",
-
   "impact.ai.title": "Tin Tức Tác Động Mới Nhất",
   "impact.ai.sub": "Những câu chuyện thực về cầu nguyện và tác động nhân đạo trên toàn thế giới",
   "impact.ai.fetch": "Lấy Bài Viết Mới",
@@ -375,7 +348,6 @@
   "impact.ai.source": "Nguồn",
   "impact.ai.loading": "Đang tải câu chuyện tác động...",
   "impact.ai.deleted": "Đã xóa bài viết",
-
   "impact.page.badge": "Báo Cáo Tác Động Toàn Cầu 2026",
   "impact.timeline.title": "Hành Trình Của Chúng Tôi",
   "impact.timeline.sub": "Các cột mốc quan trọng định hình tác động toàn cầu",
@@ -396,9 +368,7 @@
   "impact.pill.nations": "Quốc Gia",
   "impact.pill.members": "Thành Viên",
   "impact.pill.raised": "Đã Gây Quỹ",
-
   "give.crypto": "Thanh toán bằng Crypto",
-
   "library.cat.peace": "🕊️ Hòa Bình",
   "library.cat.health": "💚 Sức Khỏe",
   "library.cat.prosperity": "⭐ Thịnh Vượng",
@@ -407,7 +377,6 @@
   "library.cat.gratitude": "🙏 Biết Ơn",
   "library.cat.nation": "🏛️ Quốc Gia",
   "library.count": "{{count}} nội dung",
-
   "admin.dashboard": "Dashboard",
   "admin.prayers.title": "Quản Lý Cầu Nguyện",
   "admin.prayers.name": "Tên",
@@ -426,7 +395,6 @@
   "admin.prayers.approvedToast": "Đã duyệt",
   "admin.prayers.deleted": "Đã xóa",
   "admin.prayers.loading": "Đang tải...",
-
   "admin.posts.title": "Quản Lý Bài Viết",
   "admin.posts.create": "+ Tạo Bài Viết",
   "admin.posts.close": "Đóng",
@@ -450,7 +418,6 @@
   "admin.posts.draftToast": "Đã chuyển về nháp",
   "admin.posts.deleted": "Đã xóa",
   "admin.posts.loading": "Đang tải...",
-
   "admin.users.title": "Quản Lý Người Dùng",
   "admin.users.name": "Tên",
   "admin.users.country": "Quốc gia",
@@ -466,19 +433,16 @@
   "admin.users.unlockedToast": "Đã mở khóa",
   "admin.users.roleSet": "Đã set role: {{role}}",
   "admin.users.loading": "Đang tải...",
-
   "admin.settings.title": "Cài Đặt",
   "admin.settings.info": "Thông tin website",
   "admin.settings.infoSub": "Quản lý cài đặt chung của HOLYPray",
   "admin.settings.siteName": "Tên website",
   "admin.settings.email": "Email liên hệ",
   "admin.settings.save": "Lưu Thay Đổi",
-
   "admin.dashboard.prayers": "Lời Cầu Nguyện",
   "admin.dashboard.posts": "Bài Viết",
   "admin.dashboard.users": "Người Dùng",
   "admin.dashboard.donations": "Dâng Hiến",
-
   "pray.tab.campaigns": "Chiến Dịch",
   "campaigns.active": "Chiến dịch đang diễn ra",
   "campaigns.title": "🎯 Chiến Dịch Cầu Nguyện",
@@ -499,10 +463,8 @@
   "campaigns.card.poverty.desc": "Cầu thay cho hàng triệu người đang chịu đói khổ và thiếu thốn.",
   "campaigns.card.revival.title": "Phục Hưng Tâm Linh",
   "campaigns.card.revival.desc": "Cầu nguyện cho sự phục hưng tâm linh vĩ đại trên toàn cầu.",
-
   "prayerWall.heartLetter": "Tâm Thư",
   "prayerWall.amenLabel": "Amen",
-
   "hl.to": "GỬI",
   "hl.toVal": "Quý Tôi Tớ Chúa và Gia Đình Cơ Đốc Nhân Trên Khắp Thế Giới",
   "hl.from": "TỪ",
@@ -537,10 +499,8 @@
   "hl.sign1": "Hết lòng vì Vương Quốc Chúa,",
   "hl.sign2": "Hallelujah! Amen. 🙌🕊",
   "hl.sign3": "Abraham Nguyễn Quang Huy – Đồng Chủ tịch 9S UNION\n(Kêu gọi từ tâm bão Dubai – UAE, ngày 01/03/2026)",
-
   "section.partners.title": "Đối Tác",
   "section.partners.sub": "Các tổ chức đồng hành cùng chúng tôi",
-
   "nav.testimonials": "Lời Chứng",
   "testimonials.badge": "CHỨNG NHÂN ĐỨC TIN",
   "testimonials.title": "Lời Chứng & Nhân Chứng",
@@ -593,5 +553,39 @@
   "testimonials.thanks.title": "Cảm Ơn Bạn!",
   "testimonials.thanks.sub": "Lời chứng của bạn đã được gửi và sẽ được xét duyệt trước khi đăng. Chúa ban phước cho bạn!",
   "testimonials.thanks.back": "Quay Lại Trang Lời Chứng",
-  "common.cancel": "Hủy"
+  "common.cancel": "Hủy",
+  "about.badge": "VỀ HOLYPRAY",
+  "library.badge": "THƯ VIỆN CẦU NGUYỆN",
+  "news.hero.badge": "TIN TỨC & SỰ KIỆN",
+  "news.hero.title": "Tin Tức HOLYPray",
+  "news.hero.sub": "Cập nhật những tin tức, sự kiện và hoạt động mới nhất từ cộng đồng HOLYPray toàn cầu",
+  "news.search.placeholder": "Tìm tin tức, sự kiện, hoạt động...",
+  "news.search.btn": "Tìm kiếm",
+  "news.search.hintLabel": "Gợi ý",
+  "news.hint.community": "Cộng đồng",
+  "news.hint.events": "Sự kiện",
+  "news.hint.activities": "Hoạt động",
+  "news.hint.sharing": "Chia sẻ",
+  "news.stat.posts": "Bài viết",
+  "news.stat.categories": "Chuyên mục",
+  "news.stat.tags": "Tags",
+  "news.category.label": "Chuyên Mục",
+  "news.category.all": "Tất Cả",
+  "news.loading": "Đang tải...",
+  "news.empty": "Chưa có tin tức nào",
+  "news.section.latest": "TIN TỨC MỚI NHẤT",
+  "news.section.results": "Kết quả",
+  "news.featured": "Nổi bật",
+  "news.noResults": "Không tìm thấy kết quả",
+  "news.readTime": "{count} phút đọc",
+  "news.sidebar.announcement": "Thông Báo Mới Nhất",
+  "news.sidebar.announcementText": "Cập nhật các tin tức và sự kiện mới nhất từ cộng đồng HOLYPray toàn cầu.",
+  "news.sidebar.announcementAuthor": "HOLYPray Community",
+  "news.sidebar.tags": "Tags Phổ Biến",
+  "news.sidebar.recent": "Tin Tức Mới",
+  "news.sidebar.categories": "Chuyên Mục",
+  "news.newsletter.title": "Nhận Tin Tức Mỗi Tuần",
+  "news.newsletter.sub": "Tin tức mới nhất gửi đến hộp thư của bạn",
+  "news.newsletter.placeholder": "Email của bạn...",
+  "news.newsletter.btn": "Đăng Ký Miễn Phí"
 }

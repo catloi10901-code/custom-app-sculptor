@@ -32,6 +32,7 @@ import AdminSiteContent from "./pages/admin/AdminSiteContent";
 import AdminLiveSessions from "./pages/admin/AdminLiveSessions";
 import AdminTestimonials from "./pages/admin/AdminTestimonials";
 import AdminCategories from "./pages/admin/AdminCategories";
+import AdminWord from "./pages/admin/AdminWord";
 import AdminJobPositions from "./pages/admin/AdminJobPositions";
 import AdminApplications from "./pages/admin/AdminApplications";
 import AdminNewsletter from "./pages/admin/AdminNewsletter";
@@ -77,6 +78,7 @@ const App = () => (
               <Route path="campaigns" element={<AdminCampaigns />} />
               <Route path="site-content" element={<AdminSiteContent />} />
               <Route path="categories" element={<AdminCategories />} />
+              <Route path="word" element={<AdminWord />} />
               <Route path="live-sessions" element={<AdminLiveSessions />} />
               <Route path="testimonials" element={<AdminTestimonials />} />
               <Route path="jobs" element={<AdminJobPositions />} />

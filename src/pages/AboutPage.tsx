@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import PageHero from '@/components/layout/PageHero';
+import { Users } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
@@ -79,13 +81,17 @@ const AboutPage = () => {
 
   return (
     <div>
-      <section className="py-20 text-center" style={{ background: 'linear-gradient(180deg, rgba(197,160,89,0.06) 0%, transparent 100%)' }}>
-        <div className="container">
-          <h1 className="font-serif text-primary mb-4">{t('about.heroTitle')}</h1>
-          <p className="text-primary/80 text-lg font-semibold mb-3">{t('about.heroTagline')}</p>
-          <p className="text-muted-foreground text-base max-w-[750px] mx-auto italic leading-relaxed">{t('about.heroQuote')}</p>
-        </div>
-      </section>
+      <PageHero
+        badge={{ icon: <Users className="w-3.5 h-3.5" />, text: t('about.badge') || 'VỀ HOLYPRAY' }}
+        title={t('about.heroTitle')}
+        subtitle={t('about.heroTagline')}
+        pills={[
+          { icon: '🌍', text: `${team.length} ${t('about.pillTeam') || 'Thành viên đội ngũ'}` },
+          { icon: '🙏', text: t('about.pillMission') || 'Sứ mệnh toàn cầu' },
+          { icon: '✦', text: t('about.pillFaith') || 'Phi tôn giáo' },
+        ]}
+        bgKey="hero_bg_about"
+      />
 
       <section className="py-16">
         <div className="container max-w-[800px] text-center">

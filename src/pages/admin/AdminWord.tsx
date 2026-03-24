@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { Pencil, Trash2, Eye, EyeOff, Plus, X, Upload, ImageIcon } from 'lucide-react';
@@ -23,13 +22,13 @@ interface Category {
   id: string;
   name: string;
   slug: string;
+  icon: string | null;
   type: string;
 }
 
 const emptyForm = { title: '', slug: '', content: '', excerpt: '', status: 'draft', category_id: '', cover_image: '', tags: '' };
 
-const AdminPosts = () => {
-  const { t } = useTranslation();
+const AdminWord = () => {
   const [posts, setPosts] = useState<Post[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
@@ -43,7 +42,7 @@ const AdminPosts = () => {
 
   const fetchData = async () => {
     const [postsRes, catsRes] = await Promise.all([
-      supabase.from('blog_posts').select('*').eq('post_type', 'news').order('created_at', { ascending: false }),
+      supabase.from('blog_posts').select('*').eq('post_type', 'word').order('created_at', { ascending: false }),
       supabase.from('blog_categories').select('*').order('sort_order'),
     ]);
     if (postsRes.data) setPosts(postsRes.data);
@@ -52,6 +51,8 @@ const AdminPosts = () => {
   };
 
   useEffect(() => { fetchData(); }, []);
+
+  const wordCategories = categories.filter(c => c.type === 'word');
 
   const openCreate = () => {
     setEditingId(null);
@@ -126,7 +127,7 @@ const AdminPosts = () => {
       cover_image: coverUrl,
       tags: form.tags ? form.tags.split(',').map(t => t.trim()).filter(Boolean) : [],
       published_at: form.status === 'published' ? new Date().toISOString() : null,
-      post_type: 'news',
+      post_type: 'word',
     };
 
     if (editingId) {
@@ -153,6 +154,7 @@ const AdminPosts = () => {
   };
 
   const deletePost = async (id: string) => {
+    if (!confirm('Xóa bài viết này?')) return;
     await supabase.from('blog_posts').delete().eq('id', id);
     fetchData();
     toast.success('Đã xóa bài viết');
@@ -160,7 +162,8 @@ const AdminPosts = () => {
 
   const getCategoryName = (catId: string | null) => {
     if (!catId) return '—';
-    return categories.find(c => c.id === catId)?.name || '—';
+    const cat = categories.find(c => c.id === catId);
+    return cat ? `${cat.icon || ''} ${cat.name}`.trim() : '—';
   };
 
   if (loading) return <div className="text-muted-foreground">Đang tải...</div>;
@@ -170,16 +173,16 @@ const AdminPosts = () => {
   return (
     <div>
       <div className="flex items-center justify-between mb-6">
-        <h1 className="font-serif text-primary text-2xl">Quản Lý Bài Viết</h1>
+        <h1 className="font-serif text-primary text-2xl">Quản Lý Lời Chúa</h1>
         <button onClick={showForm ? closeForm : openCreate} className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground font-bold text-sm">
-          {showForm ? <><X className="w-4 h-4" /> Đóng</> : <><Plus className="w-4 h-4" /> Tạo bài viết</>}
+          {showForm ? <><X className="w-4 h-4" /> Đóng</> : <><Plus className="w-4 h-4" /> Tạo bài Lời Chúa</>}
         </button>
       </div>
 
       {showForm && (
         <form onSubmit={handleSubmit} className="bg-card border border-primary/30 rounded-2xl p-6 mb-6 space-y-4">
           <div className="text-lg font-bold text-foreground mb-2">
-            {editingId ? '✏️ Chỉnh sửa bài viết' : '➕ Tạo bài viết mới'}
+            {editingId ? '✏️ Chỉnh sửa bài Lời Chúa' : '➕ Tạo bài Lời Chúa mới'}
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
@@ -196,7 +199,9 @@ const AdminPosts = () => {
               <label className="block text-[0.85rem] font-bold text-muted-foreground mb-1.5">Chuyên mục</label>
               <select value={form.category_id} onChange={e => setForm({ ...form, category_id: e.target.value })} className={inputClass}>
                 <option value="">— Chọn chuyên mục —</option>
-                {categories.filter(c => c.type === 'news').map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
+                {wordCategories.map(c => (
+                  <option key={c.id} value={c.id}>{c.icon ? `${c.icon} ` : ''}{c.name}</option>
+                ))}
               </select>
             </div>
             <div>
@@ -242,7 +247,7 @@ const AdminPosts = () => {
           </div>
           <div>
             <label className="block text-[0.85rem] font-bold text-muted-foreground mb-1.5">Tags (phân cách bằng dấu phẩy)</label>
-            <input value={form.tags} onChange={e => setForm({ ...form, tags: e.target.value })} placeholder="tin tức, lời chúa, cầu nguyện" className={inputClass} />
+            <input value={form.tags} onChange={e => setForm({ ...form, tags: e.target.value })} placeholder="đức tin, cầu nguyện, kinh thánh" className={inputClass} />
           </div>
           <div>
             <label className="block text-[0.85rem] font-bold text-muted-foreground mb-1.5">Tóm tắt</label>
@@ -305,7 +310,7 @@ const AdminPosts = () => {
               </tr>
             ))}
             {posts.length === 0 && (
-              <tr><td colSpan={6} className="px-4 py-8 text-center text-muted-foreground">Chưa có bài viết nào</td></tr>
+              <tr><td colSpan={6} className="px-4 py-8 text-center text-muted-foreground">Chưa có bài Lời Chúa nào</td></tr>
             )}
           </tbody>
         </table>
@@ -314,4 +319,4 @@ const AdminPosts = () => {
   );
 };
 
-export default AdminPosts;
+export default AdminWord;

@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import PageHero from '@/components/layout/PageHero';
+import { Heart } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { useAuth } from '@/hooks/useAuth';
 import { toast } from 'sonner';
@@ -73,12 +75,17 @@ const GivePage = () => {
 
   return (
     <div>
-      <section className="py-10 sm:py-20 text-center px-4" style={{ background: 'linear-gradient(180deg, rgba(197,160,89,0.06) 0%, transparent 100%)' }}>
-        <div className="container max-w-[700px]">
-          <h1 className="font-serif text-primary mb-3 sm:mb-4 text-xl sm:text-2xl md:text-4xl">{t('give.title')}</h1>
-          <p className="text-muted-foreground text-sm sm:text-base md:text-lg">{t('give.sub')}</p>
-        </div>
-      </section>
+      <PageHero
+        badge={{ icon: <Heart className="w-3.5 h-3.5" />, text: t('give.badge') || 'DÂNG HIẾN' }}
+        title={t('give.title')}
+        subtitle={t('give.sub')}
+        pills={[
+          { icon: '🌍', text: `47 ${t('give.pillNations') || 'Quốc gia được giúp'}` },
+          { icon: '💰', text: t('give.pillTransparent') || 'Minh bạch 100%' },
+          { icon: '🔒', text: t('give.pillSecure') || 'Thanh toán an toàn' },
+        ]}
+        bgKey="hero_bg_give"
+      />
 
       <section className="py-8 sm:py-12">
         <div className="container">

@@ -194,6 +194,17 @@ const BlogPostPage = () => {
         </div>
       </section>
 
+      {/* Cover image */}
+      {post.cover_image && (
+        <div className="container max-w-[800px] -mt-4 mb-0">
+          <img
+            src={post.cover_image}
+            alt={post.title}
+            className="w-full max-h-[420px] object-cover rounded-2xl border border-border"
+          />
+        </div>
+      )}
+
       {/* Content */}
       <section className="py-12">
         <div className="container max-w-[800px]">

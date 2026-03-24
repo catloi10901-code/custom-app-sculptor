@@ -1,116 +1,415 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
+import useHeroBgImage from '@/hooks/useHeroBgImage';
 import { supabase } from '@/integrations/supabase/client';
-import SEOHead from '@/components/layout/SEOHead';
-import { Badge } from '@/components/ui/badge';
-import { format } from 'date-fns';
-import { Calendar, Eye, ArrowRight } from 'lucide-react';
+import { Search } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
-interface Post {
+interface BlogPost {
   id: string;
   title: string;
-  slug: string;
   excerpt: string | null;
+  slug: string;
+  status: string;
   cover_image: string | null;
-  published_at: string | null;
-  created_at: string;
-  view_count: number;
   tags: string[] | null;
-  category: { name: string; slug: string } | null;
+  like_count: number;
+  view_count: number;
+  created_at: string;
+  published_at: string | null;
+  category_id: string | null;
 }
 
+interface BlogCategory {
+  id: string;
+  name: string;
+  slug: string;
+  icon: string | null;
+}
+
+const HINTS = ['Cộng đồng', 'Sự kiện', 'Hoạt động', 'Chia sẻ'];
+
 const NewsPage = () => {
-  const { t } = useTranslation();
-  const [posts, setPosts] = useState<Post[]>([]);
+  const { t, i18n } = useTranslation();
+  const heroBg = useHeroBgImage('hero_bg_news');
+  const [categories, setCategories] = useState<BlogCategory[]>([]);
+  const [posts, setPosts] = useState<BlogPost[]>([]);
+  const [activeCategory, setActiveCategory] = useState('all');
   const [loading, setLoading] = useState(true);
+  const [searchInput, setSearchInput] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [activeTag, setActiveTag] = useState<string | null>(null);
+  const locale = i18n.language === 'vi' ? 'vi-VN' : 'en-US';
 
   useEffect(() => {
-    supabase
-      .from('blog_posts')
-      .select('id, title, slug, excerpt, cover_image, published_at, created_at, view_count, tags, category:blog_categories(name, slug)')
-      .eq('status', 'published')
-      .order('published_at', { ascending: false })
-      .limit(50)
-      .then(({ data }) => {
-        setPosts((data as unknown as Post[]) || []);
-        setLoading(false);
-      });
+    const fetchData = async () => {
+      const [catRes, postRes] = await Promise.all([
+        supabase.from('blog_categories').select('*').match({ type: 'news' }).order('sort_order'),
+        supabase.from('blog_posts').select('*').match({ status: 'published', post_type: 'news' }).order('created_at', { ascending: false }).limit(50),
+      ]);
+      if (catRes.data) setCategories(catRes.data);
+      if (postRes.data) setPosts(postRes.data);
+      setLoading(false);
+    };
+    fetchData();
   }, []);
+
+  const handleSearch = () => setSearchQuery(searchInput.trim());
+
+  const filtered = posts.filter((p) => {
+    const matchCat = activeCategory === 'all' || p.category_id === activeCategory;
+    const matchSearch = !searchQuery || p.title.toLowerCase().includes(searchQuery.toLowerCase()) || (p.excerpt || '').toLowerCase().includes(searchQuery.toLowerCase());
+    const matchTag = !activeTag || (p.tags || []).includes(activeTag);
+    return matchCat && matchSearch && matchTag;
+  });
+
+  const isDefaultView = activeCategory === 'all' && !searchQuery && !activeTag;
+  const featured = isDefaultView && filtered.length > 0 ? filtered[0] : null;
+  const gridPosts = featured ? filtered.slice(1) : filtered;
+
+  const allTags = [...new Set(posts.flatMap((p) => p.tags || []))].slice(0, 12);
+  const recentPosts = posts.slice(0, 5);
+
+  const formatDate = (d: string | null) => {
+    if (!d) return '';
+    return new Date(d).toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' });
+  };
+  const readTime = (excerpt: string | null) => {
+    const words = (excerpt || '').split(' ').length;
+    return t('news.readTime', { count: Math.max(2, Math.ceil(words / 40)) });
+  };
+
+  const hints = [
+    t('news.hint.community'),
+    t('news.hint.events'),
+    t('news.hint.activities'),
+    t('news.hint.sharing'),
+  ];
 
   return (
     <div>
-      <SEOHead title="Tin Tức - HOLYPray" description="Cập nhật tin tức mới nhất từ HOLYPray - tin tức cộng đồng, sự kiện và hoạt động." />
+      {/* ── HERO ─────────────────────────────────────────────── */}
+      <section
+        className="pt-16 pb-20 text-center relative overflow-hidden"
+        style={{ background: 'linear-gradient(160deg, rgba(5,20,60,.95) 0%, rgba(10,40,120,.88) 52%, rgba(8,28,100,.92) 100%)' }}
+      >
+        {heroBg && (
+          <div className="absolute inset-0 overflow-hidden">
+            <img src={heroBg} alt="" aria-hidden className="absolute inset-0 w-full h-full object-cover" style={{ filter: 'blur(8px)', transform: 'scale(1.1)', opacity: 0.6 }} />
+          </div>
+        )}
+        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-background pointer-events-none z-10" />
+        <div className="container relative z-[1]">
+          {/* Kicker */}
+          <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/25 text-primary px-4 py-1 rounded-full text-[0.65rem] font-black tracking-[3px] uppercase mb-5 backdrop-blur-md">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+            {t('news.hero.badge')}
+          </div>
 
-      <section className="py-16" style={{ background: 'linear-gradient(180deg, rgba(197,160,89,0.06) 0%, transparent 100%)' }}>
-        <div className="container">
-          <h1 className="font-serif text-primary text-center mb-3">Tin Tức</h1>
-          <p className="text-center text-muted-foreground text-lg mb-12 max-w-[600px] mx-auto">
-            Cập nhật những tin tức, sự kiện và hoạt động mới nhất từ cộng đồng HOLYPray
-          </p>
+          {/* Title */}
+          <h1 className="font-serif text-primary font-black leading-tight tracking-tight mb-3" style={{ fontSize: 'clamp(2.2rem, 5.5vw, 3.6rem)' }}>
+            {t('news.hero.title')}
+          </h1>
+          <p className="text-white/70 text-lg max-w-[500px] mx-auto mb-8 leading-relaxed">{t('news.hero.sub')}</p>
 
-          {loading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[1, 2, 3, 4, 5, 6].map((i) => (
-                <div key={i} className="bg-card border border-border rounded-2xl overflow-hidden animate-pulse">
-                  <div className="h-48 bg-muted" />
-                  <div className="p-5 space-y-3">
-                    <div className="h-4 bg-muted rounded w-3/4" />
-                    <div className="h-3 bg-muted rounded w-full" />
-                    <div className="h-3 bg-muted rounded w-1/2" />
-                  </div>
-                </div>
+          {/* Search bar */}
+          <div className="max-w-[660px] mx-auto">
+            <div
+              className="flex items-center rounded-full px-5 py-1.5 gap-3 transition-all"
+              style={{ background: 'rgba(255,255,255,0.08)', border: '1.5px solid rgba(255,255,255,0.18)' }}
+            >
+              <Search className="w-4 h-4 text-white/40 shrink-0" />
+              <input
+                type="text"
+                value={searchInput}
+                onChange={(e) => setSearchInput(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
+                placeholder={t('news.search.placeholder')}
+                className="flex-1 bg-transparent border-none outline-none text-white placeholder:text-white/40 text-[0.97rem] py-3"
+              />
+              <button
+                onClick={handleSearch}
+                className="flex items-center gap-1.5 bg-white text-blue-900 font-black text-[0.82rem] px-6 py-2.5 rounded-full hover:bg-blue-50 transition-all hover:scale-105 shrink-0 border-none cursor-pointer"
+              >
+                <Search className="w-3 h-3" />
+                {t('news.search.btn')}
+              </button>
+            </div>
+
+            {/* Hints */}
+            <div className="flex items-center justify-center gap-2 mt-3.5 flex-wrap">
+              <span className="text-[0.72rem] text-white/40 font-black uppercase tracking-widest">{t('news.search.hintLabel')}:</span>
+              {hints.map((h, i) => (
+                <button
+                  key={i}
+                  onClick={() => { setSearchInput(h); setSearchQuery(h); }}
+                  className="bg-transparent border border-white/20 text-white/60 rounded-full px-3.5 py-1 text-[0.76rem] font-medium hover:bg-white/10 hover:text-white hover:border-white/40 transition-all cursor-pointer"
+                >
+                  ✦ {h}
+                </button>
               ))}
             </div>
+          </div>
+
+          {/* Stats */}
+          {!loading && (
+            <div className="flex items-center justify-center gap-0 mt-8 flex-wrap">
+              <div className="flex flex-col items-center px-6">
+                <strong className="font-serif text-white text-2xl font-black leading-none mb-0.5">{posts.length}</strong>
+                <span className="text-[0.65rem] text-white/60 uppercase tracking-widest">{t('news.stat.posts')}</span>
+              </div>
+              <div className="w-px h-8 bg-white/20" />
+              <div className="flex flex-col items-center px-6">
+                <strong className="font-serif text-white text-2xl font-black leading-none mb-0.5">{categories.length}</strong>
+                <span className="text-[0.65rem] text-white/60 uppercase tracking-widest">{t('news.stat.categories')}</span>
+              </div>
+              <div className="w-px h-8 bg-white/20" />
+              <div className="flex flex-col items-center px-6">
+                <strong className="font-serif text-white text-2xl font-black leading-none mb-0.5">{allTags.length}</strong>
+                <span className="text-[0.65rem] text-white/60 uppercase tracking-widest">{t('news.stat.tags')}</span>
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* ── CATEGORY BAR ─────────────────────────────────────── */}
+      <div className="sticky top-[60px] z-50 bg-background/95 backdrop-blur-lg border-b border-border">
+        <div className="container">
+          <div className="flex items-center gap-4">
+            <span className="text-[0.62rem] font-black tracking-[2.5px] uppercase text-muted-foreground whitespace-nowrap shrink-0 py-4 flex items-center gap-3.5">
+              {t('news.category.label')}
+              <span className="inline-block w-px h-3.5 bg-border" />
+            </span>
+            <div className="flex gap-1.5 py-3 overflow-x-auto scrollbar-hide flex-1 items-center">
+              <button
+                onClick={() => { setActiveCategory('all'); setActiveTag(null); }}
+                className={`shrink-0 inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-[0.82rem] font-bold cursor-pointer transition-all whitespace-nowrap border-none ${
+                  activeCategory === 'all' && !activeTag
+                    ? 'bg-primary/20 text-primary shadow-md -translate-y-px'
+                    : 'bg-white/5 text-muted-foreground hover:bg-white/10 hover:text-foreground hover:-translate-y-px'
+                }`}
+              >
+                <span>📰</span>
+                <span>{t('news.category.all')}</span>
+                <span className={`text-[0.66rem] font-black px-1.5 py-0.5 rounded-full min-w-[18px] text-center ${activeCategory === 'all' && !activeTag ? 'bg-primary/20' : 'bg-white/10'}`}>
+                  {posts.length}
+                </span>
+              </button>
+              {categories.map((c) => {
+                const cnt = posts.filter((p) => p.category_id === c.id).length;
+                return (
+                  <button
+                    key={c.id}
+                    onClick={() => { setActiveCategory(c.id); setActiveTag(null); }}
+                    className={`shrink-0 inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-[0.82rem] font-bold cursor-pointer transition-all whitespace-nowrap border-none ${
+                      activeCategory === c.id
+                        ? 'bg-primary/20 text-primary shadow-md -translate-y-px'
+                        : 'bg-white/5 text-muted-foreground hover:bg-white/10 hover:text-foreground hover:-translate-y-px'
+                    }`}
+                  >
+                    {c.icon && <span>{c.icon}</span>}
+                    <span>{c.name}</span>
+                    <span className={`text-[0.66rem] font-black px-1.5 py-0.5 rounded-full min-w-[18px] text-center ${activeCategory === c.id ? 'bg-primary/20' : 'bg-white/10'}`}>{cnt}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ── MAIN CONTENT ─────────────────────────────────────── */}
+      <section className="py-8">
+        <div className="container">
+          {loading ? (
+            <div className="text-center py-16 text-muted-foreground">{t('news.loading')}</div>
           ) : posts.length === 0 ? (
-            <div className="text-center py-20">
-              <p className="text-muted-foreground text-lg">Chưa có tin tức nào.</p>
+            <div className="text-center py-16 text-muted-foreground">
+              <p className="text-2xl mb-2">📰</p>
+              <p>{t('news.empty')}</p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {posts.map((post) => (
-                <Link
-                  key={post.id}
-                  to={`/word/${post.slug}`}
-                  className="group bg-card border border-border rounded-2xl overflow-hidden no-underline transition-all duration-300 hover:border-primary/50 hover:-translate-y-1 hover:shadow-lg"
-                >
-                  {post.cover_image ? (
-                    <div className="h-48 overflow-hidden">
-                      <img src={post.cover_image} alt={post.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_308px] gap-7 items-start">
+              {/* ── MAIN ── */}
+              <main>
+                <div className="flex items-center gap-2.5 mb-5">
+                  <span className="w-1 h-[18px] bg-primary rounded-sm shrink-0" />
+                  <span className="text-[0.65rem] font-black tracking-[3px] uppercase text-primary">
+                    {searchQuery ? `${t('news.section.results')} "${searchQuery}"` : t('news.section.latest')}
+                  </span>
+                </div>
+
+                {/* Featured */}
+                {featured && (
+                  <Link
+                    to={`/word/${featured.slug}`}
+                    className="no-underline block bg-card border border-border rounded-2xl overflow-hidden mb-5 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-[0_8px_40px_rgba(0,0,0,.3)] transition-all duration-200"
+                  >
+                    <div className="grid grid-cols-1 md:grid-cols-2">
+                      <div className="h-[220px] md:h-auto bg-gradient-to-br from-blue-900/40 to-card flex items-center justify-center text-5xl overflow-hidden relative">
+                        {featured.cover_image
+                          ? <img src={featured.cover_image} alt={featured.title} className="absolute inset-0 w-full h-full object-cover" />
+                          : '📰'}
+                        <span className="absolute top-3 left-3 inline-block px-2.5 py-0.5 bg-blue-500 text-white rounded-full text-[0.72rem] font-black">{t('news.featured')}</span>
+                      </div>
+                      <div className="p-6 flex flex-col justify-center">
+                        {featured.category_id && (() => {
+                          const cat = categories.find((c) => c.id === featured.category_id);
+                          return cat ? (
+                            <span className="inline-block px-2 py-0.5 bg-gold-dim text-primary rounded-full text-[0.72rem] font-bold mb-2 w-fit">
+                              {cat.icon} {cat.name}
+                            </span>
+                          ) : null;
+                        })()}
+                        <h2 className="font-serif text-foreground text-xl mb-2.5 leading-snug">{featured.title}</h2>
+                        <p className="text-muted-foreground text-sm leading-relaxed mb-4 line-clamp-3">{featured.excerpt}</p>
+                        <div className="flex gap-4 flex-wrap text-[0.75rem] text-muted-foreground">
+                          <span>{formatDate(featured.published_at || featured.created_at)}</span>
+                          <span>⏱ {readTime(featured.excerpt)}</span>
+                          <span>❤️ {featured.like_count}</span>
+                          <span>👁 {featured.view_count}</span>
+                        </div>
+                      </div>
                     </div>
-                  ) : (
-                    <div className="h-48 bg-gold-dim flex items-center justify-center">
-                      <span className="text-4xl opacity-30">✦</span>
+                  </Link>
+                )}
+
+                {/* Grid */}
+                {gridPosts.length > 0 ? (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {gridPosts.map((post) => {
+                      const cat = categories.find((c) => c.id === post.category_id);
+                      return (
+                        <Link
+                          key={post.id}
+                          to={`/word/${post.slug}`}
+                          className="no-underline bg-card border border-border rounded-2xl overflow-hidden hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-[0_8px_40px_rgba(0,0,0,.3)] transition-all duration-200 flex flex-col"
+                        >
+                          <div className="h-[160px] bg-gradient-to-br from-blue-900/30 to-card flex items-center justify-center text-4xl overflow-hidden relative">
+                            {post.cover_image
+                              ? <img src={post.cover_image} alt={post.title} className="absolute inset-0 w-full h-full object-cover" />
+                              : '📰'}
+                          </div>
+                          <div className="p-4 flex flex-col flex-1">
+                            {cat && (
+                              <span className="inline-block px-2 py-0.5 bg-gold-dim text-primary rounded-full text-[0.72rem] font-bold mb-2 w-fit">
+                                {cat.icon} {cat.name}
+                              </span>
+                            )}
+                            <h3 className="text-foreground text-[0.95rem] font-semibold mb-1.5 leading-snug">{post.title}</h3>
+                            <p className="text-muted-foreground text-[0.85rem] leading-relaxed mb-3 line-clamp-2 flex-1">{post.excerpt}</p>
+                            <div className="flex gap-3 text-[0.75rem] text-muted-foreground">
+                              <span>{formatDate(post.published_at || post.created_at)}</span>
+                              <span>⏱ {readTime(post.excerpt)}</span>
+                              <span>❤️ {post.like_count}</span>
+                            </div>
+                          </div>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                ) : (
+                  !featured && (
+                    <div className="text-center py-16 text-muted-foreground">
+                      <p className="text-2xl mb-2">🔍</p>
+                      <p>{t('news.noResults')}</p>
                     </div>
-                  )}
-                  <div className="p-5">
-                    <div className="flex items-center gap-2 mb-3">
-                      {post.category && (
-                        <Badge variant="secondary" className="text-xs">{post.category.name}</Badge>
-                      )}
-                      {post.tags?.slice(0, 2).map((tag) => (
-                        <Badge key={tag} variant="outline" className="text-xs">{tag}</Badge>
+                  )
+                )}
+              </main>
+
+              {/* ── SIDEBAR ── */}
+              <aside className="flex flex-col gap-4 lg:sticky lg:top-[100px]">
+                {/* Highlight box */}
+                <div className="bg-gradient-to-br from-blue-900/40 to-primary/5 border border-blue-500/20 rounded-2xl p-5">
+                  <p className="text-[0.8rem] font-black text-primary uppercase tracking-[1.5px] mb-3 pb-2.5 border-b border-primary/15">📣 {t('news.sidebar.announcement')}</p>
+                  <p className="italic text-foreground/80 text-[0.88rem] leading-[1.7] mb-2">
+                    {t('news.sidebar.announcementText')}
+                  </p>
+                  <p className="text-[0.75rem] font-bold text-primary">— {t('news.sidebar.announcementAuthor')}</p>
+                </div>
+
+                {/* Tags */}
+                {allTags.length > 0 && (
+                  <div className="bg-card border border-border rounded-2xl p-5">
+                    <p className="text-[0.8rem] font-black text-primary uppercase tracking-[1.5px] mb-3 pb-2.5 border-b border-border">🏷️ {t('news.sidebar.tags')}</p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {allTags.map((tag) => (
+                        <button
+                          key={tag}
+                          onClick={() => setActiveTag(activeTag === tag ? null : tag)}
+                          className={`px-3 py-1 rounded-full border text-[0.76rem] font-semibold cursor-pointer transition-all ${
+                            activeTag === tag
+                              ? 'bg-primary border-primary text-background'
+                              : 'border-border bg-transparent text-muted-foreground hover:border-primary/40 hover:text-primary hover:bg-gold-dim'
+                          }`}
+                        >
+                          {tag}
+                        </button>
                       ))}
                     </div>
-                    <h3 className="text-foreground font-semibold text-base mb-2 line-clamp-2 group-hover:text-primary transition-colors">{post.title}</h3>
-                    {post.excerpt && (
-                      <p className="text-muted-foreground text-sm line-clamp-2 mb-3">{post.excerpt}</p>
-                    )}
-                    <div className="flex items-center justify-between text-xs text-muted-foreground">
-                      <span className="flex items-center gap-1">
-                        <Calendar className="w-3 h-3" />
-                        {format(new Date(post.published_at || post.created_at), 'dd/MM/yyyy')}
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <Eye className="w-3 h-3" /> {post.view_count}
-                      </span>
-                    </div>
-                    <div className="mt-3 flex items-center gap-1 text-primary text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-                      Đọc thêm <ArrowRight className="w-3.5 h-3.5" />
+                  </div>
+                )}
+
+                {/* Recent posts */}
+                <div className="bg-card border border-border rounded-2xl p-5">
+                  <p className="text-[0.8rem] font-black text-primary uppercase tracking-[1.5px] mb-3 pb-2.5 border-b border-border">🕐 {t('news.sidebar.recent')}</p>
+                  <div className="flex flex-col gap-3">
+                    {recentPosts.map((p) => (
+                      <Link key={p.id} to={`/word/${p.slug}`} className="no-underline flex items-start gap-3 group">
+                        <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-900/30 to-card flex items-center justify-center text-xl shrink-0 overflow-hidden relative">
+                          {p.cover_image ? <img src={p.cover_image} alt="" className="absolute inset-0 w-full h-full object-cover" /> : '📰'}
+                        </div>
+                        <div className="min-w-0">
+                          <p className="text-foreground text-[0.82rem] font-semibold leading-snug line-clamp-2 group-hover:text-primary transition-colors">{p.title}</p>
+                          <p className="text-muted-foreground text-[0.72rem] mt-0.5">{formatDate(p.published_at || p.created_at)}</p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Categories */}
+                {categories.length > 0 && (
+                  <div className="bg-card border border-border rounded-2xl p-5">
+                    <p className="text-[0.8rem] font-black text-primary uppercase tracking-[1.5px] mb-3 pb-2.5 border-b border-border">📂 {t('news.sidebar.categories')}</p>
+                    <div className="flex flex-col gap-0.5">
+                      {categories.map((c) => {
+                        const cnt = posts.filter((p) => p.category_id === c.id).length;
+                        return (
+                          <button
+                            key={c.id}
+                            onClick={() => { setActiveCategory(c.id === activeCategory ? 'all' : c.id); setActiveTag(null); }}
+                            className={`flex items-center justify-between px-3 py-2 rounded-xl text-[0.85rem] font-medium cursor-pointer transition-all text-left border-none ${
+                              activeCategory === c.id ? 'bg-primary/15 text-primary' : 'bg-transparent text-muted-foreground hover:bg-white/5 hover:text-foreground'
+                            }`}
+                          >
+                            <span>{c.icon} {c.name}</span>
+                            <span className="text-[0.72rem] font-bold opacity-60">{cnt}</span>
+                          </button>
+                        );
+                      })}
                     </div>
                   </div>
-                </Link>
-              ))}
+                )}
+
+                {/* Newsletter */}
+                <div className="rounded-2xl p-5 text-center" style={{ background: 'linear-gradient(135deg, rgba(5,20,80,.9), rgba(10,40,140,.6))', border: '1px solid rgba(96,165,250,.2)' }}>
+                  <p className="text-blue-400 text-xl mb-2">📬</p>
+                  <p className="font-serif text-foreground font-bold text-[1rem] mb-1.5">{t('news.newsletter.title')}</p>
+                  <p className="text-muted-foreground text-[0.8rem] mb-3.5 leading-relaxed">{t('news.newsletter.sub')}</p>
+                  <input
+                    type="email"
+                    placeholder={t('news.newsletter.placeholder')}
+                    className="w-full px-4 py-2.5 rounded-full text-[0.85rem] mb-2 outline-none border-none"
+                    style={{ background: 'rgba(255,255,255,0.12)', color: '#fff' }}
+                  />
+                  <button className="w-full py-2.5 rounded-full bg-primary text-background font-black text-[0.82rem] hover:opacity-90 transition-opacity cursor-pointer border-none">
+                    {t('news.newsletter.btn')}
+                  </button>
+                </div>
+              </aside>
             </div>
           )}
         </div>

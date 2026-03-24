@@ -7,7 +7,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/hooks/use-toast";
-import { Pencil, Trash2, Plus, X } from "lucide-react";
+import { Pencil, Trash2, Plus, X, BookOpen, Newspaper } from "lucide-react";
 
 interface Category {
   id: string;
@@ -16,10 +16,19 @@ interface Category {
   icon: string | null;
   description: string | null;
   sort_order: number;
+  type: string;
   created_at: string;
 }
 
+type TabType = "word" | "news";
+
+const TABS: { key: TabType; label: string; icon: React.ReactNode; color: string }[] = [
+  { key: "word", label: "Chuyên mục Lời Chúa", icon: <BookOpen className="w-4 h-4" />, color: "text-primary" },
+  { key: "news", label: "Chuyên mục Bài Viết", icon: <Newspaper className="w-4 h-4" />, color: "text-blue-400" },
+];
+
 const AdminCategories = () => {
+  const [activeTab, setActiveTab] = useState<TabType>("word");
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
   const [editingId, setEditingId] = useState<string | null>(null);
@@ -32,15 +41,18 @@ const AdminCategories = () => {
   const [sortOrder, setSortOrder] = useState(0);
 
   const fetchCategories = async () => {
+    setLoading(true);
     const { data, error } = await supabase
       .from("blog_categories")
       .select("*")
       .order("sort_order");
-    if (!error && data) setCategories(data);
+    if (!error && data) setCategories(data as Category[]);
     setLoading(false);
   };
 
   useEffect(() => { fetchCategories(); }, []);
+
+  const filtered = categories.filter((c) => (c.type || "word") === activeTab);
 
   const generateSlug = (text: string) =>
     text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
@@ -73,7 +85,14 @@ const AdminCategories = () => {
       return;
     }
 
-    const payload = { name: name.trim(), slug: slug.trim(), icon: icon.trim() || null, description: description.trim() || null, sort_order: sortOrder };
+    const payload = {
+      name: name.trim(),
+      slug: slug.trim(),
+      icon: icon.trim() || null,
+      description: description.trim() || null,
+      sort_order: sortOrder,
+      type: activeTab,
+    };
 
     if (editingId) {
       const { error } = await supabase.from("blog_categories").update(payload).eq("id", editingId);
@@ -96,21 +115,52 @@ const AdminCategories = () => {
     fetchCategories();
   };
 
+  const handleTabChange = (tab: TabType) => {
+    setActiveTab(tab);
+    resetForm();
+  };
+
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-bold text-primary">Quản lý Chuyên Mục</h1>
         {!showForm && (
           <Button onClick={() => { resetForm(); setShowForm(true); }}>
-            <Plus className="w-4 h-4 mr-1" /> Thêm chuyên mục
+            <Plus className="w-4 h-4 mr-1" /> Thêm {activeTab === "word" ? "chuyên mục Lời Chúa" : "chuyên mục Bài Viết"}
           </Button>
         )}
+      </div>
+
+      {/* Tabs */}
+      <div className="flex gap-1 p-1 bg-card border border-border rounded-xl w-fit">
+        {TABS.map((tab) => {
+          const count = categories.filter((c) => (c.type || "word") === tab.key).length;
+          return (
+            <button
+              key={tab.key}
+              onClick={() => handleTabChange(tab.key)}
+              className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-all cursor-pointer border-none ${
+                activeTab === tab.key
+                  ? "bg-primary/15 text-primary shadow-sm"
+                  : "bg-transparent text-muted-foreground hover:text-foreground hover:bg-white/5"
+              }`}
+            >
+              {tab.icon}
+              {tab.label}
+              <span className={`text-[0.7rem] font-black px-1.5 py-0.5 rounded-full min-w-[20px] text-center ${activeTab === tab.key ? "bg-primary/20 text-primary" : "bg-white/10 text-muted-foreground"}`}>
+                {count}
+              </span>
+            </button>
+          );
+        })}
       </div>
 
       {showForm && (
         <Card>
           <CardHeader className="flex flex-row items-center justify-between pb-2">
-            <CardTitle className="text-lg">{editingId ? "Sửa chuyên mục" : "Thêm chuyên mục mới"}</CardTitle>
+            <CardTitle className="text-lg">
+              {editingId ? "Sửa chuyên mục" : `Thêm chuyên mục — ${TABS.find(t => t.key === activeTab)?.label}`}
+            </CardTitle>
             <Button variant="ghost" size="icon" onClick={resetForm}><X className="w-4 h-4" /></Button>
           </CardHeader>
           <CardContent>
@@ -159,9 +209,9 @@ const AdminCategories = () => {
             <TableBody>
               {loading ? (
                 <TableRow><TableCell colSpan={5} className="text-center py-8 text-muted-foreground">Đang tải...</TableCell></TableRow>
-              ) : categories.length === 0 ? (
+              ) : filtered.length === 0 ? (
                 <TableRow><TableCell colSpan={5} className="text-center py-8 text-muted-foreground">Chưa có chuyên mục nào</TableCell></TableRow>
-              ) : categories.map((cat) => (
+              ) : filtered.map((cat) => (
                 <TableRow key={cat.id}>
                   <TableCell className="text-xl">{cat.icon || "📁"}</TableCell>
                   <TableCell className="font-medium">{cat.name}</TableCell>

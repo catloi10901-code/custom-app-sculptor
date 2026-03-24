@@ -11,7 +11,6 @@
   "nav.profile": "Profile",
   "nav.admin": "Admin Panel",
   "nav.news": "News",
-
   "hero.badge": "LIVE • 47 NATIONS PRAYING",
   "hero.title1": "Connecting Millions of Hearts —",
   "hero.title2": "One Prayer For the World.",
@@ -22,7 +21,6 @@
   "hero.stat.nations": "NATIONS",
   "hero.stat.members": "MEMBERS",
   "hero.stat.donated": "DONATED",
-
   "section.quickpray.title": "Pray Right Now",
   "section.quickpray.sub": "Choose a topic and send your prayer in 30 seconds",
   "card.peace.title": "World Peace",
@@ -33,14 +31,12 @@
   "card.healing.desc": "Pray for physical and spiritual healing for those in suffering.",
   "card.pray": "Pray →",
   "section.prayerwall.link": "View full prayer wall →",
-
   "section.map.title": "Global Prayer Map",
   "section.map.sub": "Real-time updates • 47 nations interceding together",
   "section.map.live": "people praying right now",
   "section.map.legend.prayers": "Prayers",
   "section.map.legend.active": "High activity",
   "section.map.legend.new": "New members",
-
   "section.impact.title": "Measurable Impact",
   "section.impact.sub": "Transparency is a feature, not an afterthought",
   "impact.stat1": "Prayers",
@@ -52,7 +48,6 @@
   "impact.change3": "↑ +3 new nations",
   "impact.change4": "↑ 6 new projects",
   "impact.cta": "View Full Report →",
-
   "section.testimonials.title": "Testimonials",
   "section.testimonials.sub": "Voices that trust and stand with HOLYPray",
   "testimonial.1.quote": "\"HOLYPray connected our church with a global prayer community. Every prayer truly makes a difference.\"",
@@ -64,12 +59,10 @@
   "testimonial.3.quote": "\"This is the first platform I've seen that combines spiritual depth with real social impact. Trustworthy and full of hope.\"",
   "testimonial.3.name": "Rev. Amara Diallo",
   "testimonial.3.org": "Religious leader, Dakar Senegal",
-
   "section.give.title": "Your Giving Creates Impact",
   "section.give.sub": "Every dollar is transparently allocated to humanitarian projects. Give once or recurring.",
   "section.give.cta": "♡ Give Now",
   "section.give.cta2": "See Budget Allocation",
-
   "live.title": "Live Prayer Sessions",
   "live.viewAll": "View all →",
   "live.viewers": "viewers",
@@ -81,11 +74,9 @@
   "live.card3.time": "⏰ 06:00 Tomorrow",
   "live.card3.title": "Dawn Prayer Session",
   "live.card3.host": "HOLYPray Community",
-
   "ticker.prayed": "just prayed from",
   "ticker.amened": "said Amen from",
   "ticker.donated": "donated from",
-
   "footer.desc": "Connecting millions of hearts, one prayer for a peaceful world.",
   "footer.impact": "Global Impact",
   "footer.word": "God's Word",
@@ -113,7 +104,6 @@
   "footer.emailExists": "This email is already subscribed!",
   "footer.emailFail": "Could not subscribe",
   "footer.emailSuccess": "Subscribed successfully! 🎉",
-
   "auth.forgotPassword": "Forgot Password",
   "auth.login": "Login",
   "auth.signup": "Sign Up",
@@ -132,7 +122,6 @@
   "auth.loginSuccess": "Login successful!",
   "auth.signupSuccess": "Sign up successful! Please check your email to confirm.",
   "auth.resetEmailSent": "Password reset email sent! Please check your inbox.",
-
   "reset.title": "Reset Password",
   "reset.waiting": "Verifying link... Please wait or check your email again.",
   "reset.newTitle": "Set New Password",
@@ -143,7 +132,6 @@
   "reset.mismatch": "Passwords don't match!",
   "reset.tooShort": "Password must be at least 6 characters",
   "reset.success": "Password reset successful!",
-
   "give.title": "♡ Give",
   "give.sub": "Every dollar is transparently allocated to humanitarian projects. Give once or recurring.",
   "give.chooseAmount": "Choose Amount",
@@ -165,7 +153,6 @@
   "give.loginRequired": "Please login to give",
   "give.error": "Could not process donation",
   "give.thanks": "Thank you for donating ${{amount}}! ♡",
-
   "profile.loginRequired": "Please login to view your profile",
   "profile.prayers": "Prayers",
   "profile.amensReceived": "Amens received",
@@ -185,12 +172,10 @@
   "profile.saveBtn": "💾 Save Changes",
   "profile.updateError": "Could not update profile",
   "profile.updateSuccess": "Profile updated! ✨",
-
   "pray.tab.wall": "Prayer",
   "pray.tab.live": "Live",
   "pray.tab.community": "Community",
   "pray.tab.calendar": "Prayer Calendar",
-
   "prayerWall.title": "🙏 Prayer Wall",
   "prayerWall.sub": "Send a prayer and intercede with the global community",
   "prayerWall.sendBtn": "+ Send a Prayer",
@@ -221,7 +206,6 @@
   "prayerWall.minutesAgo": "{{count}} min ago",
   "prayerWall.hoursAgo": "{{count}} hr ago",
   "prayerWall.daysAgo": "{{count}} days ago",
-
   "filter.all": "All",
   "topic.peace": "🕊️ Peace",
   "topic.prosperity": "🌟 Prosperity",
@@ -230,7 +214,6 @@
   "topic.recovery": "🔄 Recovery",
   "topic.family": "👨‍👩‍👧 Family",
   "topic.nation": "🏛️ Nation",
-
   "community.title": "🤝 Community",
   "community.newPost": "+ Create New Post",
   "community.titlePlaceholder": "Post title...",
@@ -255,7 +238,6 @@
   "community.badgePrayer": "Prayer",
   "community.badgeNews": "News",
   "community.badgeDiscussion": "Discussion",
-
   "liveSessions.banner": "Live prayer session in progress",
   "liveSessions.viewers": "viewers",
   "liveSessions.liveTitle": "Prayer for World Peace",
@@ -268,14 +250,12 @@
   "liveSessions.healingTitle": "Healing Prayer",
   "liveSessions.worshipTitle": "Worship & Prayer Night",
   "liveSessions.globalTitle": "Global Prayer",
-
   "calendar.prev": "← Prev",
   "calendar.next": "Next →",
   "calendar.month": "March 2026",
   "calendar.upcoming": "📅 Upcoming Events",
   "calendar.joined": "✓ Joined",
   "calendar.join": "Join",
-
   "word.title": "📖 God's Word",
   "word.sub": "Reflect, learn, and be nourished by His Word every day",
   "word.all": "All",
@@ -286,7 +266,6 @@
   "word.verse.title": "✨ Verse of the Day",
   "word.verse.text": "\"Cast all your anxiety on Him because He cares for you.\"",
   "word.verse.ref": "— 1 Peter 5:7",
-
   "impact.page.title": "🌍 Measurable Impact",
   "impact.page.sub": "Transparency is a feature, not an afterthought. Every dollar is tracked and clearly reported.",
   "impact.stories.title": "📖 Impact Stories",
@@ -305,7 +284,6 @@
   "impact.stories.4.desc": "Over 8,000 people now have clean water, reducing water-related diseases by 70%.",
   "impact.fund.title": "💰 Budget Allocation",
   "impact.fund.sub": "Every dollar is transparently allocated",
-
   "about.heroTitle": "HOLY PRAY TODAY",
   "about.heroTagline": "Digital Altar — Prayer for All Nations",
   "about.heroQuote": "United in the Holy Spirit, shaking the Heavens.",
@@ -327,12 +305,10 @@
   "about.joinText": "Every prayer, every donation creates change. Become part of this global movement.",
   "about.startPraying": "✦ Start Praying",
   "about.giveNow": "♡ Give",
-
   "library.title": "📚 Prayer Library",
   "library.sub": "A treasury of prayers by topic, ready for you to use and share",
   "library.all": "📚 All",
   "library.read": "📖 Read",
-
   "blog.loading": "Loading...",
   "blog.notFound": "Post not found",
   "blog.backToWord": "← Back to God's Word",
@@ -350,10 +326,8 @@
   "blog.loginRequired": "Please login to comment",
   "blog.commentError": "Could not submit comment",
   "blog.commentSuccess": "Comment submitted! 💬",
-
   "common.loading": "Loading...",
   "common.user": "User",
-
   "search.label": "Search",
   "search.placeholder": "Search prayers, posts, discussions...",
   "search.searching": "Searching...",
@@ -361,7 +335,6 @@
   "search.hint": "Type a keyword to search...",
   "search.select": "select",
   "search.close": "close",
-
   "impact.ai.title": "Latest Impact News",
   "impact.ai.sub": "Real stories of prayer and humanitarian impact around the world",
   "impact.ai.fetch": "Fetch New Articles",
@@ -375,7 +348,6 @@
   "impact.ai.source": "Source",
   "impact.ai.loading": "Loading impact stories...",
   "impact.ai.deleted": "Article deleted",
-
   "impact.page.badge": "Global Impact Report 2026",
   "impact.timeline.title": "Our Journey",
   "impact.timeline.sub": "Key milestones that shaped our global impact",
@@ -396,9 +368,7 @@
   "impact.pill.nations": "Nations",
   "impact.pill.members": "Members",
   "impact.pill.raised": "Raised",
-
   "give.crypto": "Pay with Crypto",
-
   "library.cat.peace": "🕊️ Peace",
   "library.cat.health": "💚 Health",
   "library.cat.prosperity": "⭐ Prosperity",
@@ -407,7 +377,6 @@
   "library.cat.gratitude": "🙏 Gratitude",
   "library.cat.nation": "🏛️ Nation",
   "library.count": "{{count}} items",
-
   "admin.dashboard": "Dashboard",
   "admin.prayers.title": "Prayer Management",
   "admin.prayers.name": "Name",
@@ -426,7 +395,6 @@
   "admin.prayers.approvedToast": "Approved",
   "admin.prayers.deleted": "Deleted",
   "admin.prayers.loading": "Loading...",
-
   "admin.posts.title": "Post Management",
   "admin.posts.create": "+ Create Post",
   "admin.posts.close": "Close",
@@ -450,7 +418,6 @@
   "admin.posts.draftToast": "Moved to draft",
   "admin.posts.deleted": "Deleted",
   "admin.posts.loading": "Loading...",
-
   "admin.users.title": "User Management",
   "admin.users.name": "Name",
   "admin.users.country": "Country",
@@ -466,19 +433,16 @@
   "admin.users.unlockedToast": "Account unlocked",
   "admin.users.roleSet": "Role set: {{role}}",
   "admin.users.loading": "Loading...",
-
   "admin.settings.title": "Settings",
   "admin.settings.info": "Website Information",
   "admin.settings.infoSub": "Manage general settings for HOLYPray",
   "admin.settings.siteName": "Website Name",
   "admin.settings.email": "Contact Email",
   "admin.settings.save": "Save Changes",
-
   "admin.dashboard.prayers": "Prayers",
   "admin.dashboard.posts": "Posts",
   "admin.dashboard.users": "Users",
   "admin.dashboard.donations": "Donations",
-
   "pray.tab.campaigns": "Campaigns",
   "campaigns.active": "Active campaigns",
   "campaigns.title": "🎯 Prayer Campaigns",
@@ -499,10 +463,8 @@
   "campaigns.card.poverty.desc": "Intercede for millions suffering from hunger and deprivation.",
   "campaigns.card.revival.title": "Spiritual Revival",
   "campaigns.card.revival.desc": "Pray for a great spiritual awakening across the globe.",
-
   "prayerWall.heartLetter": "Heart Letter",
   "prayerWall.amenLabel": "Amen",
-
   "hl.to": "TO",
   "hl.toVal": "Beloved Servants of God and Christian Families Around the World",
   "hl.from": "FROM",
@@ -537,10 +499,8 @@
   "hl.sign1": "Wholeheartedly for the Kingdom of God,",
   "hl.sign2": "Hallelujah! Amen. 🙌🕊",
   "hl.sign3": "Abraham Nguyen Quang Huy – Co-Chairman, 9S UNION\n(A call from the eye of the storm, Dubai – UAE, March 1, 2026)",
-
   "section.partners.title": "Partners",
   "section.partners.sub": "Organizations partnering with us",
-
   "nav.testimonials": "Testimonials",
   "testimonials.badge": "STORIES OF FAITH",
   "testimonials.title": "Witness & Testimonials",
@@ -593,5 +553,39 @@
   "testimonials.thanks.title": "Thank You!",
   "testimonials.thanks.sub": "Your testimony has been submitted and will be reviewed before publishing. God bless you!",
   "testimonials.thanks.back": "Back to Testimonials",
-  "common.cancel": "Cancel"
+  "common.cancel": "Cancel",
+  "about.badge": "ABOUT HOLYPRAY",
+  "library.badge": "PRAYER LIBRARY",
+  "news.hero.badge": "NEWS & EVENTS",
+  "news.hero.title": "HOLYPray News",
+  "news.hero.sub": "Updates on the latest news, events and activities from the HOLYPray global community",
+  "news.search.placeholder": "Search news, events, activities...",
+  "news.search.btn": "Search",
+  "news.search.hintLabel": "Hint",
+  "news.hint.community": "Community",
+  "news.hint.events": "Events",
+  "news.hint.activities": "Activities",
+  "news.hint.sharing": "Sharing",
+  "news.stat.posts": "Posts",
+  "news.stat.categories": "Categories",
+  "news.stat.tags": "Tags",
+  "news.category.label": "Category",
+  "news.category.all": "All",
+  "news.loading": "Loading...",
+  "news.empty": "No news yet",
+  "news.section.latest": "LATEST NEWS",
+  "news.section.results": "Results",
+  "news.featured": "Featured",
+  "news.noResults": "No results found",
+  "news.readTime": "{count} min read",
+  "news.sidebar.announcement": "Latest Announcement",
+  "news.sidebar.announcementText": "Stay updated with the latest news and events from the global HOLYPray community.",
+  "news.sidebar.announcementAuthor": "HOLYPray Community",
+  "news.sidebar.tags": "Popular Tags",
+  "news.sidebar.recent": "Recent News",
+  "news.sidebar.categories": "Categories",
+  "news.newsletter.title": "Get Weekly News",
+  "news.newsletter.sub": "Latest news delivered to your inbox",
+  "news.newsletter.placeholder": "Your email...",
+  "news.newsletter.btn": "Subscribe Free"
 }

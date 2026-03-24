@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { allLibraryItems } from '@/data/libraryItems';
+import PageHero from '@/components/layout/PageHero';
+import { BookOpen } from 'lucide-react';
 
 const LibraryPage = () => {
   const { t } = useTranslation();
@@ -33,12 +35,17 @@ const LibraryPage = () => {
 
   return (
     <div>
-      <section className="py-20 text-center" style={{ background: 'linear-gradient(180deg, rgba(197,160,89,0.06) 0%, transparent 100%)' }}>
-        <div className="container">
-          <h1 className="font-serif text-primary mb-4">{t('library.title')}</h1>
-          <p className="text-muted-foreground text-lg max-w-[600px] mx-auto">{t('library.sub')}</p>
-        </div>
-      </section>
+      <PageHero
+        badge={{ icon: <BookOpen className="w-3.5 h-3.5" />, text: t('library.badge') || 'THƯ VIỆN CẦU NGUYỆN' }}
+        title={<>{t('library.title')}</>}
+        subtitle={t('library.sub')}
+        pills={[
+          { icon: '📖', text: `${allLibraryItems.length} ${t('library.pillItems') || 'Bài cầu nguyện'}` },
+          { icon: '🗂️', text: `7 ${t('library.pillCategories') || 'Chủ đề'}` },
+          { icon: '🌐', text: t('library.pillMultilang') || 'Đa ngôn ngữ' },
+        ]}
+        bgKey="hero_bg_library"
+      />
       <section className="py-12">
         <div className="container">
           {isMobile ? (
