@@ -23,12 +23,12 @@ const PrayPage = () => {
 
   return (
     <div>
-      <div className="flex gap-0 bg-white/[0.04] border-b border-border sticky top-[60px] z-[100] backdrop-blur-xl overflow-x-auto">
+      <div className="flex gap-6 sm:justify-between bg-white/[0.04] border-b border-border sticky top-[60px] z-[100] backdrop-blur-xl overflow-x-auto" style={{ scrollbarHeight: "5px" }}>
         {tabs.map((tab) => (
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            className={`flex-1 min-w-0 flex items-center justify-center gap-1 sm:gap-[7px] py-3 sm:py-3.5 px-1.5 sm:px-2.5 bg-transparent border-none border-b-[3px] text-[0.78rem] sm:text-[0.88rem] font-semibold cursor-pointer transition-all duration-300 whitespace-nowrap ${
+            className={` sm:min-w-0 2xl:min-w-[300px] flex items-center justify-center gap-1 sm:gap-[7px] py-3 sm:py-3.5 px-2 sm:px-2.5 bg-transparent border-none border-b-[3px] text-[0.78rem] sm:text-[0.88rem] font-semibold cursor-pointer transition-all duration-300 whitespace-nowrap ${
               activeTab === tab.id ? "text-white border-b-primary bg-primary/[0.06]" : "text-muted-foreground border-b-transparent hover:text-foreground hover:bg-white/[0.05]"
             }`}
           >

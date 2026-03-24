@@ -14,6 +14,7 @@ interface BlogPost {
   cover_image: string | null;
   like_count: number;
   view_count: number;
+  pray_together_count: number;
   created_at: string;
   published_at: string | null;
   category_id: string | null;
@@ -46,6 +47,8 @@ const BlogPostPage = () => {
   const [loading, setLoading] = useState(true);
   const [newComment, setNewComment] = useState('');
   const [submittingComment, setSubmittingComment] = useState(false);
+  const [prayTogetherCount, setPrayTogetherCount] = useState(0);
+  const [hasPrayed, setHasPrayed] = useState(false);
   const locale = i18n.language === 'vi' ? 'vi-VN' : 'en-US';
 
   useEffect(() => {
@@ -60,6 +63,8 @@ const BlogPostPage = () => {
 
       if (data) {
         setPost(data);
+        setPrayTogetherCount(data.pray_together_count ?? 0);
+        setHasPrayed(sessionStorage.getItem("prayed_" + data.id) === "1");
         // Increment view count atomically
         await supabase.rpc('increment_view_count', { post_id: data.id });
 
@@ -140,6 +145,24 @@ const BlogPostPage = () => {
   const formatDate = (d: string | null) => {
     if (!d) return '';
     return new Date(d).toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' });
+  };
+
+  const handlePrayTogether = async () => {
+    if (!post || hasPrayed) return;
+    sessionStorage.setItem("prayed_" + post.id, "1");
+    setHasPrayed(true);
+    setPrayTogetherCount(c => c + 1);
+    await supabase.rpc('increment_pray_together_count', { post_id: post.id });
+  };
+
+  const handleShare = () => {
+    const url = window.location.href;
+    if (navigator.share) {
+      navigator.share({ title: post.title, url });
+    } else {
+      navigator.clipboard.writeText(url);
+      toast.success('Đã sao chép liên kết!');
+    }
   };
 
   const timeAgo = (d: string) => {
@@ -231,17 +254,29 @@ const BlogPostPage = () => {
             </div>
           )}
 
-          {/* Share */}
-          <div className="flex items-center gap-3 mt-8 pt-6 border-t border-border">
-            <span className="text-muted-foreground text-sm">{t('blog.share')}</span>
-            {['𝕏', 'f', 'in'].map((icon, i) => (
-              <button
-                key={i}
-                className="w-9 h-9 rounded-full bg-gold-dim border border-border flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-              >
-                {icon}
-              </button>
-            ))}
+          {/* Action buttons */}
+          <div className="flex items-center gap-2 mt-8 pt-6 border-t border-border">
+            <button
+              onClick={handlePrayTogether}
+              disabled={hasPrayed}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-xs font-semibold transition-all cursor-pointer
+                bg-blue-50 border-blue-200 text-blue-700 hover:bg-blue-100
+                disabled:opacity-60 disabled:cursor-default"
+            >
+              <span>🙏</span>
+              <span>{prayTogetherCount} Cầu Nguyện Cùng</span>
+            </button>
+            <button
+              onClick={handleShare}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-border bg-card text-foreground text-xs font-semibold hover:bg-secondary/50 transition-all cursor-pointer"
+            >
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+              </svg>
+              <span>Chia Sẻ</span>
+            </button>
           </div>
 
           {/* Comments Section */}

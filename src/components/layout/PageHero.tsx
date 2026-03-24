@@ -42,7 +42,7 @@ const PageHero = ({ badge, title, subtitle, pills, cta, bgKey, bgUrl }: PageHero
       {/* Blurred background image */}
       {bgImage && (
         <div className="absolute inset-0 overflow-hidden">
-          <img src={bgImage} alt="" aria-hidden className="absolute inset-0 w-full h-full object-cover" style={{ filter: "blur(3px)", transform: "scale(1.1)", opacity: 0.6 }} />
+          <img src={bgImage} alt="" aria-hidden className="absolute inset-0 w-full h-full object-cover" style={{ filter: "blur(1px)", transform: "scale(1.1)", opacity: 0.6 }} />
         </div>
       )}
       {/* Gradient overlay */}

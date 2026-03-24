@@ -104,10 +104,7 @@ const WordPage = () => {
 
           {/* Search bar */}
           <div className="max-w-[660px] mx-auto">
-            <div
-              className="flex items-center rounded-full px-5 py-1.5 gap-3 transition-all"
-              style={{ background: "rgba(255,255,255,0.08)", border: "1.5px solid rgba(255,255,255,0.18)" }}
-            >
+            <div className="flex items-center rounded-full px-5 py-1.5 gap-3 transition-all" style={{ background: "rgba(255,255,255,0.08)", border: "1.5px solid rgba(255,255,255,0.18)" }}>
               <Search className="w-4 h-4 text-white/40 shrink-0" />
               <input
                 type="text"
@@ -132,7 +129,10 @@ const WordPage = () => {
               {HINTS.map((h) => (
                 <button
                   key={h}
-                  onClick={() => { setSearchInput(h); setSearchQuery(h); }}
+                  onClick={() => {
+                    setSearchInput(h);
+                    setSearchQuery(h);
+                  }}
                   className="bg-transparent border border-white/20 text-white/60 rounded-full px-3.5 py-1 text-[0.76rem] font-medium hover:bg-white/12 hover:text-white hover:border-white/40 transition-all cursor-pointer"
                 >
                   ✦ {h}
@@ -319,48 +319,6 @@ const WordPage = () => {
                   <p className="italic text-foreground/80 text-[0.92rem] leading-[1.7] mb-2 font-serif">{t("word.verse.text")}</p>
                   <p className="text-[0.75rem] font-bold text-primary">{t("word.verse.ref")}</p>
                 </div>
-
-                {/* Tags */}
-                {allTags.length > 0 && (
-                  <div className="bg-card border border-border rounded-2xl p-5">
-                    <p className="text-[0.8rem] font-black text-primary uppercase tracking-[1.5px] mb-3 pb-2.5 border-b border-border">🏷️ Tags Phổ Biến</p>
-                    <div className="flex flex-wrap gap-1.5">
-                      {allTags.map((tag) => (
-                        <button
-                          key={tag}
-                          onClick={() => setActiveTag(activeTag === tag ? null : tag)}
-                          className={`px-3 py-1 rounded-full border text-[0.76rem] font-semibold cursor-pointer transition-all ${
-                            activeTag === tag
-                              ? "bg-primary border-primary text-background"
-                              : "border-border bg-transparent text-muted-foreground hover:border-primary/40 hover:text-primary hover:bg-gold-dim"
-                          }`}
-                        >
-                          {tag}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {/* Recent posts */}
-                <div className="bg-card border border-border rounded-2xl p-5">
-                  <p className="text-[0.8rem] font-black text-primary uppercase tracking-[1.5px] mb-3 pb-2.5 border-b border-border">🕐 Bài Viết Mới</p>
-                  <div className="flex flex-col gap-3">
-                    {recentPosts.map((p) => (
-                      <Link key={p.id} to={`/word/${p.slug}`} className="no-underline flex items-start gap-3 group">
-                        <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/20 to-card flex items-center justify-center text-xl shrink-0 overflow-hidden relative">
-                          {p.cover_image ? <img src={p.cover_image} alt="" className="absolute inset-0 w-full h-full object-cover" /> : "📖"}
-                        </div>
-                        <div className="min-w-0">
-                          <p className="text-foreground text-[0.82rem] font-semibold leading-snug line-clamp-2 group-hover:text-primary transition-colors">{p.title}</p>
-                          <p className="text-muted-foreground text-[0.72rem] mt-0.5">{formatDate(p.published_at || p.created_at)}</p>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Categories */}
                 {categories.length > 0 && (
                   <div className="bg-card border border-border rounded-2xl p-5">
                     <p className="text-[0.8rem] font-black text-primary uppercase tracking-[1.5px] mb-3 pb-2.5 border-b border-border">📂 Chủ Đề</p>
@@ -404,6 +362,48 @@ const WordPage = () => {
                     Đăng Ký Miễn Phí
                   </button>
                 </div>
+
+                {/* Tags */}
+                {allTags.length > 0 && (
+                  <div className="bg-card border border-border rounded-2xl p-5">
+                    <p className="text-[0.8rem] font-black text-primary uppercase tracking-[1.5px] mb-3 pb-2.5 border-b border-border">🏷️ Tags Phổ Biến</p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {allTags.map((tag) => (
+                        <button
+                          key={tag}
+                          onClick={() => setActiveTag(activeTag === tag ? null : tag)}
+                          className={`px-3 py-1 rounded-full border text-[0.76rem] font-semibold cursor-pointer transition-all ${
+                            activeTag === tag
+                              ? "bg-primary border-primary text-background"
+                              : "border-border bg-transparent text-muted-foreground hover:border-primary/40 hover:text-primary hover:bg-gold-dim"
+                          }`}
+                        >
+                          {tag}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Recent posts */}
+                <div className="bg-card border border-border rounded-2xl p-5">
+                  <p className="text-[0.8rem] font-black text-primary uppercase tracking-[1.5px] mb-3 pb-2.5 border-b border-border">🕐 Bài Viết Mới</p>
+                  <div className="flex flex-col gap-3">
+                    {recentPosts.map((p) => (
+                      <Link key={p.id} to={`/word/${p.slug}`} className="no-underline flex items-start gap-3 group">
+                        <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary/20 to-card flex items-center justify-center text-xl shrink-0 overflow-hidden relative">
+                          {p.cover_image ? <img src={p.cover_image} alt="" className="absolute inset-0 w-full h-full object-cover" /> : "📖"}
+                        </div>
+                        <div className="min-w-0">
+                          <p className="text-foreground text-[0.82rem] font-semibold leading-snug line-clamp-2 group-hover:text-primary transition-colors">{p.title}</p>
+                          <p className="text-muted-foreground text-[0.72rem] mt-0.5">{formatDate(p.published_at || p.created_at)}</p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Categories */}
               </aside>
             </div>
           )}

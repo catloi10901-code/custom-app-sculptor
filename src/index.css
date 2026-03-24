@@ -252,3 +252,15 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
   font-family: 'Noto Sans Arabic', 'Playfair Display', serif;
   font-weight: 700;
 }
+
+/* ===== PRAY TAB SCROLLBAR (5px) ===== */
+.sticky.top-\[60px\].z-\[100\].overflow-x-auto::-webkit-scrollbar {
+  height: 5px;
+}
+.sticky.top-\[60px\].z-\[100\].overflow-x-auto::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.05);
+}
+.sticky.top-\[60px\].z-\[100\].overflow-x-auto::-webkit-scrollbar-thumb {
+  background: rgba(197,160,89,0.4);
+  border-radius: 3px;
+}
