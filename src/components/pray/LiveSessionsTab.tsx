@@ -87,7 +87,7 @@ const LiveSessionsTab = () => {
           <div className="mb-6">
             <div className="w-full aspect-video rounded-2xl overflow-hidden border border-red-500/30 shadow-[0_0_40px_rgba(239,68,68,0.15)]">
               <iframe
-                src={`${liveSession.youtube_url}?autoplay=1&rel=0&modestbranding=1`}
+                src={`${liveSession.youtube_url}?autoplay=1&mute=1&rel=0&modestbranding=1`}
                 className="w-full h-full"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen

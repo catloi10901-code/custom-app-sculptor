@@ -82,15 +82,15 @@ const WordPage = () => {
   return (
     <div>
       {/* ── HERO ─────────────────────────────────────────────── */}
-      <section className="pt-16 pb-20 text-center relative overflow-hidden" style={{ background: "linear-gradient(160deg, rgba(10,22,72,.92) 0%, rgba(27,59,168,.85) 52%, rgba(15,35,120,.90) 100%)" }}>
+      <section className="pt-16 pb-20 text-center relative overflow-hidden" style={{ background: "linear-gradient(160deg, rgba(10,22,72,.50) 0%, rgba(27,59,168,.42) 52%, rgba(15,35,120,.50) 100%)" }}>
         {heroBg && (
           <div className="absolute inset-0 overflow-hidden">
-            <img src={heroBg} alt="" aria-hidden className="absolute inset-0 w-full h-full object-cover" style={{ filter: "blur(8px)", transform: "scale(1.1)", opacity: 0.6 }} />
+            <img src={heroBg} alt="" aria-hidden className="absolute inset-0 w-full h-full object-cover" style={{ filter: "blur(3px)", transform: "scale(1.1)", opacity: 0.6 }} />
           </div>
         )}
         <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-background pointer-events-none z-10" />
         <div className="container relative z-[1]">
-          {/* Kicker */}
+          {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/25 text-primary px-4 py-1 rounded-full text-[0.65rem] font-black tracking-[3px] uppercase mb-5 backdrop-blur-md">
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
             {t("word.title")}
@@ -106,11 +106,7 @@ const WordPage = () => {
           <div className="max-w-[660px] mx-auto">
             <div
               className="flex items-center rounded-full px-5 py-1.5 gap-3 transition-all"
-              style={{
-                background: "rgba(255,255,255,0.08)",
-                border: "1.5px solid rgba(255,255,255,0.18)",
-              }}
-              onFocus={() => {}}
+              style={{ background: "rgba(255,255,255,0.08)", border: "1.5px solid rgba(255,255,255,0.18)" }}
             >
               <Search className="w-4 h-4 text-white/40 shrink-0" />
               <input
@@ -136,10 +132,7 @@ const WordPage = () => {
               {HINTS.map((h) => (
                 <button
                   key={h}
-                  onClick={() => {
-                    setSearchInput(h);
-                    setSearchQuery(h);
-                  }}
+                  onClick={() => { setSearchInput(h); setSearchQuery(h); }}
                   className="bg-transparent border border-white/20 text-white/60 rounded-full px-3.5 py-1 text-[0.76rem] font-medium hover:bg-white/12 hover:text-white hover:border-white/40 transition-all cursor-pointer"
                 >
                   ✦ {h}

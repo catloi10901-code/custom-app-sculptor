@@ -428,7 +428,7 @@
   "section.partners.sub": "우리와 함께하는 기관들",
   "nav.testimonials": "Testimonials",
   "testimonials.badge": "STORIES OF FAITH",
-  "testimonials.title": "Witness & Testimonials",
+  "testimonials.title": "참증",
   "testimonials.sub": "Real stories of God's power — transformed lives through prayer.",
   "testimonials.cta": "Share Your Testimony",
   "testimonials.loading": "Loading...",
@@ -512,5 +512,6 @@
   "news.newsletter.title": "주간 뉴스 받기",
   "news.newsletter.sub": "최신 뉴스를 이메일로 받으세요",
   "news.newsletter.placeholder": "이메일...",
-  "news.newsletter.btn": "무료 구독"
+  "news.newsletter.btn": "무료 구독",
+  "live.schedule": "📅 방송 일정"
 }

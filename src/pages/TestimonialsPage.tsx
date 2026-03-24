@@ -8,6 +8,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { toast } from 'sonner';
 import { useTranslation } from 'react-i18next';
 import { Loader2, Upload, X, CheckCircle, Heart, Star, ImageIcon, Video, ChevronDown as ChevDown, Share2 } from 'lucide-react';
+import PageHero from '@/components/layout/PageHero';
 
 // ── Country data ─────────────────────────────────────────────────────────────
 type Country = { code: string; name: string; dialCode: string; flag: string };
@@ -818,41 +819,13 @@ const TestimonialsPage = () => {
   return (
     <div>
       {/* ══ HERO ══ */}
-      <section className="relative overflow-hidden py-20 sm:py-28">
-        {heroBg && (
-          <div className="absolute inset-0 overflow-hidden">
-            <img src={heroBg} alt="" aria-hidden className="absolute inset-0 w-full h-full object-cover" style={{ filter: 'blur(8px)', transform: 'scale(1.1)', opacity: 0.6 }} />
-          </div>
-        )}
-        <div className="absolute inset-0" style={{
-          background: `
-            radial-gradient(ellipse 100% 80% at 50% -10%, rgba(197,160,89,0.14) 0%, transparent 60%),
-            radial-gradient(ellipse 60% 50% at 80% 80%, rgba(167,139,250,0.08) 0%, transparent 50%),
-            linear-gradient(180deg, hsl(221 68% 30% / 0.72) 0%, hsl(221 68% 33% / 0.72) 100%)
-          `
-        }} />
-        <div className="absolute top-[10%] right-[8%] w-[280px] h-[280px] rounded-full border border-primary/10 opacity-30" style={{ animation: 'auraPulse 8s ease-in-out infinite alternate' }} />
-        <div className="absolute inset-0 opacity-[0.025]" style={{
-          backgroundImage: 'linear-gradient(rgba(197,160,89,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(197,160,89,0.5) 1px, transparent 1px)',
-          backgroundSize: '60px 60px'
-        }} />
-        <div className="container relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/25 text-primary px-4 py-1.5 rounded-full text-[0.78rem] font-bold tracking-widest uppercase mb-6" style={{ animation: 'fadeDown 0.8s ease both' }}>
-            <Star className="w-3.5 h-3.5" />{t('testimonials.badge')}
-          </div>
-          <h1 className="font-serif text-primary mb-5" style={{ animation: 'fadeUp 0.9s ease 0.2s both', fontSize: 'clamp(1.8rem, 4vw, 3rem)' }}>
-            {t('testimonials.title')}
-          </h1>
-          <p className="text-muted-foreground text-lg max-w-[580px] mx-auto leading-relaxed mb-8" style={{ animation: 'fadeUp 0.9s ease 0.35s both' }}>
-            {t('testimonials.sub')}
-          </p>
-          <div style={{ animation: 'fadeUp 0.9s ease 0.5s both' }}>
-            <Button onClick={() => setShowFormModal(true)} className="px-8 py-3 text-[0.95rem] font-bold">
-              ✦ {t('testimonials.cta')}
-            </Button>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        badge={{ icon: <Star className="w-3.5 h-3.5" />, text: t('testimonials.badge') }}
+        title={t('testimonials.title')}
+        subtitle={t('testimonials.sub')}
+        bgUrl={heroBg}
+        cta={<Button onClick={() => setShowFormModal(true)} className="px-8 py-3 text-[0.95rem] font-bold">✦ {t('testimonials.cta')}</Button>}
+      />
 
       {/* ══ LIST ══ */}
       <section className="container py-12 pb-20">

@@ -503,7 +503,7 @@
   "section.partners.sub": "Các tổ chức đồng hành cùng chúng tôi",
   "nav.testimonials": "Lời Chứng",
   "testimonials.badge": "CHỨNG NHÂN ĐỨC TIN",
-  "testimonials.title": "Lời Chứng & Nhân Chứng",
+  "testimonials.title": "Lời Chứng",
   "testimonials.sub": "Những câu chuyện thật về quyền năng Đức Chúa Trời — cuộc đời được biến đổi qua lời cầu nguyện.",
   "testimonials.cta": "Chia Sẻ Lời Chứng",
   "testimonials.loading": "Đang tải...",
@@ -587,5 +587,6 @@
   "news.newsletter.title": "Nhận Tin Tức Mỗi Tuần",
   "news.newsletter.sub": "Tin tức mới nhất gửi đến hộp thư của bạn",
   "news.newsletter.placeholder": "Email của bạn...",
-  "news.newsletter.btn": "Đăng Ký Miễn Phí"
+  "news.newsletter.btn": "Đăng Ký Miễn Phí",
+  "live.schedule": "📅 Lịch phát sóng"
 }

@@ -428,7 +428,7 @@
   "section.partners.sub": "องค์กรที่ร่วมเดินทางกับเรา",
   "nav.testimonials": "Testimonials",
   "testimonials.badge": "STORIES OF FAITH",
-  "testimonials.title": "Witness & Testimonials",
+  "testimonials.title": "ประจักษ์พยาน",
   "testimonials.sub": "Real stories of God's power — transformed lives through prayer.",
   "testimonials.cta": "Share Your Testimony",
   "testimonials.loading": "Loading...",
@@ -512,5 +512,6 @@
   "news.newsletter.title": "รับข่าวสารประจำสัปดาห์",
   "news.newsletter.sub": "ข่าวล่าสุดส่งถึงกล่องอีเมลของคุณ",
   "news.newsletter.placeholder": "อีเมลของคุณ...",
-  "news.newsletter.btn": "สมัครฟรี"
+  "news.newsletter.btn": "สมัครฟรี",
+  "live.schedule": "📅 ตารางออกอากาศ"
 }

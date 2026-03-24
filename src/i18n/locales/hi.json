@@ -428,7 +428,7 @@
   "section.partners.sub": "हमारे साथ चलने वाले संगठन",
   "nav.testimonials": "Testimonials",
   "testimonials.badge": "STORIES OF FAITH",
-  "testimonials.title": "Witness & Testimonials",
+  "testimonials.title": "प्रत्यक्षदर्शी",
   "testimonials.sub": "Real stories of God's power — transformed lives through prayer.",
   "testimonials.cta": "Share Your Testimony",
   "testimonials.loading": "Loading...",
@@ -512,5 +512,6 @@
   "news.newsletter.title": "साप्ताहिक समाचार प्राप्त करें",
   "news.newsletter.sub": "नवीनतम समाचार आपके इनबॉक्स में",
   "news.newsletter.placeholder": "आपका ईमेल...",
-  "news.newsletter.btn": "मुफ्त सदस्यता लें"
+  "news.newsletter.btn": "मुफ्त सदस्यता लें",
+  "live.schedule": "📅 प्रसारण कार्यक्रम"
 }

@@ -503,7 +503,7 @@
   "section.partners.sub": "Organizations partnering with us",
   "nav.testimonials": "Testimonials",
   "testimonials.badge": "STORIES OF FAITH",
-  "testimonials.title": "Witness & Testimonials",
+  "testimonials.title": "Testimonies",
   "testimonials.sub": "Real stories of God's power — transformed lives through prayer.",
   "testimonials.cta": "Share Your Testimony",
   "testimonials.loading": "Loading...",
@@ -587,5 +587,6 @@
   "news.newsletter.title": "Get Weekly News",
   "news.newsletter.sub": "Latest news delivered to your inbox",
   "news.newsletter.placeholder": "Your email...",
-  "news.newsletter.btn": "Subscribe Free"
+  "news.newsletter.btn": "Subscribe Free",
+  "live.schedule": "📅 Broadcast Schedule"
 }

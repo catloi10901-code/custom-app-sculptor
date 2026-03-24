@@ -428,7 +428,7 @@
   "section.partners.sub": "私たちと共に歩む組織",
   "nav.testimonials": "Testimonials",
   "testimonials.badge": "STORIES OF FAITH",
-  "testimonials.title": "Witness & Testimonials",
+  "testimonials.title": "証し",
   "testimonials.sub": "Real stories of God's power — transformed lives through prayer.",
   "testimonials.cta": "Share Your Testimony",
   "testimonials.loading": "Loading...",
@@ -512,5 +512,6 @@
   "news.newsletter.title": "週刊ニュースを受け取る",
   "news.newsletter.sub": "最新ニュースをメールでお届け",
   "news.newsletter.placeholder": "メールアドレス...",
-  "news.newsletter.btn": "無料登録"
+  "news.newsletter.btn": "無料登録",
+  "live.schedule": "📅 放送スケジュール"
 }

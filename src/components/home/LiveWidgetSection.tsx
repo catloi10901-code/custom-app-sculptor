@@ -10,6 +10,8 @@ type LiveSession = {
   scheduled_time: string | null;
   is_live: boolean;
   viewers: number;
+  youtube_url: string | null;
+  thumbnail_url: string | null;
 };
 
 const LiveWidgetSection = () => {
@@ -22,25 +24,26 @@ const LiveWidgetSection = () => {
       .select('*')
       .eq('is_active', true)
       .order('sort_order')
-      .limit(3)
+      .limit(5)
       .then(({ data }) => {
         if (data && data.length > 0) setSessions(data);
       });
   }, []);
 
-  // Fallback
-  const fallbackCards = [
-    { id: '1', title: t('live.card1.title'), host: t('live.card1.host'), scheduled_time: null, is_live: true, viewers: 3241 },
-    { id: '2', title: t('live.card2.title'), host: t('live.card2.host'), scheduled_time: null, is_live: false, viewers: 0 },
-    { id: '3', title: t('live.card3.title'), host: t('live.card3.host'), scheduled_time: null, is_live: false, viewers: 0 },
-  ];
-
-  const cards = sessions.length > 0 ? sessions : fallbackCards;
+  const liveSession = sessions.find((s) => s.is_live && s.youtube_url);
+  const upcomingSessions = sessions.filter((s) => !s.is_live || !s.youtube_url);
 
   const formatTime = (s: LiveSession) => {
     if (s.is_live) return '🔴 LIVE';
-    if (s.scheduled_time) return new Date(s.scheduled_time).toLocaleString('vi', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit' });
-    return t('live.card2.time');
+    if (s.scheduled_time) {
+      return new Date(s.scheduled_time).toLocaleString('vi', {
+        hour: '2-digit',
+        minute: '2-digit',
+        day: '2-digit',
+        month: '2-digit',
+      });
+    }
+    return t('live.card2.time') || '';
   };
 
   return (
@@ -54,31 +57,79 @@ const LiveWidgetSection = () => {
             </span>
             <span className="text-foreground">{t('live.title')}</span>
           </h2>
-          <Link to="/pray?tab=live" className="text-muted-foreground text-sm hover:text-primary transition-colors no-underline">
+          <Link
+            to="/pray?tab=live"
+            className="text-muted-foreground text-sm hover:text-primary transition-colors no-underline"
+          >
             {t('live.viewAll')}
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {cards.map((card) => (
-            <Link
-              key={card.id}
-              to="/pray?tab=live"
-              className={`bg-card/50 border border-border rounded-xl p-4 transition-all duration-300 hover:bg-card h-full flex flex-col no-underline ${!card.is_live ? 'opacity-70' : ''}`}
-            >
-              <div className={`text-[0.78rem] font-semibold mb-1.5 ${card.is_live ? 'text-destructive' : 'text-primary'}`}>
-                {formatTime(card)}
+        {/* ── Live embed ── */}
+        {liveSession ? (
+          <div className="mb-6">
+            <div className="rounded-2xl overflow-hidden border border-border shadow-[0_8px_40px_rgba(0,0,0,.4)]">
+              <div className="flex items-center gap-3 px-4 py-3 bg-card border-b border-border">
+                <span className="w-2.5 h-2.5 rounded-full bg-destructive animate-pulse" />
+                <span className="text-destructive text-xs font-black tracking-widest uppercase">NOW LIVING</span>
+                <span className="text-foreground text-sm font-semibold flex-1">{liveSession.title}</span>
+                {liveSession.viewers > 0 && (
+                  <span className="text-muted-foreground text-xs">👥 {liveSession.viewers.toLocaleString()}</span>
+                )}
               </div>
-              <div className="font-semibold text-foreground text-[0.9rem] mb-1 text-balance flex-1">{card.title}</div>
-              <div className="text-[0.78rem] text-muted-foreground">{card.host}</div>
-              {card.is_live && card.viewers > 0 && (
-                <div className="text-[0.75rem] text-muted-foreground mt-2">
-                  👥 {card.viewers.toLocaleString()} {t('live.viewers')}
-                </div>
-              )}
-            </Link>
-          ))}
-        </div>
+              <div className="aspect-video bg-black">
+                <iframe
+                  className="w-full h-full"
+                  src={`${liveSession.youtube_url}?autoplay=1&mute=1&rel=0&modestbranding=1&color=white`}
+                  title={liveSession.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          </div>
+        ) : null}
+
+        {/* ── Schedule ── */}
+        {sessions.length > 0 && (
+          <div>
+            <p className="text-[0.75rem] font-black tracking-[2px] uppercase text-muted-foreground mb-4">
+              {t('live.schedule') || '📅 Lịch phát sóng'}
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {sessions.map((card) => (
+                <Link
+                  key={card.id}
+                  to="/pray?tab=live"
+                  className={`bg-card/50 border border-border rounded-xl p-4 transition-all duration-300 hover:bg-card hover:border-primary/30 no-underline flex flex-col gap-2 ${
+                    card.is_live && card.youtube_url ? 'border-primary/30 bg-primary/5' : ''
+                  }`}
+                >
+                  <div className="flex items-center gap-2">
+                    <span
+                      className={`text-[0.72rem] font-bold px-2 py-0.5 rounded-full ${
+                        card.is_live
+                          ? 'bg-destructive/20 text-destructive'
+                          : 'bg-primary/15 text-primary'
+                      }`}
+                    >
+                      {formatTime(card)}
+                    </span>
+                    {card.is_live && (
+                      <span className="flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-destructive animate-pulse" />
+                      </span>
+                    )}
+                  </div>
+                  <span className="text-foreground text-[0.88rem] font-semibold leading-snug flex-1">
+                    {card.title}
+                  </span>
+                  <span className="text-muted-foreground text-[0.78rem]">{card.host}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

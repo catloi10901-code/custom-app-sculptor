@@ -1,4 +1,5 @@
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
+import PageHero from "@/components/layout/PageHero";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
 import useHeroBgImage from "@/hooks/useHeroBgImage";
@@ -179,68 +180,18 @@ const ImpactPage = () => {
   return (
     <div>
       {/* ═══════ HERO ═══════ */}
-      <section className="relative overflow-hidden py-24 sm:py-32">
-        {/* Blurred bg image */}
-        {heroBg && (
-          <div className="absolute inset-0 overflow-hidden">
-            <img src={heroBg} alt="" aria-hidden className="absolute inset-0 w-full h-full object-cover" style={{ filter: "blur(8px)", transform: "scale(1.1)", opacity: 0.6 }} />
-          </div>
-        )}
-        {/* Layered background */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background: `
-            radial-gradient(ellipse 100% 80% at 50% -10%, rgba(197,160,89,0.12) 0%, transparent 60%),
-            radial-gradient(ellipse 60% 50% at 80% 80%, rgba(96,165,250,0.08) 0%, transparent 50%),
-            radial-gradient(ellipse 50% 60% at 20% 70%, rgba(110,231,183,0.06) 0%, transparent 50%),
-            linear-gradient(180deg, hsl(221 68% 30% / 0.72) 0%, hsl(221 68% 33% / 0.72) 100%)
-          `,
-          }}
-        />
-        {/* Decorative circles */}
-        <div className="absolute top-[10%] right-[8%] w-[300px] h-[300px] rounded-full border border-primary/10 opacity-30" style={{ animation: "auraPulse 8s ease-in-out infinite alternate" }} />
-
-        {/* Grid pattern overlay */}
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage: "linear-gradient(rgba(197,160,89,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(197,160,89,0.5) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
-        />
-
-        <div className="container relative z-10 text-center">
-          <div
-            className="inline-flex items-center gap-2 bg-primary/10 border border-primary/25 text-primary px-4 py-1.5 rounded-full text-[0.78rem] font-bold tracking-widest uppercase mb-6"
-            style={{ animation: "fadeDown 0.8s ease both" }}
-          >
-            <Globe className="w-3.5 h-3.5" />
-            {t("impact.page.badge")}
-          </div>
-          <h1 className="font-serif text-primary mb-5" style={{ animation: "fadeUp 0.9s ease 0.2s both", fontSize: "clamp(1.8rem, 4vw, 3.2rem)" }}>
-            {t("impact.page.title")}
-          </h1>
-          <p className="text-muted-foreground text-lg max-w-[640px] mx-auto leading-relaxed" style={{ animation: "fadeUp 0.9s ease 0.4s both" }}>
-            {t("impact.page.sub")}
-          </p>
-
-          {/* Floating stat pills */}
-          <div className="flex flex-wrap justify-center gap-3 mt-10" style={{ animation: "fadeUp 0.9s ease 0.6s both" }}>
-            {[
-              { icon: "🙏", text: `${liveStats.prayers_count.toLocaleString()}+ ${t("impact.pill.prayers")}` },
-              { icon: "🌍", text: `${countriesCount} ${t("impact.pill.nations")}` },
-              { icon: "👥", text: `${liveStats.members_count.toLocaleString()} ${t("impact.pill.members")}` },
-              { icon: "💰", text: `$${liveStats.donated_total.toLocaleString()} ${t("impact.pill.raised")}` },
-            ].map((pill, i) => (
-              <div key={i} className="flex items-center gap-2 bg-card/60 backdrop-blur-sm border border-border/60 rounded-full px-4 py-2 text-[0.82rem] text-muted-foreground">
-                <span>{pill.icon}</span>
-                <span className="font-medium">{pill.text}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <PageHero
+        badge={{ icon: <Globe className="w-3.5 h-3.5" />, text: t('impact.page.badge') }}
+        title={t('impact.page.title')}
+        subtitle={t('impact.page.sub')}
+        bgUrl={heroBg}
+        pills={[
+          { icon: '🙏', text: `${liveStats.prayers_count.toLocaleString()}+ ${t('impact.pill.prayers')}` },
+          { icon: '🌍', text: `${countriesCount} ${t('impact.pill.nations')}` },
+          { icon: '👥', text: `${liveStats.members_count.toLocaleString()} ${t('impact.pill.members')}` },
+          { icon: '💰', text: `$${liveStats.donated_total.toLocaleString()} ${t('impact.pill.raised')}` },
+        ]}
+      />
 
       {/* ═══════ STATS ═══════ */}
       <section className="py-16 relative">
