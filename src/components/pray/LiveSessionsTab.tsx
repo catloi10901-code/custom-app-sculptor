@@ -30,6 +30,7 @@ const formatSchedule = (iso: string | null) => {
 const LiveSessionsTab = () => {
   const [sessions, setSessions] = useState<LiveSession[]>([]);
   const [loading, setLoading] = useState(true);
+  const [selectedSession, setSelectedSession] = useState<LiveSession | null>(null);
 
   useEffect(() => {
     supabase
@@ -38,7 +39,12 @@ const LiveSessionsTab = () => {
       .eq('is_active', true)
       .order('sort_order')
       .then(({ data }) => {
-        setSessions(data || []);
+        const active = data || [];
+        setSessions(active);
+        // Auto-select the live one, or the first session
+        const live = active.find((s: LiveSession) => s.is_live && s.youtube_url);
+        const fallback = active.find((s: LiveSession) => s.youtube_url);
+        setSelectedSession(live || fallback || null);
         setLoading(false);
       });
   }, []);
@@ -53,7 +59,6 @@ const LiveSessionsTab = () => {
     );
   }
 
-  const liveSession = sessions.find(s => s.is_live && s.youtube_url);
   const allSessions = sessions;
 
   if (sessions.length === 0) {
@@ -72,35 +77,35 @@ const LiveSessionsTab = () => {
       <div className="container">
 
         {/* Live banner */}
-        {liveSession && (
+        {selectedSession?.is_live && (
           <div className="bg-gradient-to-r from-red-500/15 to-red-600/[0.08] border border-red-500/30 rounded-xl p-3 flex items-center gap-3 mb-5">
             <span className="w-2.5 h-2.5 rounded-full bg-red-500 shrink-0" style={{ animation: 'livePulse 1.2s ease-in-out infinite' }} />
-            <span className="text-foreground font-semibold text-sm">{liveSession.title}</span>
-            {liveSession.viewers > 0 && (
-              <span className="text-red-400 text-sm font-bold ml-auto">👥 {liveSession.viewers.toLocaleString()} đang xem</span>
+            <span className="text-foreground font-semibold text-sm">{selectedSession.title}</span>
+            {selectedSession.viewers > 0 && (
+              <span className="text-red-400 text-sm font-bold ml-auto">👥 {selectedSession.viewers.toLocaleString()} đang xem</span>
             )}
           </div>
         )}
 
         {/* Main player */}
-        {liveSession ? (
+        {selectedSession && selectedSession.youtube_url ? (
           <div className="mb-6">
             <div className="w-full aspect-video rounded-2xl overflow-hidden border border-red-500/30 shadow-[0_0_40px_rgba(239,68,68,0.15)]">
               <iframe
-                src={`${liveSession.youtube_url}?autoplay=1&mute=1&rel=0&modestbranding=1`}
+                src={`${selectedSession.youtube_url}?autoplay=1&mute=1&rel=0&modestbranding=1`}
                 className="w-full h-full"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
-                title={liveSession.title}
+                title={selectedSession.title}
               />
             </div>
             <div className="flex items-center gap-3 mt-3">
-              <span className="flex items-center gap-1.5 text-xs bg-red-500 text-white px-2.5 py-1 rounded-full font-bold">
-                <Radio className="w-3 h-3" />LIVE
+              <span className={`flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full font-bold \${selectedSession.is_live ? 'bg-red-500 text-white' : 'bg-primary/15 text-primary border border-primary/30'}`}>
+                {selectedSession.is_live ? <><Radio className="w-3 h-3" />LIVE</> : '▶ Xem lại'}
               </span>
               <div>
-                <p className="font-semibold text-foreground">{liveSession.title}</p>
-                {liveSession.host && <p className="text-sm text-muted-foreground">{liveSession.host}</p>}
+                <p className="font-semibold text-foreground">{selectedSession.title}</p>
+                {selectedSession.host && <p className="text-sm text-muted-foreground">{selectedSession.host}</p>}
               </div>
             </div>
           </div>
@@ -123,11 +128,14 @@ const LiveSessionsTab = () => {
               {allSessions.map((s, i) => (
                 <div
                   key={s.id}
-                  className={`border rounded-xl p-4 transition-all duration-300 hover:scale-[1.02] ${
-                    s.is_live
+                  className={`border rounded-xl p-4 transition-all duration-300 hover:scale-[1.02] cursor-pointer ${
+                    selectedSession?.id === s.id
+                      ? 'border-primary shadow-lg shadow-primary/20 ring-2 ring-primary/40'
+                      : s.is_live
                       ? 'bg-gradient-to-br from-red-500/15 to-red-600/5 border-red-500/30 shadow-lg shadow-red-500/10'
                       : cardGradients[i % cardGradients.length]
                   }`}
+                  onClick={() => setSelectedSession(s)}
                 >
                   <div className="flex items-center gap-2 mb-1.5">
                     {s.is_live ? (

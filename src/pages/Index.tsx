@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import HeroSection from '@/components/home/HeroSection';
 import LiveTicker from '@/components/home/LiveTicker';
 import QuickPraySection from '@/components/home/QuickPraySection';
@@ -9,6 +11,18 @@ import PartnerLogosSection from '@/components/home/PartnerLogosSection';
 
 
 const Index = () => {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const el = document.getElementById(hash.slice(1));
+      if (el) {
+        const top = el.offsetTop - 210;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    }
+  }, [hash]);
+
   return (
     <div>
       <HeroSection />

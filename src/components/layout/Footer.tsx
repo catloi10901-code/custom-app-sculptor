@@ -1,16 +1,39 @@
-import logo7center from "@/assets/logos/7center.png";
-import logo9s from "@/assets/logos/9slogo.png";
-import logoGifpp from "@/assets/logos/gifpp.png";
 import { supabase } from "@/integrations/supabase/client";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { toast } from "sonner";
 
 const Footer = () => {
   const { t } = useTranslation();
   const [email, setEmail] = useState("");
   const [subscribing, setSubscribing] = useState(false);
+  const [searchParams] = useSearchParams();
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+
+  const buildPrayUrl = (tab: string) => {
+    if (pathname === "/pray") {
+      const params = new URLSearchParams(searchParams.toString());
+      params.set("tab", tab);
+      return `?${params.toString()}`;
+    }
+    return `/pray?tab=${tab}`;
+  };
+
+  const scrollToPartners = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const el = document.getElementById("partners");
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 500);
+    } else {
+      const el = document.getElementById("partners");
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   const handleSubscribe = async () => {
     if (!email || !email.includes("@")) {
@@ -111,11 +134,11 @@ const Footer = () => {
                 </a>
               ))}
             </div>
-            <div className="flex items-center gap-5 mt-5 flex-wrap">
+            {/* <div className="flex items-center gap-5 mt-5 flex-wrap">
               {[logo7center, logo9s, logoGifpp].map((logo, i) => (
                 <img key={i} src={logo} alt={`Partner ${i + 1}`} className="h-8 opacity-70 hover:opacity-100 transition-opacity duration-300 object-contain" />
               ))}
-            </div>
+            </div> */}
           </div>
 
           <div>
@@ -127,12 +150,12 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/pray?tab=campaigns" className="text-muted-foreground no-underline text-[0.9rem] transition-all duration-300 hover:text-primary">
+                <Link to={buildPrayUrl("campaigns")} className="text-muted-foreground no-underline text-[0.9rem] transition-all duration-300 hover:text-primary">
                   {t("footer.campaigns")}
                 </Link>
               </li>
               <li>
-                <Link to="/pray?tab=calendar" className="text-muted-foreground no-underline text-[0.9rem] transition-all duration-300 hover:text-primary">
+                <Link to={buildPrayUrl("calendar")} className="text-muted-foreground no-underline text-[0.9rem] transition-all duration-300 hover:text-primary">
                   {t("footer.calendar")}
                 </Link>
               </li>
@@ -153,9 +176,9 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-muted-foreground no-underline text-[0.9rem] transition-all duration-300 hover:text-primary">
+                <a href="/#partners" onClick={scrollToPartners} className="text-muted-foreground no-underline text-[0.9rem] transition-all duration-300 hover:text-primary">
                   {t("footer.partners")}
-                </Link>
+                </a>
               </li>
               <li>
                 <Link to="/about" className="text-muted-foreground no-underline text-[0.9rem] transition-all duration-300 hover:text-primary">

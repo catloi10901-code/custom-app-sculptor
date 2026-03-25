@@ -16,19 +16,13 @@ const PartnerLogosSection = () => {
   const useMarquee = partners.length > MARQUEE_THRESHOLD;
 
   const logoList = partners.map((partner) => (
-    <a
-      key={partner.alt}
-      href={partner.href}
-      className="opacity-70 hover:opacity-100 transition-opacity duration-300 shrink-0"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <a key={partner.alt} href={partner.href} className="opacity-70 hover:opacity-100 transition-opacity duration-300 shrink-0" target="_blank" rel="noopener noreferrer">
       <img src={partner.src} alt={partner.alt} className="h-20 object-contain" />
     </a>
   ));
 
   return (
-    <section className="py-16">
+    <section id="partners" className="py-16 ">
       <div className="container">
         <div className="text-center mb-10">
           <h2 className="font-serif text-primary mb-2">{t("section.partners.title", "Đối Tác")}</h2>
@@ -43,9 +37,7 @@ const PartnerLogosSection = () => {
             </div>
           </div>
         ) : (
-          <div className="flex flex-wrap items-center justify-center gap-10">
-            {logoList}
-          </div>
+          <div className="flex flex-wrap items-center justify-center gap-10">{logoList}</div>
         )}
       </div>
     </section>
