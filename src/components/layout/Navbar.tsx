@@ -56,7 +56,7 @@ const Navbar = () => {
         <div className="container h-full flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2.5 no-underline">
             <div className="w-9 h-9 rounded-full bg-gold-dim border-[1.5px] border-primary flex items-center justify-center text-base">✦</div>
-            <span className="font-serif text-2xl font-bold text-primary">HOLYPray</span>
+            <span className="font-serif text-2xl font-bold text-primary">HOLY Pray</span>
           </Link>
 
           <ul className="hidden md:flex items-center gap-0 list-none">
