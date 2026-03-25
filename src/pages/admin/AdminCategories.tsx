@@ -7,7 +7,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/hooks/use-toast";
-import { Pencil, Trash2, Plus, X, BookOpen, Newspaper } from "lucide-react";
+import { Pencil, Trash2, Plus, X, BookOpen, Newspaper, Library } from "lucide-react";
 
 interface Category {
   id: string;
@@ -20,11 +20,12 @@ interface Category {
   created_at: string;
 }
 
-type TabType = "word" | "news";
+type TabType = "word" | "news" | "library";
 
 const TABS: { key: TabType; label: string; icon: React.ReactNode; color: string }[] = [
   { key: "word", label: "Chuyên mục Lời Chúa", icon: <BookOpen className="w-4 h-4" />, color: "text-primary" },
   { key: "news", label: "Chuyên mục Bài Viết", icon: <Newspaper className="w-4 h-4" />, color: "text-blue-400" },
+  { key: "library", label: "Chuyên mục Thư Viện", icon: <Library className="w-4 h-4" />, color: "text-purple-400" },
 ];
 
 const AdminCategories = () => {
@@ -126,7 +127,7 @@ const AdminCategories = () => {
         <h1 className="text-2xl font-bold text-primary">Quản lý Chuyên Mục</h1>
         {!showForm && (
           <Button onClick={() => { resetForm(); setShowForm(true); }}>
-            <Plus className="w-4 h-4 mr-1" /> Thêm {activeTab === "word" ? "chuyên mục Lời Chúa" : "chuyên mục Bài Viết"}
+            <Plus className="w-4 h-4 mr-1" /> Thêm {activeTab === "word" ? "chuyên mục Lời Chúa" : activeTab === "news" ? "chuyên mục Bài Viết" : "chuyên mục Thư Viện"}
           </Button>
         )}
       </div>
@@ -159,7 +160,7 @@ const AdminCategories = () => {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-lg">
-              {editingId ? "Sửa chuyên mục" : `Thêm chuyên mục — ${TABS.find(t => t.key === activeTab)?.label}`}
+              {editingId ? "Sửa chuyên mục" : `Thêm — ${TABS.find(t => t.key === activeTab)?.label}`}
             </CardTitle>
             <Button variant="ghost" size="icon" onClick={resetForm}><X className="w-4 h-4" /></Button>
           </CardHeader>

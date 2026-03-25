@@ -309,6 +309,7 @@
   "library.sub": "A treasury of prayers by topic, ready for you to use and share",
   "library.all": "📚 All",
   "library.read": "📖 Read",
+  "library.noContent": "Content is being updated...",
   "blog.loading": "Loading...",
   "blog.notFound": "Post not found",
   "blog.backToWord": "← Back to God's Word",

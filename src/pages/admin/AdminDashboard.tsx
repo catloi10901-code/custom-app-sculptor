@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import AnimatedCounter from '@/components/ui/AnimatedCounter';
-import { HandHeart, BookOpen, Users, Target, Radio, ScrollText, Newspaper } from 'lucide-react';
+import { HandHeart, BookOpen, Users, Target, Radio, ScrollText, Newspaper, Heart } from 'lucide-react';
 
 interface Stats {
   prayers: number;
+  amens: number;
   testimonials: number;
   posts: number;
   words: number;
@@ -13,15 +14,16 @@ interface Stats {
   liveSessions: number;
 }
 
-const INITIAL: Stats = { prayers: 0, testimonials: 0, posts: 0, words: 0, users: 0, campaigns: 0, liveSessions: 0 };
+const INITIAL: Stats = { prayers: 0, amens: 0, testimonials: 0, posts: 0, words: 0, users: 0, campaigns: 0, liveSessions: 0 };
 
 const AdminDashboard = () => {
   const [stats, setStats] = useState<Stats>(INITIAL);
   const [loading, setLoading] = useState(true);
 
   const fetchStats = async () => {
-    const [prayers, testimonials, posts, words, users, campaigns, liveSessions] = await Promise.all([
+    const [prayers, amens, testimonials, posts, words, users, campaigns, liveSessions] = await Promise.all([
       supabase.from('prayers').select('id', { count: 'exact', head: true }),
+      supabase.from('prayer_amens').select('id', { count: 'exact', head: true }),
       supabase.from('testimonials').select('id', { count: 'exact', head: true }),
       supabase.from('blog_posts').select('id', { count: 'exact', head: true }).eq('status', 'published').eq('post_type', 'news'),
       supabase.from('blog_posts').select('id', { count: 'exact', head: true }).eq('status', 'published').eq('post_type', 'word'),
@@ -31,6 +33,7 @@ const AdminDashboard = () => {
     ]);
     setStats({
       prayers: prayers.count ?? 0,
+      amens: amens.count ?? 0,
       testimonials: testimonials.count ?? 0,
       posts: posts.count ?? 0,
       words: words.count ?? 0,
@@ -46,6 +49,7 @@ const AdminDashboard = () => {
     const channel = supabase
       .channel('admin-dashboard')
       .on('postgres_changes', { event: '*', schema: 'public', table: 'prayers' }, fetchStats)
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'prayer_amens' }, fetchStats)
       .on('postgres_changes', { event: '*', schema: 'public', table: 'testimonials' }, fetchStats)
       .on('postgres_changes', { event: '*', schema: 'public', table: 'blog_posts' }, fetchStats)
       .on('postgres_changes', { event: '*', schema: 'public', table: 'profiles' }, fetchStats)
@@ -64,6 +68,15 @@ const AdminDashboard = () => {
       bg: 'bg-primary/[0.08]',
       border: 'border-primary/20',
       glow: 'shadow-primary/10',
+    },
+    {
+      label: 'Số Amen',
+      value: stats.amens,
+      icon: Heart,
+      accent: 'text-rose-400',
+      bg: 'bg-rose-500/[0.08]',
+      border: 'border-rose-500/20',
+      glow: 'shadow-rose-500/10',
     },
     {
       label: 'Lời chứng',

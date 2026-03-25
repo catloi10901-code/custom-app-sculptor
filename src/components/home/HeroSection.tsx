@@ -8,29 +8,36 @@ import HeroGlobe2D from "./HeroGlobe2D";
 
 const HeroSection = () => {
   const { t } = useTranslation();
-  const [stats, setStats] = useState({ prayers: 0, nations: 0, members: 0 });
+  const [stats, setStats] = useState({ prayers: 0, members: 0, donated: 0 });
   const [prayerDialogOpen, setPrayerDialogOpen] = useState(false);
 
   useEffect(() => {
     const fetchStats = async () => {
-      const [prayersRes, countriesRes, membersRes] = await Promise.all([
-        supabase.from("prayers").select("id", { count: "exact", head: true }),
-        supabase.from("prayers").select("country"),
-        supabase.from("profiles").select("id", { count: "exact", head: true }),
-      ]);
-      const countries = new Set((countriesRes.data || []).map((p) => p.country).filter(Boolean));
-      setStats({
-        prayers: prayersRes.count ?? 0,
-        nations: countries.size,
-        members: membersRes.count ?? 0,
-      });
+      const { data } = await supabase
+        .from("live_stats")
+        .select("prayers_count, members_count, donated_total")
+        .eq("id", 1)
+        .single();
+      if (data) {
+        setStats({
+          prayers: Number(data.prayers_count),
+          members: Number(data.members_count),
+          donated: Number(data.donated_total),
+        });
+      }
     };
     fetchStats();
 
     const channel = supabase
       .channel("hero-live-stats")
-      .on("postgres_changes", { event: "*", schema: "public", table: "prayers" }, fetchStats)
-      .on("postgres_changes", { event: "*", schema: "public", table: "profiles" }, fetchStats)
+      .on("postgres_changes", { event: "UPDATE", schema: "public", table: "live_stats" }, (payload) => {
+        const d = payload.new as { prayers_count: number; members_count: number; donated_total: number };
+        setStats({
+          prayers: Number(d.prayers_count),
+          members: Number(d.members_count),
+          donated: Number(d.donated_total),
+        });
+      })
       .subscribe();
 
     return () => {
@@ -139,12 +146,12 @@ const HeroSection = () => {
               <span className="text-[0.65rem] sm:text-[0.82rem] text-muted-foreground uppercase tracking-wide">{t("hero.stat.prayers")}</span>
             </div>
             <div className="text-center lg:text-left">
-              <AnimatedCounter value={stats.nations} className="font-serif text-[1.2rem] sm:text-[1.8rem] font-bold text-primary block tabular-nums" />
-              <span className="text-[0.65rem] sm:text-[0.82rem] text-muted-foreground uppercase tracking-wide">{t("hero.stat.nations")}</span>
-            </div>
-            <div className="text-center lg:text-left">
               <AnimatedCounter value={stats.members} className="font-serif text-[1.2rem] sm:text-[1.8rem] font-bold text-primary block tabular-nums" />
               <span className="text-[0.65rem] sm:text-[0.82rem] text-muted-foreground uppercase tracking-wide">{t("hero.stat.members")}</span>
+            </div>
+            <div className="text-center lg:text-left">
+              <AnimatedCounter value={stats.donated} prefix="$" className="font-serif text-[1.2rem] sm:text-[1.8rem] font-bold text-primary block tabular-nums" />
+              <span className="text-[0.65rem] sm:text-[0.82rem] text-muted-foreground uppercase tracking-wide">{t("hero.stat.donated")}</span>
             </div>
           </div>
         </div>

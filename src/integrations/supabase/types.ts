@@ -151,6 +151,53 @@ export type Database = {
           },
         ]
       }
+      library_items: {
+        Row: {
+          id: string
+          icon: string
+          title: string
+          excerpt: string | null
+          content: string | null
+          category_id: string | null
+          sort_order: number
+          is_published: boolean
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          icon?: string
+          title: string
+          excerpt?: string | null
+          content?: string | null
+          category_id?: string | null
+          sort_order?: number
+          is_published?: boolean
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          icon?: string
+          title?: string
+          excerpt?: string | null
+          content?: string | null
+          category_id?: string | null
+          sort_order?: number
+          is_published?: boolean
+          created_at?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "library_items_category_id_fkey"
+            columns: ["category_id"]
+            isOneToOne: false
+            referencedRelation: "blog_categories"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       campaign_participants: {
         Row: {
           id: string

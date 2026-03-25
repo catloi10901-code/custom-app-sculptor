@@ -342,6 +342,7 @@
   "library.sub": "按主题分类的祈祷宝库，随时使用和分享",
   "library.all": "📚 全部",
   "library.read": "📖 阅读",
+  "library.noContent": "内容正在更新中...",
   "blog.loading": "加载中...",
   "blog.notFound": "帖子未找到",
   "blog.backToWord": "← 返回神的话语",

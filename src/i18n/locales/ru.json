@@ -342,6 +342,7 @@
   "library.sub": "Сокровищница молитв по темам",
   "library.all": "📚 Все",
   "library.read": "📖 Читать",
+  "library.noContent": "Содержимое обновляется...",
   "blog.loading": "Загрузка...",
   "blog.notFound": "Публикация не найдена",
   "blog.backToWord": "← Назад к Слову Божьему",

@@ -342,6 +342,7 @@
   "library.sub": "Un tesoro de oraciones por tema, listas para usar y compartir",
   "library.all": "📚 Todos",
   "library.read": "📖 Leer",
+  "library.noContent": "El contenido se está actualizando...",
   "blog.loading": "Cargando...",
   "blog.notFound": "Publicación no encontrada",
   "blog.backToWord": "← Volver a Palabra de Dios",

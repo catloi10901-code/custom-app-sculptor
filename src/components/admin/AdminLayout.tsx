@@ -1,5 +1,5 @@
 import { useAuth } from "@/hooks/useAuth";
-import { BarChart3, BookOpen, Briefcase, FileCheck, FileText, Flag, Globe, LayoutDashboard, Mail, Menu, MessageSquare, Quote, Radio, Settings, Tag, Users, X } from "lucide-react";
+import { BarChart3, BookOpen, Briefcase, FileCheck, FileText, Flag, Globe, LayoutDashboard, Library, Mail, Menu, MessageSquare, Quote, Radio, Settings, Tag, Users, X } from "lucide-react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, Navigate, Outlet, useLocation } from "react-router-dom";
@@ -11,6 +11,7 @@ const adminNav = [
   { path: "/admin/live-sessions", labelKey: "Phiên Live", icon: Radio },
   { path: "/admin/categories", labelKey: "Chuyên mục", icon: Tag },
   { path: "/admin/word", labelKey: "Lời Chúa", icon: BookOpen },
+  { path: "/admin/library", labelKey: "Thư Viện Cầu Nguyện", icon: Library },
   { path: "/admin/posts", labelKey: "admin.posts.title", icon: FileText },
   { path: "/admin/prayers", labelKey: "admin.prayers.title", icon: MessageSquare },
   { path: "/admin/campaigns", labelKey: "Chiến dịch", icon: Flag },

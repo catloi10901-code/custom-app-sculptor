@@ -342,6 +342,7 @@
   "library.sub": "ขุมทรัพย์คำอธิษฐานตามหัวข้อ พร้อมใช้และแบ่งปัน",
   "library.all": "📚 ทั้งหมด",
   "library.read": "📖 อ่าน",
+  "library.noContent": "กำลังอัปเดตเนื้อหา...",
   "blog.loading": "กำลังโหลด...",
   "blog.notFound": "ไม่พบโพสต์",
   "blog.backToWord": "← กลับไปพระวจนะ",

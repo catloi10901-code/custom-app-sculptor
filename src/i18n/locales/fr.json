@@ -342,6 +342,7 @@
   "library.sub": "Un trésor de prières par sujet, prêtes à utiliser et partager",
   "library.all": "📚 Tous",
   "library.read": "📖 Lire",
+  "library.noContent": "Le contenu est en cours de mise à jour...",
   "blog.loading": "Chargement...",
   "blog.notFound": "Publication non trouvée",
   "blog.backToWord": "← Retour à Parole de Dieu",
