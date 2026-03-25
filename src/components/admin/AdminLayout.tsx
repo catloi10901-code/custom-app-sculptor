@@ -11,7 +11,7 @@ const adminNav = [
   { path: "/admin/live-sessions", labelKey: "Phiên Live", icon: Radio },
   { path: "/admin/categories", labelKey: "Chuyên mục", icon: Tag },
   { path: "/admin/word", labelKey: "Lời Chúa", icon: BookOpen },
-  { path: "/admin/library", labelKey: "Thư Viện Cầu Nguyện", icon: Library },
+  { path: "/admin/library", labelKey: "Thư Viện", icon: Library },
   { path: "/admin/posts", labelKey: "admin.posts.title", icon: FileText },
   { path: "/admin/prayers", labelKey: "admin.prayers.title", icon: MessageSquare },
   { path: "/admin/campaigns", labelKey: "Chiến dịch", icon: Flag },

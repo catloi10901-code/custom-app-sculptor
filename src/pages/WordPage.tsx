@@ -146,7 +146,7 @@ const WordPage = () => {
             <div className="flex items-center justify-center gap-0 mt-8 flex-wrap">
               <div className="flex flex-col items-center px-6">
                 <strong className="font-serif text-white text-2xl font-black leading-none mb-0.5">{posts.length}</strong>
-                <span className="text-[0.65rem] text-white/60 uppercase tracking-widest">Bài viết</span>
+                <span className="text-[0.65rem] text-white/60 uppercase tracking-widest">Tin tức</span>
               </div>
               <div className="w-px h-8 bg-white/20" />
               <div className="flex flex-col items-center px-6">
@@ -351,7 +351,7 @@ const WordPage = () => {
                 <div className="rounded-2xl p-5 text-center" style={{ background: "linear-gradient(135deg, rgba(14,31,112,.9), rgba(27,59,168,.6))", border: "1px solid rgba(197,160,89,.2)" }}>
                   <p className="text-primary text-xl mb-2">✦</p>
                   <p className="font-serif text-foreground font-bold text-[1rem] mb-1.5">Nhận Lời Chúa Mỗi Sáng</p>
-                  <p className="text-muted-foreground text-[0.8rem] mb-3.5 leading-relaxed">Bài viết mới nhất gửi đến hộp thư của bạn</p>
+                  <p className="text-muted-foreground text-[0.8rem] mb-3.5 leading-relaxed">Tin tức mới nhất gửi đến hộp thư của bạn</p>
                   <input
                     type="email"
                     placeholder="Email của bạn..."
@@ -387,7 +387,7 @@ const WordPage = () => {
 
                 {/* Recent posts */}
                 <div className="bg-card border border-border rounded-2xl p-5">
-                  <p className="text-[0.8rem] font-black text-primary uppercase tracking-[1.5px] mb-3 pb-2.5 border-b border-border">🕐 Bài Viết Mới</p>
+                  <p className="text-[0.8rem] font-black text-primary uppercase tracking-[1.5px] mb-3 pb-2.5 border-b border-border">🕐 Tin Tức Mới</p>
                   <div className="flex flex-col gap-3">
                     {recentPosts.map((p) => (
                       <Link key={p.id} to={`/word/${p.slug}`} className="no-underline flex items-start gap-3 group">
