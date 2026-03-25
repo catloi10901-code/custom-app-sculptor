@@ -20,12 +20,163 @@ interface UserDonation {
   is_recurring: boolean;
 }
 
+interface UserTestimony {
+  id: string;
+  full_name: string;
+  birth_date: string | null;
+  facebook: string | null;
+  phone: string | null;
+  email: string | null;
+  address: string | null;
+  title: string;
+  before_prayer: string;
+  after_prayer: string;
+  current_status: string | null;
+  message: string | null;
+  media_urls: string[];
+  status: string;
+  created_at: string;
+}
+
+
+const statusConfig: Record<string, { label: string; className: string }> = {
+  approved:  { label: 'Đã duyệt',  className: 'bg-green-500/20 text-green-400 border border-green-500/30' },
+  pending:   { label: 'Đang chờ',  className: 'bg-amber-500/20 text-amber-400 border border-amber-500/30' },
+  rejected:  { label: 'Từ chối',   className: 'bg-red-500/20 text-red-400 border border-red-500/30' },
+};
+
+// ── Detail modal ─────────────────────────────────────────────────────────────
+const TestimonyDetailModal = ({ item, onClose }: { item: UserTestimony; onClose: () => void }) => {
+  const { t } = useTranslation();
+  const isVideo = (url: string) => /\.(mp4|mov|webm)(\?|$)/i.test(url);
+  const hasMedia = item.media_urls?.length > 0;
+  const fmt = (iso: string) => new Date(iso).toLocaleDateString('vi-VN', { day: '2-digit', month: '2-digit', year: 'numeric' });
+
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = ''; };
+  }, []);
+
+  return (
+    <div
+      className="fixed inset-0 z-[2000] flex items-center justify-center p-3 sm:p-4"
+      onClick={e => { if (e.target === e.currentTarget) onClose(); }}
+    >
+      <div className="absolute inset-0 bg-black/75 backdrop-blur-sm" />
+      <div className="relative z-10 w-full max-w-lg max-h-[92vh] flex flex-col bg-card border border-border rounded-2xl shadow-2xl">
+
+        {/* Header */}
+        <div className="flex items-center gap-3 px-4 py-3.5 border-b border-border shrink-0">
+          <div className="w-8 h-8 rounded-full bg-primary/15 border border-primary/30 flex items-center justify-center shrink-0 text-primary font-bold text-xs">
+            {item.full_name.charAt(0).toUpperCase()}
+          </div>
+          <div className="flex-1 min-w-0">
+            <p className="font-semibold text-foreground text-sm leading-tight">{item.full_name}</p>
+            <p className="text-muted-foreground text-[11px] mt-0.5">
+              {fmt(item.created_at)}
+              {item.address && <span> · {item.address}</span>}
+              {item.birth_date && <span> · {new Date(item.birth_date).getFullYear()}</span>}
+            </p>
+          </div>
+          <button onClick={onClose} className="w-7 h-7 rounded-full flex items-center justify-center bg-white/5 hover:bg-white/10 border border-border transition-colors cursor-pointer shrink-0">
+            <span className="text-muted-foreground text-sm">✕</span>
+          </button>
+        </div>
+
+        {/* Body */}
+        <div className="flex-1 overflow-y-auto px-4 py-4 space-y-3">
+
+          {/* Status badge */}
+          <div className="flex items-center gap-2">
+            {(() => {
+              const s = statusConfig[item.status] || statusConfig.pending;
+              return <span className={`px-2.5 py-0.5 rounded-full text-[0.7rem] font-bold ${s.className}`}>{s.label}</span>;
+            })()}
+          </div>
+
+          {/* Title */}
+          <h2 className="font-serif text-primary font-semibold leading-snug" style={{ fontSize: 'clamp(0.95rem, 2vw, 1.1rem)' }}>
+            "{item.title}"
+          </h2>
+
+          {/* Personal info block */}
+          {(item.birth_date || item.phone || item.email || item.facebook) && (
+            <div className="grid grid-cols-2 gap-x-4 gap-y-1.5 bg-white/5 rounded-xl px-3.5 py-3 text-xs">
+              {item.birth_date && <>
+                <span className="text-muted-foreground">{t('testimonials.field.dob')}</span>
+                <span className="text-foreground/80 font-medium">{fmt(item.birth_date)}</span>
+              </>}
+              {item.phone && <>
+                <span className="text-muted-foreground">{t('testimonials.field.phone')}</span>
+                <span className="text-foreground/80 font-medium">{item.phone}</span>
+              </>}
+              {item.email && <>
+                <span className="text-muted-foreground">Email</span>
+                <span className="text-foreground/80 font-medium truncate">{item.email}</span>
+              </>}
+              {item.facebook && <>
+                <span className="text-muted-foreground">Facebook</span>
+                <span className="text-foreground/80 font-medium truncate">{item.facebook}</span>
+              </>}
+            </div>
+          )}
+
+          {/* Before */}
+          <div className="space-y-1">
+            <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">{t('testimonials.field.before')}</p>
+            <p className="text-sm text-foreground/75 leading-relaxed bg-white/5 rounded-lg px-3 py-2.5">{item.before_prayer}</p>
+          </div>
+
+          {/* After */}
+          <div className="space-y-1">
+            <p className="text-[10px] font-bold text-primary uppercase tracking-widest">⭐ {t('testimonials.field.after')}</p>
+            <p className="text-sm text-foreground/80 leading-relaxed bg-primary/5 border border-primary/15 rounded-lg px-3 py-2.5">{item.after_prayer}</p>
+          </div>
+
+          {/* Current status */}
+          {item.current_status && (
+            <div className="space-y-1">
+              <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">{t('testimonials.field.current')}</p>
+              <p className="text-sm text-foreground/75 leading-relaxed">{item.current_status}</p>
+            </div>
+          )}
+
+          {/* Message */}
+          {item.message && (
+            <div className="border-l-2 border-primary/40 pl-3 py-1">
+              <p className="text-sm text-foreground/70 italic leading-relaxed">"{item.message}"</p>
+            </div>
+          )}
+
+          {/* Media */}
+          {hasMedia && (
+            <div className="space-y-2">
+              <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Media</p>
+              <div className="grid grid-cols-4 gap-1.5">
+                {item.media_urls.map((url, i) => (
+                  <a key={i} href={url} target="_blank" rel="noopener noreferrer" className="block aspect-square rounded-lg overflow-hidden border border-border hover:opacity-85 transition-opacity">
+                    {isVideo(url)
+                      ? <video src={url} className="w-full h-full object-cover" muted playsInline />
+                      : <img src={url} alt="" className="w-full h-full object-cover" />}
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const ProfilePage = () => {
   const { t, i18n } = useTranslation();
   const { user, profile, signOut } = useAuth();
   const [prayers, setPrayers] = useState<UserPrayer[]>([]);
   const [donations, setDonations] = useState<UserDonation[]>([]);
-  const [activeTab, setActiveTab] = useState<'prayers' | 'donations' | 'settings'>('prayers');
+  const [testimonies, setTestimonies] = useState<UserTestimony[]>([]);
+  const [activeTab, setActiveTab] = useState<'prayers' | 'donations' | 'testimonies' | 'settings'>('prayers');
+  const [selectedTestimony, setSelectedTestimony] = useState<UserTestimony | null>(null);
   const [loading, setLoading] = useState(true);
 
   const [editName, setEditName] = useState('');
@@ -38,12 +189,14 @@ const ProfilePage = () => {
   useEffect(() => {
     if (!user) return;
     const fetchData = async () => {
-      const [prayerRes, donationRes] = await Promise.all([
+      const [prayerRes, donationRes, testimonyRes] = await Promise.all([
         supabase.from('prayers').select('id, content, topic, amen_count, created_at').eq('user_id', user.id).order('created_at', { ascending: false }),
         supabase.from('donations').select('id, amount, currency, created_at, is_recurring').eq('user_id', user.id).order('created_at', { ascending: false }),
+        supabase.from('testimonials').select('id, full_name, birth_date, facebook, phone, email, address, title, before_prayer, after_prayer, current_status, message, media_urls, status, created_at').eq('created_by', user.id).order('created_at', { ascending: false }),
       ]);
       if (prayerRes.data) setPrayers(prayerRes.data);
       if (donationRes.data) setDonations(donationRes.data);
+      if (testimonyRes.data) setTestimonies(testimonyRes.data);
       setLoading(false);
     };
     fetchData();
@@ -137,22 +290,23 @@ const ProfilePage = () => {
       </section>
 
       <div className="sticky top-[60px] z-[50] bg-background/95 backdrop-blur-lg border-b border-border">
-        <div className="container max-w-[800px] flex gap-0">
+        <div className="container max-w-[800px] flex gap-0 overflow-x-auto" style={{ scrollbarHeight: '4px' }}>
           {[
-            { id: 'prayers' as const, label: t('profile.tab.prayers') },
-            { id: 'donations' as const, label: t('profile.tab.donations') },
-            { id: 'settings' as const, label: t('profile.tab.settings') },
+            { id: 'prayers' as const,     label: t('profile.tab.prayers') },
+            { id: 'donations' as const,    label: t('profile.tab.donations') },
+            { id: 'testimonies' as const,  label: t('profile.tab.testimonies'), icon: '✝️' },
+            { id: 'settings' as const,      label: t('profile.tab.settings') },
           ].map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex-1 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold border-b-[3px] transition-all duration-300 ${
+              className={`flex-1 min-w-[80px] py-2.5 sm:py-3 text-xs sm:text-sm font-semibold border-b-[3px] transition-all duration-300 ${
                 activeTab === tab.id
                   ? 'text-primary border-b-primary'
                   : 'text-muted-foreground border-b-transparent hover:text-foreground'
               }`}
             >
-              {tab.label}
+              {tab.icon && <span className='mr-1'>{tab.icon}</span>}{tab.label}
             </button>
           ))}
         </div>
@@ -202,6 +356,41 @@ const ProfilePage = () => {
                 ))}
               </div>
             )
+          ) : activeTab === 'testimonies' ? (
+            testimonies.length === 0 ? (
+              <div className="text-center py-10 text-muted-foreground">{t('profile.noTestimonies', 'Bạn chưa gửi lời chứng nào.')}</div>
+            ) : (
+              <div className="space-y-3 sm:space-y-4">
+                {testimonies.map((tm) => {
+                  const s = statusConfig[tm.status] || statusConfig.pending;
+                  return (
+                    <div key={tm.id} className="bg-card border border-border rounded-xl p-4 sm:p-5 cursor-pointer hover:border-primary/40 transition-all" onClick={() => setSelectedTestimony(tm)}>
+                      <div className="flex items-start justify-between gap-3 mb-2">
+                        <h3 className="text-foreground font-semibold text-sm sm:text-base leading-snug flex-1">{tm.title}</h3>
+                        <span className={`shrink-0 px-2.5 py-0.5 rounded-full text-[0.7rem] font-bold ${s.className}`}>
+                          {s.label}
+                        </span>
+                      </div>
+                      {tm.before_prayer && (
+                        <p className="text-[0.78rem] text-muted-foreground mb-1.5">
+                          <span className="text-red-400 font-semibold">Trước: </span>
+                          {tm.before_prayer.length > 100 ? tm.before_prayer.slice(0, 100) + '…' : tm.before_prayer}
+                        </p>
+                      )}
+                      {tm.after_prayer && (
+                        <p className="text-[0.78rem] text-muted-foreground">
+                          <span className="text-primary font-semibold">Sau: </span>
+                          {tm.after_prayer.length > 100 ? tm.after_prayer.slice(0, 100) + '…' : tm.after_prayer}
+                        </p>
+                      )}
+                      <div className="mt-3 pt-2 border-t border-border/50 text-[0.7rem] text-muted-foreground text-right">
+                        {new Date(tm.created_at).toLocaleDateString(locale)}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            )
           ) : (
             <div className="space-y-4 sm:space-y-5">
               <div>
@@ -228,6 +417,9 @@ const ProfilePage = () => {
           )}
         </div>
       </section>
+      {selectedTestimony && (
+        <TestimonyDetailModal item={selectedTestimony} onClose={() => setSelectedTestimony(null)} />
+      )}
     </div>
   );
 };

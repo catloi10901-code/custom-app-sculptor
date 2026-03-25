@@ -513,5 +513,13 @@
   "news.newsletter.sub": "नवीनतम समाचार आपके इनबॉक्स में",
   "news.newsletter.placeholder": "आपका ईमेल...",
   "news.newsletter.btn": "मुफ्त सदस्यता लें",
-  "live.schedule": "📅 प्रसारण कार्यक्रम"
+  "live.schedule": "📅 प्रसारण कार्यक्रम",
+  "profile": {
+    "tab": {
+      "testimonies": "Testimonies"
+    },
+    "noTestimonies": "You have not submitted any testimonies yet."
+  },
+  "profile.noTestimonies": "You have not submitted any testimonies yet.",
+  "Testimonies": "Testimonies"
 }

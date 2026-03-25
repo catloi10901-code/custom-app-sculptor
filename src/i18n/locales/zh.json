@@ -513,5 +513,13 @@
   "news.newsletter.sub": "最新新闻发送到您的邮箱",
   "news.newsletter.placeholder": "您的邮箱...",
   "news.newsletter.btn": "免费订阅",
-  "live.schedule": "📅 播出时间表"
+  "live.schedule": "📅 播出时间表",
+  "profile": {
+    "tab": {
+      "testimonies": "Testimonies"
+    },
+    "noTestimonies": "You have not submitted any testimonies yet."
+  },
+  "profile.noTestimonies": "You have not submitted any testimonies yet.",
+  "Testimonies": "Testimonies"
 }

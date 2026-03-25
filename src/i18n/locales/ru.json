@@ -513,5 +513,13 @@
   "news.newsletter.sub": "Последние новости на вашу почту",
   "news.newsletter.placeholder": "Ваш email...",
   "news.newsletter.btn": "Подписаться бесплатно",
-  "live.schedule": "📅 Расписание"
+  "live.schedule": "📅 Расписание",
+  "profile": {
+    "tab": {
+      "testimonies": "Testimonies"
+    },
+    "noTestimonies": "You have not submitted any testimonies yet."
+  },
+  "profile.noTestimonies": "You have not submitted any testimonies yet.",
+  "Testimonies": "Testimonies"
 }

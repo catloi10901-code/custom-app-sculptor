@@ -224,7 +224,6 @@ type TestimonySubmission = {
   current_status: string | null;
   message: string | null;
   media_urls: string[];
-  public_info: boolean;
   created_at: string;
 };
 
@@ -244,7 +243,6 @@ const INITIAL_FORM = {
   current_status: '',
   message: '',
   confirmed: false,
-  public_info: false,
 };
 
 // ── Phone code selector ──────────────────────────────────────────────────────
@@ -467,7 +465,7 @@ const TestimonyModal = ({ onClose }: { onClose: () => void }) => {
         current_status: form.current_status.trim() || null,
         message: form.message.trim() || null,
         media_urls: mediaUrls,
-        public_info: form.public_info,
+        created_by: user.id,
       });
       if (error) throw error;
       setSubmitted(true);
@@ -638,17 +636,7 @@ const TestimonyModal = ({ onClose }: { onClose: () => void }) => {
                     {t('testimonials.confirm.text')}
                   </span>
                 </label>
-                <label className="flex items-start gap-3 cursor-pointer group">
-                  <div
-                    className={`w-5 h-5 mt-0.5 rounded border-2 flex items-center justify-center transition-all shrink-0 ${form.public_info ? 'bg-primary border-primary' : 'border-border group-hover:border-primary/50'}`}
-                    onClick={() => setForm(p => ({ ...p, public_info: !p.public_info }))}
-                  >
-                    {form.public_info && <CheckCircle className="w-3.5 h-3.5 text-primary-foreground" />}
-                  </div>
-                  <span className="text-sm text-foreground/80 leading-relaxed select-none" onClick={() => setForm(p => ({ ...p, public_info: !p.public_info }))}>
-                    {t('testimonials.confirm.public')}
-                  </span>
-                </label>
+
               </div>
             </div>
           )}
@@ -723,7 +711,7 @@ const DetailModal = ({ item, onClose }: { item: TestimonySubmission; onClose: ()
           </h2>
 
           {/* Personal info block */}
-          {item.public_info && (item.birth_date || item.phone || item.email || item.facebook) && (
+          {(item.birth_date || item.phone || item.email || item.facebook) && (
             <div className="grid grid-cols-2 gap-x-4 gap-y-1.5 bg-white/5 rounded-xl px-3.5 py-3 text-xs">
               {item.birth_date && <>
                 <span className="text-muted-foreground">{t('testimonials.field.dob')}</span>
@@ -806,7 +794,7 @@ const TestimonialsPage = () => {
   const fetchApproved = async () => {
     const { data, error } = await supabase
       .from('testimonials')
-      .select('id, full_name, birth_date, facebook, phone, email, address, title, before_prayer, after_prayer, current_status, message, media_urls, public_info, created_at')
+      .select('id, full_name, birth_date, facebook, phone, email, address, title, before_prayer, after_prayer, current_status, message, media_urls, created_at')
       .eq('status', 'approved')
       .order('created_at', { ascending: false });
     if (!error) setSubmissions((data as unknown as TestimonySubmission[]) || []);

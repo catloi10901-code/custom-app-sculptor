@@ -513,5 +513,13 @@
   "news.newsletter.sub": "Neueste Nachrichten direkt in Ihr Postfach",
   "news.newsletter.placeholder": "Ihre E-Mail...",
   "news.newsletter.btn": "Kostenlos abonnieren",
-  "live.schedule": "📅 Sendeplan"
+  "live.schedule": "📅 Sendeplan",
+  "profile": {
+    "tab": {
+      "testimonies": "Testimonies"
+    },
+    "noTestimonies": "You have not submitted any testimonies yet."
+  },
+  "profile.noTestimonies": "You have not submitted any testimonies yet.",
+  "Testimonies": "Testimonies"
 }

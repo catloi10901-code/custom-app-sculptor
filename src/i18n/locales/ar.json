@@ -513,5 +513,13 @@
   "news.newsletter.sub": "آخر الأخبار تصل إلى بريدك",
   "news.newsletter.placeholder": "بريدك الإلكتروني...",
   "news.newsletter.btn": "اشترك مجانًا",
-  "live.schedule": "📅 جدول البث"
+  "live.schedule": "📅 جدول البث",
+  "profile": {
+    "tab": {
+      "testimonies": "Testimonies"
+    },
+    "noTestimonies": "You have not submitted any testimonies yet."
+  },
+  "profile.noTestimonies": "You have not submitted any testimonies yet.",
+  "Testimonies": "Testimonies"
 }

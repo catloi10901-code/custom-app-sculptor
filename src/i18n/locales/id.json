@@ -513,5 +513,13 @@
   "news.newsletter.sub": "Berita terbaru dikirim ke email Anda",
   "news.newsletter.placeholder": "Email Anda...",
   "news.newsletter.btn": "Berlangganan Gratis",
-  "live.schedule": "📅 Jadwal Siaran"
+  "live.schedule": "📅 Jadwal Siaran",
+  "profile": {
+    "tab": {
+      "testimonies": "Testimonies"
+    },
+    "noTestimonies": "You have not submitted any testimonies yet."
+  },
+  "profile.noTestimonies": "You have not submitted any testimonies yet.",
+  "Testimonies": "Testimonies"
 }

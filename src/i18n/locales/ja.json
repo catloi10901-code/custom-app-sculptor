@@ -513,5 +513,13 @@
   "news.newsletter.sub": "最新ニュースをメールでお届け",
   "news.newsletter.placeholder": "メールアドレス...",
   "news.newsletter.btn": "無料登録",
-  "live.schedule": "📅 放送スケジュール"
+  "live.schedule": "📅 放送スケジュール",
+  "profile": {
+    "tab": {
+      "testimonies": "Testimonies"
+    },
+    "noTestimonies": "You have not submitted any testimonies yet."
+  },
+  "profile.noTestimonies": "You have not submitted any testimonies yet.",
+  "Testimonies": "Testimonies"
 }

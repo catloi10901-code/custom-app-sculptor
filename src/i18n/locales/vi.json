@@ -588,5 +588,13 @@
   "news.newsletter.sub": "Tin tức mới nhất gửi đến hộp thư của bạn",
   "news.newsletter.placeholder": "Email của bạn...",
   "news.newsletter.btn": "Đăng Ký Miễn Phí",
-  "live.schedule": "📅 Lịch phát sóng"
+  "live.schedule": "📅 Lịch phát sóng",
+  "profile": {
+    "tab": {
+      "testimonies": "Lời Chứng"
+    },
+    "noTestimonies": "Bạn chưa gửi lời chứng nào."
+  },
+  "profile.noTestimonies": "Bạn chưa gửi lời chứng nào.",
+  "Lời Chứng": "Lời Chứng"
 }

@@ -513,5 +513,13 @@
   "news.newsletter.sub": "Últimas notícias no seu e-mail",
   "news.newsletter.placeholder": "Seu e-mail...",
   "news.newsletter.btn": "Inscreva-se gratuitamente",
-  "live.schedule": "📅 Programação"
+  "live.schedule": "📅 Programação",
+  "profile": {
+    "tab": {
+      "testimonies": "Testimonies"
+    },
+    "noTestimonies": "You have not submitted any testimonies yet."
+  },
+  "profile.noTestimonies": "You have not submitted any testimonies yet.",
+  "Testimonies": "Testimonies"
 }

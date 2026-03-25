@@ -513,5 +513,13 @@
   "news.newsletter.sub": "ข่าวล่าสุดส่งถึงกล่องอีเมลของคุณ",
   "news.newsletter.placeholder": "อีเมลของคุณ...",
   "news.newsletter.btn": "สมัครฟรี",
-  "live.schedule": "📅 ตารางออกอากาศ"
+  "live.schedule": "📅 ตารางออกอากาศ",
+  "profile": {
+    "tab": {
+      "testimonies": "Testimonies"
+    },
+    "noTestimonies": "You have not submitted any testimonies yet."
+  },
+  "profile.noTestimonies": "You have not submitted any testimonies yet.",
+  "Testimonies": "Testimonies"
 }

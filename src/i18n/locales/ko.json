@@ -513,5 +513,13 @@
   "news.newsletter.sub": "최신 뉴스를 이메일로 받으세요",
   "news.newsletter.placeholder": "이메일...",
   "news.newsletter.btn": "무료 구독",
-  "live.schedule": "📅 방송 일정"
+  "live.schedule": "📅 방송 일정",
+  "profile": {
+    "tab": {
+      "testimonies": "Testimonies"
+    },
+    "noTestimonies": "You have not submitted any testimonies yet."
+  },
+  "profile.noTestimonies": "You have not submitted any testimonies yet.",
+  "Testimonies": "Testimonies"
 }
