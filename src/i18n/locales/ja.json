@@ -522,4 +522,7 @@
   },
   "profile.noTestimonies": "You have not submitted any testimonies yet.",
   "Testimonies": "Testimonies"
+,
+  "testimonials.form.title": "あなたの証しを共有",
+  "testimonials.form.sub": "あなたの物語はグローバルな祈りのコミュニティで他の人を励まし、鼓舞できます"
 }

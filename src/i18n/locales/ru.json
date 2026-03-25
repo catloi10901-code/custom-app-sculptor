@@ -522,4 +522,7 @@
   },
   "profile.noTestimonies": "You have not submitted any testimonies yet.",
   "Testimonies": "Testimonies"
+,
+  "testimonials.form.title": "Поделитесь Своим Свидетельством",
+  "testimonials.form.sub": "Ваша история может ободрить и вдохновить других в глобальном сообществе молитвы"
 }

@@ -522,4 +522,7 @@
   },
   "profile.noTestimonies": "You have not submitted any testimonies yet.",
   "Testimonies": "Testimonies"
+,
+  "testimonials.form.title": "แบ่งปันคำพยานของคุณ",
+  "testimonials.form.sub": "เรื่องราวของคุณสามารถให้กำลังใจและสร้างแรงบันดาลใจให้ผู้อื่นในชุมชนคำอธิษฐานทั่วโลก"
 }

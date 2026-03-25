@@ -1,62 +1,158 @@
 import { useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import { supabase } from '@/integrations/supabase/client';
 import AnimatedCounter from '@/components/ui/AnimatedCounter';
+import { HandHeart, BookOpen, Users, Target, Radio, ScrollText, Newspaper } from 'lucide-react';
+
+interface Stats {
+  prayers: number;
+  testimonials: number;
+  posts: number;
+  words: number;
+  users: number;
+  campaigns: number;
+  liveSessions: number;
+}
+
+const INITIAL: Stats = { prayers: 0, testimonials: 0, posts: 0, words: 0, users: 0, campaigns: 0, liveSessions: 0 };
 
 const AdminDashboard = () => {
-  const { t } = useTranslation();
-  const [stats, setStats] = useState({ prayers: 0, posts: 0, users: 0, donated: 0 });
+  const [stats, setStats] = useState<Stats>(INITIAL);
+  const [loading, setLoading] = useState(true);
 
   const fetchStats = async () => {
-    const [prayers, posts, users, liveStats] = await Promise.all([
+    const [prayers, testimonials, posts, words, users, campaigns, liveSessions] = await Promise.all([
       supabase.from('prayers').select('id', { count: 'exact', head: true }),
-      supabase.from('blog_posts').select('id', { count: 'exact', head: true }).eq('status', 'published'),
+      supabase.from('testimonials').select('id', { count: 'exact', head: true }),
+      supabase.from('blog_posts').select('id', { count: 'exact', head: true }).eq('status', 'published').eq('post_type', 'news'),
+      supabase.from('blog_posts').select('id', { count: 'exact', head: true }).eq('status', 'published').eq('post_type', 'word'),
       supabase.from('profiles').select('id', { count: 'exact', head: true }),
-      supabase.from('live_stats').select('donated_total, prayers_count, members_count').eq('id', 1).single(),
+      supabase.from('campaigns').select('id', { count: 'exact', head: true }),
+      supabase.from('live_sessions').select('id', { count: 'exact', head: true }).eq('is_active', true),
     ]);
     setStats({
-      prayers: liveStats.data ? Number(liveStats.data.prayers_count) : (prayers.count || 0),
-      posts: posts.count || 0,
-      users: liveStats.data ? Number(liveStats.data.members_count) : (users.count || 0),
-      donated: liveStats.data ? Number(liveStats.data.donated_total) : 0,
+      prayers: prayers.count ?? 0,
+      testimonials: testimonials.count ?? 0,
+      posts: posts.count ?? 0,
+      words: words.count ?? 0,
+      users: users.count ?? 0,
+      campaigns: campaigns.count ?? 0,
+      liveSessions: liveSessions.count ?? 0,
     });
+    setLoading(false);
   };
 
   useEffect(() => {
     fetchStats();
-
     const channel = supabase
       .channel('admin-dashboard')
-      .on('postgres_changes', { event: '*', schema: 'public', table: 'live_stats' }, () => fetchStats())
-      .on('postgres_changes', { event: '*', schema: 'public', table: 'prayers' }, () => fetchStats())
-      .on('postgres_changes', { event: '*', schema: 'public', table: 'blog_posts' }, () => fetchStats())
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'prayers' }, fetchStats)
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'testimonials' }, fetchStats)
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'blog_posts' }, fetchStats)
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'profiles' }, fetchStats)
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'campaigns' }, fetchStats)
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'live_sessions' }, fetchStats)
       .subscribe();
-
     return () => { supabase.removeChannel(channel); };
   }, []);
 
   const cards = [
-    { label: t('admin.dashboard.prayers'), value: stats.prayers, icon: '🙏', color: 'from-primary/20 to-transparent' },
-    { label: t('admin.dashboard.posts'), value: stats.posts, icon: '📖', color: 'from-blue-500/20 to-transparent' },
-    { label: t('admin.dashboard.users'), value: stats.users, icon: '👥', color: 'from-green-500/20 to-transparent' },
-    { label: t('admin.dashboard.donations'), value: stats.donated, prefix: '$', icon: '💰', color: 'from-purple-500/20 to-transparent' },
+    {
+      label: 'Lời cầu nguyện',
+      value: stats.prayers,
+      icon: HandHeart,
+      accent: 'text-primary',
+      bg: 'bg-primary/[0.08]',
+      border: 'border-primary/20',
+      glow: 'shadow-primary/10',
+    },
+    {
+      label: 'Lời chứng',
+      value: stats.testimonials,
+      icon: ScrollText,
+      accent: 'text-amber-400',
+      bg: 'bg-amber-500/[0.08]',
+      border: 'border-amber-500/20',
+      glow: 'shadow-amber-500/10',
+    },
+    {
+      label: 'Bài viết tin tức',
+      value: stats.posts,
+      icon: Newspaper,
+      accent: 'text-blue-400',
+      bg: 'bg-blue-500/[0.08]',
+      border: 'border-blue-500/20',
+      glow: 'shadow-blue-500/10',
+    },
+    {
+      label: 'Lời Chúa',
+      value: stats.words,
+      icon: BookOpen,
+      accent: 'text-sky-400',
+      bg: 'bg-sky-500/[0.08]',
+      border: 'border-sky-500/20',
+      glow: 'shadow-sky-500/10',
+    },
+    {
+      label: 'Người dùng',
+      value: stats.users,
+      icon: Users,
+      accent: 'text-green-400',
+      bg: 'bg-green-500/[0.08]',
+      border: 'border-green-500/20',
+      glow: 'shadow-green-500/10',
+    },
+    {
+      label: 'Chiến dịch',
+      value: stats.campaigns,
+      icon: Target,
+      accent: 'text-purple-400',
+      bg: 'bg-purple-500/[0.08]',
+      border: 'border-purple-500/20',
+      glow: 'shadow-purple-500/10',
+    },
+    {
+      label: 'Phiên live đang hoạt động',
+      value: stats.liveSessions,
+      icon: Radio,
+      accent: 'text-red-400',
+      bg: 'bg-red-500/[0.08]',
+      border: 'border-red-500/20',
+      glow: 'shadow-red-500/10',
+    },
   ];
 
   return (
     <div>
-      <h1 className="font-serif text-primary text-2xl mb-6">{t('admin.dashboard')}</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        {cards.map((c, i) => (
-          <div key={i} className={`bg-gradient-to-br ${c.color} border border-border rounded-2xl p-6`}>
-            <div className="text-3xl mb-2">{c.icon}</div>
-            <AnimatedCounter
-              value={c.value}
-              prefix={(c as any).prefix || ''}
-              className="font-serif text-3xl font-bold text-foreground"
-            />
-            <div className="text-[0.82rem] text-muted-foreground mt-1">{c.label}</div>
-          </div>
-        ))}
+      <div className="mb-8">
+        <h1 className="font-serif text-2xl font-bold text-foreground">Tổng quan</h1>
+        <p className="text-sm text-muted-foreground mt-1">Thống kê toàn bộ dữ liệu hệ thống</p>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+        {cards.map((c, i) => {
+          const Icon = c.icon;
+          return (
+            <div
+              key={i}
+              className={`relative rounded-2xl border ${c.border} ${c.bg} p-6 flex items-center gap-5 shadow-lg ${c.glow} transition-all duration-300 hover:scale-[1.02] hover:shadow-xl`}
+            >
+              <div className={`flex-shrink-0 w-14 h-14 rounded-xl ${c.bg} border ${c.border} flex items-center justify-center`}>
+                <Icon className={`w-7 h-7 ${c.accent}`} strokeWidth={1.5} />
+              </div>
+              <div className="min-w-0">
+                {loading ? (
+                  <div className="h-8 w-16 bg-white/10 rounded-lg animate-pulse mb-1" />
+                ) : (
+                  <AnimatedCounter
+                    value={c.value}
+                    className={`font-serif text-3xl font-bold ${c.accent}`}
+                  />
+                )}
+                <p className="text-sm text-muted-foreground leading-snug mt-0.5">{c.label}</p>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

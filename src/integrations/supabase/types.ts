@@ -151,6 +151,35 @@ export type Database = {
           },
         ]
       }
+      campaign_participants: {
+        Row: {
+          id: string
+          campaign_id: string
+          user_id: string
+          joined_at: string
+        }
+        Insert: {
+          id?: string
+          campaign_id: string
+          user_id: string
+          joined_at?: string
+        }
+        Update: {
+          id?: string
+          campaign_id?: string
+          user_id?: string
+          joined_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "campaign_participants_campaign_id_fkey"
+            columns: ["campaign_id"]
+            isOneToOne: false
+            referencedRelation: "campaigns"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       campaigns: {
         Row: {
           created_at: string

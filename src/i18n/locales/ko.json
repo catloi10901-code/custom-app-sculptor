@@ -522,4 +522,7 @@
   },
   "profile.noTestimonies": "You have not submitted any testimonies yet.",
   "Testimonies": "Testimonies"
+,
+  "testimonials.form.title": "여러분의 증언을 공유하세요",
+  "testimonials.form.sub": "당신의 이야기는 글로벌 기도 커뮤니티에서 다른 사람들을 격려하고 영감을 줄 수 있습니다"
 }

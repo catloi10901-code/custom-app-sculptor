@@ -9,7 +9,7 @@ import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from '@
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Label } from '@/components/ui/label';
 import { toast } from '@/hooks/use-toast';
-import { Pencil, Plus } from 'lucide-react';
+import { Pencil, Plus, Users } from 'lucide-react';
 
 interface Campaign {
   id: string;
@@ -20,6 +20,17 @@ interface Campaign {
   goal: number;
   is_active: boolean;
   sort_order: number;
+}
+
+interface Participant {
+  id: string;
+  joined_at: string;
+  profiles: {
+    display_name: string | null;
+    avatar_url: string | null;
+    country: string | null;
+  } | null;
+  user_email: string | null;
 }
 
 const emptyCampaign: Omit<Campaign, 'id'> = {
@@ -40,6 +51,12 @@ const AdminCampaigns = () => {
   const [editing, setEditing] = useState<Campaign | null>(null);
   const [form, setForm] = useState<Omit<Campaign, 'id'>>(emptyCampaign);
   const [saving, setSaving] = useState(false);
+
+  // Participants dialog
+  const [participantsOpen, setParticipantsOpen] = useState(false);
+  const [selectedCampaign, setSelectedCampaign] = useState<Campaign | null>(null);
+  const [participants, setParticipants] = useState<Participant[]>([]);
+  const [participantsLoading, setParticipantsLoading] = useState(false);
 
   const fetchCampaigns = async () => {
     const { data } = await supabase.from('campaigns').select('*').order('sort_order');
@@ -78,6 +95,41 @@ const AdminCampaigns = () => {
     fetchCampaigns();
   };
 
+  const openParticipants = async (campaign: Campaign) => {
+    setSelectedCampaign(campaign);
+    setParticipantsOpen(true);
+    setParticipantsLoading(true);
+    setParticipants([]);
+
+    const { data: participantData } = await supabase
+      .from('campaign_participants')
+      .select('id, joined_at, user_id')
+      .eq('campaign_id', campaign.id)
+      .order('joined_at', { ascending: false });
+
+    if (!participantData || participantData.length === 0) {
+      setParticipantsLoading(false);
+      return;
+    }
+
+    const userIds = participantData.map((p) => p.user_id);
+    const { data: profileData } = await supabase
+      .from('profiles')
+      .select('user_id, display_name, avatar_url, country')
+      .in('user_id', userIds);
+
+    const profileMap = new Map((profileData ?? []).map((p) => [p.user_id, p]));
+
+    const rows: Participant[] = participantData.map((p) => ({
+      id: p.id,
+      joined_at: p.joined_at,
+      profiles: profileMap.get(p.user_id) ?? null,
+      user_email: null,
+    }));
+    setParticipants(rows);
+    setParticipantsLoading(false);
+  };
+
   if (loading) return <div className="text-muted-foreground">{t('common.loading')}</div>;
 
   return (
@@ -96,7 +148,7 @@ const AdminCampaigns = () => {
               <TableHead className="text-right">Người tham gia</TableHead>
               <TableHead className="text-right">Mục tiêu</TableHead>
               <TableHead className="text-center">Trạng thái</TableHead>
-              <TableHead className="w-16" />
+              <TableHead className="w-24" />
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -113,9 +165,14 @@ const AdminCampaigns = () => {
                   <span className={`inline-block w-2 h-2 rounded-full ${c.is_active ? 'bg-green-500' : 'bg-muted-foreground'}`} />
                 </TableCell>
                 <TableCell>
-                  <Button variant="ghost" size="icon" onClick={() => openEdit(c)}>
-                    <Pencil className="w-4 h-4" />
-                  </Button>
+                  <div className="flex items-center gap-1">
+                    <Button variant="ghost" size="icon" title="Danh sách user" onClick={() => openParticipants(c)}>
+                      <Users className="w-4 h-4" />
+                    </Button>
+                    <Button variant="ghost" size="icon" onClick={() => openEdit(c)}>
+                      <Pencil className="w-4 h-4" />
+                    </Button>
+                  </div>
                 </TableCell>
               </TableRow>
             ))}
@@ -123,6 +180,7 @@ const AdminCampaigns = () => {
         </Table>
       </div>
 
+      {/* Edit / Create Dialog */}
       <Dialog open={editOpen} onOpenChange={setEditOpen}>
         <DialogContent className="max-w-md">
           <DialogHeader>
@@ -167,6 +225,49 @@ const AdminCampaigns = () => {
               {saving ? 'Đang lưu...' : 'Lưu'}
             </Button>
           </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Participants Dialog */}
+      <Dialog open={participantsOpen} onOpenChange={setParticipantsOpen}>
+        <DialogContent className="max-w-2xl">
+          <DialogHeader>
+            <DialogTitle>
+              Danh sách user tham gia — {selectedCampaign?.icon} {selectedCampaign?.title}
+            </DialogTitle>
+          </DialogHeader>
+          {participantsLoading ? (
+            <div className="text-muted-foreground py-8 text-center">Đang tải...</div>
+          ) : participants.length === 0 ? (
+            <div className="text-muted-foreground py-8 text-center">Chưa có ai tham gia chiến dịch này.</div>
+          ) : (
+            <div className="rounded-lg border border-border overflow-hidden">
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>#</TableHead>
+                    <TableHead>Tên hiển thị</TableHead>
+                    <TableHead>Quốc gia</TableHead>
+                    <TableHead>Ngày tham gia</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {participants.map((p, i) => (
+                    <TableRow key={p.id}>
+                      <TableCell className="text-muted-foreground">{i + 1}</TableCell>
+                      <TableCell className="font-medium">
+                        {p.profiles?.display_name || <span className="text-muted-foreground italic">Ẩn danh</span>}
+                      </TableCell>
+                      <TableCell className="text-muted-foreground">{p.profiles?.country || '—'}</TableCell>
+                      <TableCell className="text-muted-foreground text-sm">
+                        {new Date(p.joined_at).toLocaleString('vi-VN')}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </div>
+          )}
         </DialogContent>
       </Dialog>
     </div>

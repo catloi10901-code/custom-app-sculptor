@@ -522,4 +522,7 @@
   },
   "profile.noTestimonies": "You have not submitted any testimonies yet.",
   "Testimonies": "Testimonies"
+,
+  "testimonials.form.title": "分享你的见证",
+  "testimonials.form.sub": "你的故事可以鼓励和启发全球祈祷社区中的其他人"
 }

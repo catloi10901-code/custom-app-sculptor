@@ -597,4 +597,7 @@
   },
   "profile.noTestimonies": "You have not submitted any testimonies yet.",
   "Testimonies": "Testimonies"
+,
+  "testimonials.form.title": "Share Your Testimony",
+  "testimonials.form.sub": "Your story can encourage and inspire others in the global prayer community"
 }

@@ -522,4 +522,7 @@
   },
   "profile.noTestimonies": "You have not submitted any testimonies yet.",
   "Testimonies": "Testimonies"
+,
+  "testimonials.form.title": "Comparte Tu Testimonio",
+  "testimonials.form.sub": "Tu historia puede alentar e inspirar a otros en la comunidad global de oración"
 }
