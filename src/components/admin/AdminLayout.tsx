@@ -36,9 +36,9 @@ const AdminLayout = () => {
     <div className="min-h-screen flex flex-col md:flex-row">
       {/* Mobile header */}
       <div className="md:hidden flex items-center justify-between p-3 bg-card border-b border-border">
-        <Link to="/" className="flex items-center gap-2 no-underline">
-          <div className="w-8 h-8 rounded-full bg-gold-dim border border-primary flex items-center justify-center text-sm">✦</div>
-          <span className="font-serif text-primary text-lg font-bold">Admin</span>
+        <Link to="/" className="flex items-center no-underline">
+          <img src="/logo.png" alt="Holy Pray" className="h-10 w-auto object-contain" />
+          <span className="font-serif text-primary text-lg font-bold ml-2">Admin</span>
         </Link>
         <button onClick={() => setSidebarOpen(!sidebarOpen)} className="p-2 text-primary">
           {sidebarOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -48,7 +48,7 @@ const AdminLayout = () => {
       {/* Sidebar - desktop always visible, mobile toggle */}
       <aside className={`${sidebarOpen ? "block" : "hidden"} md:block w-full md:w-[260px] bg-card border-r border-border flex-shrink-0 p-4 flex flex-col gap-1`}>
         <Link to="/" className="hidden md:flex items-center gap-2 no-underline mb-6 px-2">
-          <div className="w-8 h-8 rounded-full bg-gold-dim border border-primary flex items-center justify-center text-sm">✦</div>
+          <img src="/logo.png" alt="Holy Pray" className="h-10 w-auto object-contain" />
           <span className="font-serif text-primary text-lg font-bold">Admin</span>
         </Link>
         {adminNav.map((item) => {
