@@ -98,9 +98,9 @@ const Footer = () => {
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
           <div>
-            <Link to="/" className="flex items-center gap-2.5 no-underline mb-3">
-              <div className="w-9 h-9 rounded-full bg-gold-dim border-[1.5px] border-primary flex items-center justify-center text-base">✦</div>
-              <span className="font-serif text-2xl font-bold text-primary">HOLYPray</span>
+            <Link to="/" className="flex items-center no-underline mb-3">
+              <img src="/logo.png" alt="Holy Pray" className="h-12 w-auto object-contain" />
+              <span className="font-serif text-2xl font-bold text-primary ml-2">HOLY Pray</span>
             </Link>
             <p className="text-[0.95rem] text-muted-foreground mt-2 max-w-[300px] leading-[1.7]">{t("footer.desc")}</p>
             <div className="flex flex-col sm:flex-row gap-2 mt-4">
