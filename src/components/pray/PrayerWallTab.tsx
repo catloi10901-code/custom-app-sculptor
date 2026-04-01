@@ -59,9 +59,9 @@ const PrayerWallTab = () => {
   }, [fetchPrayers, fetchUserAmens]);
 
   // Seed prayers once on mount
-  useEffect(() => {
-    supabase.functions.invoke("seed-prayers").catch(() => {});
-  }, []);
+  // useEffect(() => {
+  //   supabase.functions.invoke("seed-prayers").catch(() => {});
+  // }, []);
 
   const toggleAmen = async (prayerId: string) => {
     if (!user) {
